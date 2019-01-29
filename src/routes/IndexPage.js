@@ -1,6 +1,7 @@
 import React from "react"
+import {withRouter} from "react-router-dom";
 
-export default class IndexPage extends React.Component{
+class IndexPage extends React.Component{
     render() {
         return(
             <div>
@@ -9,3 +10,5 @@ export default class IndexPage extends React.Component{
         );
     }
 }
+
+export default withRouter(IndexPage)
