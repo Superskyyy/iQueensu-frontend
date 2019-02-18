@@ -4,9 +4,11 @@ import {withRouter} from "react-router-dom";
 class NotFoundPage extends React.Component{
     render() {
         return(
-            <div>
-
-            </div>
+            <React.Fragment>
+                <div>
+                    Not Found Page
+                </div>
+            </React.Fragment>
         );
     }
 }
