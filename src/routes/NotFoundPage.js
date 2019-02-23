@@ -6,7 +6,7 @@ class NotFoundPage extends React.Component{
         return(
             <React.Fragment>
                 <div>
-                    Not Found Page
+                    404 Not Found Page
                 </div>
             </React.Fragment>
         );

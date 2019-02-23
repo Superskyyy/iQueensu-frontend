@@ -1,0 +1,14 @@
+{
+  "places": {
+    "skyline": {
+      "id": "SkyLine",
+      "text": "SkyLine Apartment",
+      "geometry": {
+        "location": {
+          "lat":44.2318514,
+          "lng":-76.4919847
+        }
+      }
+    }
+  }
+}

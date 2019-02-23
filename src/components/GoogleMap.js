@@ -1,13 +1,19 @@
 import React,{Fragment} from "react";
 import PropTypes from "prop-types";
+import GoogleMapReact from 'google-map-react';
+import {GoogleMapApi} from "../utils/apiKey";
 
 
 const GoogleMap = ({ children, ...props }) => (
     <Fragment>
         <GoogleMapReact
             bootstrapURLKeys={{
-                key: process.env.REACT_APP_MAP_KEY,
+                key:GoogleMapApi,
+                language: 'en',
+                region: 'ca',
+                libraries: ['places','geometry']
             }}
+            yesIWantToUseGoogleMapApiInternals = {true}
             {...props}
         >
             {children}
