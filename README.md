@@ -1,7 +1,5 @@
 # iQueensu Web Front End
 ## Project Information
-[![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react)
-<br>
 iQueensu Web Front End Project
 ## Command Scripts
 ### `yarn install`
@@ -28,6 +26,6 @@ Builds the app for production to the `build` folder.<br>
 Creaete eslint src Module.
 
 ## People
-### <code/>Developers<code/>
-<code/>EstKey<br><code/>
-<code/>B.T<code/>
+### `Developers`
+`EstKey`<br>
+`B.T`
