@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="305" height="285" viewBox="0 0 305 285">
+    <defs>
+        <style>
+            .cls-1{fill:#59c0a5}.cls-2{fill:#3162ab}.cls-3{fill:#4178cb}.cls-4{clip-path:url(#clip-path)}.cls-5{fill:#a2c0ef}.cls-6{fill:#5b91e2}.cls-7{fill:#77a8f1}.cls-8{filter:url(#Rectangle_106)}.cls-9{filter:url(#Rectangle_107)}
+        </style>
+        <filter id="Rectangle_107" width="305" height="285" x="0" y="0">
+            <feOffset dy="8"/>
+            <feGaussianBlur result="blur" stdDeviation="7.5"/>
+            <feFlood flood-opacity=".2"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <filter id="Rectangle_106" width="269" height="249.5" x="18" y="4.5">
+            <feOffset dy="5"/>
+            <feGaussianBlur result="blur-2" stdDeviation="1.5"/>
+            <feFlood flood-color="#010101" flood-opacity=".051"/>
+            <feComposite in2="blur-2" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <clipPath id="clip-path">
+            <path id="Rectangle_105" d="M0 0h260v240H0z" class="cls-1" transform="translate(365 1825)"/>
+        </clipPath>
+    </defs>
+    <g id="Group_659" transform="translate(-945.5 -587.5)">
+        <g class="cls-9" transform="translate(945.5 587.5)">
+            <rect id="Rectangle_107-2" width="260" height="240" class="cls-2" rx="5" transform="translate(22.5 14.5)"/>
+        </g>
+        <g class="cls-8" transform="translate(945.5 587.5)">
+            <rect id="Rectangle_106-2" width="260" height="240" class="cls-3" rx="5" transform="translate(22.5 4.5)"/>
+        </g>
+        <g id="Mask_Group_21" class="cls-4" transform="translate(603 -1233)">
+            <g id="Group_590" transform="rotate(30 422.607 1869.299)">
+                <path id="Rectangle_127" d="M0 0h21v205H0z" class="cls-5" transform="translate(627.401 1908.727)"/>
+                <path id="Rectangle_128" d="M0 0h21v197H0z" class="cls-6" transform="translate(433.428 1932.742)"/>
+                <path id="Rectangle_131" d="M0 0h21v103H0z" class="cls-6" transform="rotate(-90 1193.585 760.157)"/>
+                <path id="Rectangle_132" d="M0 0h21v86H0z" class="cls-6" transform="rotate(-90 1256.001 733.68)"/>
+                <path id="Rectangle_129" d="M0 0h21v197H0z" class="cls-7" transform="translate(474 1897)"/>
+                <path id="Rectangle_133" d="M0 0h21v197H0z" class="cls-6" transform="translate(587.321 1989.681)"/>
+                <path id="Rectangle_130" d="M0 0h21v197H0z" class="cls-6" transform="translate(515.428 1932.742)"/>
+            </g>
+        </g>
+    </g>
+</svg>

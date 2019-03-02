@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="305" height="285" viewBox="0 0 305 285">
+    <defs>
+        <style>
+            .cls-1{fill:#59c0a5}.cls-2{fill:#4b4b4b}.cls-3{fill:#5e5e5e}.cls-4{clip-path:url(#clip-path)}.cls-5{fill:#828282}.cls-6{fill:#949494}.cls-7{filter:url(#Rectangle_106)}.cls-8{filter:url(#Rectangle_107)}
+        </style>
+        <filter id="Rectangle_107" width="305" height="285" x="0" y="0">
+            <feOffset dy="8"/>
+            <feGaussianBlur result="blur" stdDeviation="7.5"/>
+            <feFlood flood-opacity=".2"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <filter id="Rectangle_106" width="269" height="249.5" x="18" y="4.5">
+            <feOffset dy="5"/>
+            <feGaussianBlur result="blur-2" stdDeviation="1.5"/>
+            <feFlood flood-color="#010101" flood-opacity=".051"/>
+            <feComposite in2="blur-2" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <clipPath id="clip-path">
+            <path id="Rectangle_105" d="M0 0h260v240H0z" class="cls-1" transform="translate(365 1825)"/>
+        </clipPath>
+    </defs>
+    <g id="Group_660" transform="translate(-1221.5 -587.5)">
+        <g class="cls-8" transform="translate(1221.5 587.5)">
+            <rect id="Rectangle_107-2" width="260" height="240" class="cls-2" rx="5" transform="translate(22.5 14.5)"/>
+        </g>
+        <g class="cls-7" transform="translate(1221.5 587.5)">
+            <rect id="Rectangle_106-2" width="260" height="240" class="cls-3" rx="5" transform="translate(22.5 4.5)"/>
+        </g>
+        <g id="Mask_Group_21" class="cls-4" transform="translate(879 -1233)">
+            <g id="icons8_Book" transform="translate(379 1972)">
+                <path id="Path_169" d="M98.375 2H17.482A13.474 13.474 0 0 0 4 15.482V123.34a13.474 13.474 0 0 0 13.482 13.482h80.893a13.474 13.474 0 0 0 13.482-13.482V15.482A13.474 13.474 0 0 0 98.375 2zM51.188 69.411L34.335 59.3 17.482 69.411V15.482h33.706z" class="cls-5"/>
+            </g>
+            <g id="icons8_Bookmark" transform="translate(502 1920.234)">
+                <path id="Path_170" d="M14.877 2A10.87 10.87 0 0 0 4 12.877v81.575a16.4 16.4 0 0 0 16.315 16.315h70.7V99.89h-70.7a5.438 5.438 0 1 1 0-10.877h70.7V2H69.26v54.384L52.945 45.507 36.63 56.384V2z" class="cls-6"/>
+            </g>
+            <g id="icons8_Lock" transform="translate(433.338 1928)">
+                <path id="Path_171" d="M25.331 1a15.962 15.962 0 0 0-16 16v2.666A5.343 5.343 0 0 0 4 25v26.661a5.343 5.343 0 0 0 5.333 5.333h32a5.343 5.343 0 0 0 5.333-5.333V25a5.343 5.343 0 0 0-5.333-5.333V17A15.963 15.963 0 0 0 25.331 1zm0 5.333A10.441 10.441 0 0 1 36 17v2.666H14.665V17A10.441 10.441 0 0 1 25.331 6.333zm0 26.664A5.333 5.333 0 1 1 20 38.329 5.343 5.343 0 0 1 25.331 33z" class="cls-2"/>
+            </g>
+        </g>
+    </g>
+</svg>

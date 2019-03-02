@@ -1,21 +1,19 @@
 import React from "react"
 import {NavLink} from "react-router-dom";
 
-class Landing extends React.Component{
+class Qucumber extends React.Component{
     render() {
         return(
             <React.Fragment>
-
                 <header>
-                    IQueensu
+                    Qucumber
                 </header>
                 <section>
-                    <NavLink to={"/qhousing" }>Qhousing</NavLink>
-                    <NavLink to={"/qucumber" }>Qucumber</NavLink>
+                    <NavLink to={"/"}>Back to Home Page</NavLink>
                 </section>
             </React.Fragment>
         );
     }
 }
 
-export default Landing
+export default Qucumber
