@@ -1,7 +1,14 @@
 import React from "react"
 import CampusMap from "./CampusMap";
 import {NavLink} from "react-router-dom";
+import styled from 'styled-components';
 
+const CampusMapWrapper = styled.section`
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+`;
 class Qhousing extends React.Component {
     render() {
         return(
@@ -12,9 +19,9 @@ class Qhousing extends React.Component {
                 <section>
                     <NavLink to={"/"}>Back to Home Page</NavLink>
                 </section>
-                <section>
+                <CampusMapWrapper>
                     <CampusMap/>
-                </section>
+                </CampusMapWrapper>
             </React.Fragment>
         );
     }

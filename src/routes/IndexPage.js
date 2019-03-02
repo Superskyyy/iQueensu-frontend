@@ -1,16 +1,12 @@
 import React from "react"
-import {NavLink, withRouter} from "react-router-dom";
+import {withRouter} from "react-router-dom";
+import Landing from "../containers/landing/Landing";
 
 class IndexPage extends React.Component{
     render() {
         return(
             <React.Fragment>
-                <header>
-                    IQueensu
-                </header>
-                <section>
-                    <NavLink to={"/qhousing" }>Qhousing</NavLink>
-                </section>
+                <Landing/>
             </React.Fragment>
         );
     }

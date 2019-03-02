@@ -3,7 +3,25 @@ import GoogleMap from "../../components/GoogleMap";
 import {MockPlaces, QueensUniversity} from "../../assets/locations";
 import Marker from "../../components/Marker";
 import SearchBar from "../../components/SearchBar";
+import styled from 'styled-components';
 
+const Wrapper = styled.div`
+  display: table;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+`;
+const MapWrapper = styled.div`
+  display: table-cell;
+  align-items: center;
+  justify-content: center;
+`;
+const SelectBoxWrapper = styled.div`
+  display: table-cell;
+  align-items: center;
+  text-align-all: center;
+  justify-content: center;
+`;
 class CampusMap extends Component {
     constructor(props) {
         super(props);
@@ -11,7 +29,7 @@ class CampusMap extends Component {
             mapApiLoaded: false,
             mapInstance: null,
             mapApi: null,
-            places: [MockPlaces.skyline],
+            places: [MockPlaces[0],MockPlaces[1]],
         };
     }
     static defaultProps = {
@@ -68,24 +86,30 @@ class CampusMap extends Component {
             places, mapApiLoaded, mapInstance, mapApi,
         } = this.state;
         return (
-            <div style={{ height: '80vh', width: '100%' }}>
-                {mapApiLoaded && <SearchBar map={mapInstance} mapApi={mapApi} addplace={this.addPlace} />}
-                <GoogleMap
-                    defaultCenter={this.props.center}
-                    defaultZoom={this.props.zoom}
-                    options = {this.getMapOptions}
-                    onGoogleApiLoaded={({ map, maps }) => this.apiHasLoaded(map, maps)}
-                >
-                    {places.map(place => (
-                        <Marker
-                            key={place.id}
-                            text={place.name}
-                            lat={place.geometry.location.lat}
-                            lng={place.geometry.location.lng}
-                        />
-                    ))}
+            <div>
+                <Wrapper>
+                    <MapWrapper style={{ height: '80vh', width: '70%' }}>
+                        <GoogleMap
+                            defaultCenter={this.props.center}
+                            defaultZoom={this.props.zoom}
+                            options = {this.getMapOptions}
+                            onGoogleApiLoaded={({ map, maps }) => this.apiHasLoaded(map, maps)}
+                        >
+                            {places.map(place => (
+                                <Marker
+                                    key={place.id}
+                                    text={place.name}
+                                    lat={place.geometry.location.lat}
+                                    lng={place.geometry.location.lng}
+                                />
+                            ))}
 
-                </GoogleMap>
+                        </GoogleMap>
+                    </MapWrapper>
+                    <SelectBoxWrapper style={{ height: '80vh', width: '30%' }}>
+                        {mapApiLoaded && <SearchBar map={mapInstance} mapApi={mapApi} addplace={this.addPlace} />}
+                    </SelectBoxWrapper>
+                </Wrapper>
             </div>
         );
     }

@@ -8,6 +8,8 @@ import * as serviceWorker from './utils/serviceWorker';
 import App from './containers/App';
 import './index.css';
 
+export const iQueensU = () =>{return "iQueensU Web";};
+
 const root = document.getElementById('root');
 if(root !== null){
     ReactDOM.render(
