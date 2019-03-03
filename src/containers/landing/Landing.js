@@ -3,6 +3,7 @@ import {NavLink} from "react-router-dom";
 
 class Landing extends React.Component{
     render() {
+        const intlTest = "test";
         return(
             <React.Fragment>
 
@@ -13,6 +14,7 @@ class Landing extends React.Component{
                     <NavLink to={"/qhousing" }>Qhousing</NavLink><br/>
                     <NavLink to={"/qucumber" }>Qucumber</NavLink>
                 </section>
+                <h1>{intlTest}</h1>
             </React.Fragment>
         );
     }

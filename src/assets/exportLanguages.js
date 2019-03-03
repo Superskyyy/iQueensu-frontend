@@ -1,3 +1,3 @@
 /**-- Export Languages Pack --**/
-export const en = require("");
-export const zh = require("");
+export const en_US = require("./languages/en_US");
+export const zh_CH = require("./languages/zh_CH");

@@ -1,7 +1,7 @@
 import React,{Fragment} from "react";
 import PropTypes from "prop-types";
 import GoogleMapReact from 'google-map-react';
-import {GoogleMapApi} from "../utils/apiKey";
+import {GoogleMapApi} from "../utils/api";
 
 
 const GoogleMap = ({ children, ...props }) => (

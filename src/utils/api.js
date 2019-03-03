@@ -1,4 +1,9 @@
-// api keys
+// api
+/**
+ * BASE URL
+ * @type {string}
+ */
+export const BASE_URL = "";
 /**
  * Google map API Key
  * map, Routes, Places

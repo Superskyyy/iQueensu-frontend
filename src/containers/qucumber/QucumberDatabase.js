@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import {btnGDBtn, btnCCBtn, btnDPBtn, btnSLBtn, DatabaseLogo} from "../../assets/exportImages";
 
 const Wrapper = styled.section`
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 700px) {
   .column {
     width: 100%;
     display: block;
@@ -52,9 +52,14 @@ const Col = styled.div`
   padding: 0 8px;
 `;
 const BtnWrapper = styled.div`
-  h1{
   width: 305px;
   height: 298px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  background-size: 100% 100%;
+  h1{
+  padding-top: 30%;
   color: white;
   font-family: Raleway,sans-serif;
   font-size: 64%;
@@ -65,9 +70,6 @@ const BtnWrapper = styled.div`
   font-family: Raleway,sans-serif;
   font-size: 30%;
   }
-  position: relative;
-  align-items: center;
-  justify-content: center;
 `;
 const FooterWrapper = styled.section`
   position: relative;
@@ -77,12 +79,10 @@ const FooterWrapper = styled.section`
 `;
 const Btn = (props) => {
     return(
-        <div style={{"background-image":"url(" + props.bg + ")"}}>
-            <div>
+        <BtnWrapper style={{"background-image":"url(" + props.bg + ")"}}>
                 <h1>{props.title}</h1>
                 <h2>{props.subTitle}</h2>
-            </div>
-        </div>
+        </BtnWrapper>
     );
 };
 
@@ -98,24 +98,24 @@ class QucumberDatabase extends React.Component{
                     </TitleBar>
                     <Row>
                         <Col>
-                            <BtnWrapper>
-                                <Btn bg={btnGDBtn} title={"Grade Distribution"} subTitle={"Looking for a bird course?"}/>
-                            </BtnWrapper>
+                            <Btn bg={btnGDBtn}
+                                 title={"Grade Distribution"}
+                                 ubTitle={"Looking for a bird course?"}/>
                         </Col>
                         <Col>
-                            <BtnWrapper>
-                                <Btn bg={btnCCBtn} title={"Grade Distribution"} subTitle={"Looking for a bird course?"}/>
-                            </BtnWrapper>
+                            <Btn bg={btnCCBtn}
+                                 title={"Grade Distribution"}
+                                 subTitle={"Looking for a bird course?"}/>
                         </Col>
                         <Col>
-                            <BtnWrapper>
-                                <Btn bg={btnDPBtn} title={"Grade Distribution"} subTitle={"Looking for a bird course?"}/>
-                            </BtnWrapper>
+                            <Btn bg={btnDPBtn}
+                                 title={"Grade Distribution"}
+                                 subTitle={"Looking for a bird course?"}/>
                         </Col>
                         <Col>
-                            <BtnWrapper>
-                                <Btn bg={btnSLBtn} title={"Grade Distribution"} subTitle={"Looking for a bird course?"}/>
-                            </BtnWrapper>
+                            <Btn bg={btnSLBtn}
+                                 title={"Grade Distribution"}
+                                 subTitle={"Looking for a bird course?"}/>
                         </Col>
                     </Row>
                 </Wrapper>
