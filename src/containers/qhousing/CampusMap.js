@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMap from "../../components/GoogleMap";
-import {MockPlaces, QueensUniversity} from "../../assets/locations";
+import {MockPlaces, QueensUniversity} from "../../assets/exportLocations";
 import Marker from "../../components/Marker";
 import SearchBar from "../../components/SearchBar";
 import styled from 'styled-components';

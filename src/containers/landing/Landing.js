@@ -10,7 +10,7 @@ class Landing extends React.Component{
                     IQueensu
                 </header>
                 <section>
-                    <NavLink to={"/qhousing" }>Qhousing</NavLink>
+                    <NavLink to={"/qhousing" }>Qhousing</NavLink><br/>
                     <NavLink to={"/qucumber" }>Qucumber</NavLink>
                 </section>
             </React.Fragment>
