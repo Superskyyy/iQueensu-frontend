@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import zh from 'react-intl/locale-data/zh';
 import en from 'react-intl/locale-data/en';
-import {en_US, zh_CH} from "../assets/exportLanguages";
+import {en_US, zh_CN} from "../assets/exportLanguages";
 
 addLocaleData([...zh,...en]);
 
@@ -25,7 +25,7 @@ function chooseLocale(val) {
         case 'en':
             return en_US;
         case 'zh':
-            return zh_CH;
+            return zh_CN;
         default:
             return en_US;
     }

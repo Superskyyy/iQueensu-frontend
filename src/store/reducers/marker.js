@@ -1,12 +1,15 @@
-import {ADD_MARKER, DEL_MARKER} from "../actions/types"
-
-export default function marker(state = 0, action) {
+const initialState = {
+    markers:[]
+};
+const getMarkerReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_MARKER:
+        case "ADD_MARKER":
             return state + 1;
-        case DEL_MARKER:
+        case "DEL_MARKER":
             return state - 1;
         default:
-            return -1;
+            return state
     }
-}
+};
+
+export default getMarkerReducer;

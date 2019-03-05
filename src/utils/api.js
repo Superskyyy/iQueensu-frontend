@@ -3,7 +3,7 @@
  * BASE URL
  * @type {string}
  */
-export const BASE_URL = "";
+export const BASE_URL = "https://localhost:2019";
 /**
  * Google map API Key
  * map, Routes, Places

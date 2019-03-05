@@ -1,4 +1,6 @@
 const en_US = {
-    "intl.test": "Test: {str}"
+    hello: 'hello',
+    test: 'Test: {str}'
 };
 
+export default en_US;

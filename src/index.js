@@ -7,6 +7,7 @@ import history from './utils/history'
 import * as serviceWorker from './utils/serviceWorker';
 import App from './containers/App';
 import './index.css';
+import Intl from "./components/Intl";
 
 export const iQueensU = () =>{return "iQueensU Web";};
 
@@ -14,9 +15,11 @@ const root = document.getElementById('root');
 if(root !== null){
     ReactDOM.render(
         <Provider store={store}>
-            <Router history={history}>
-                <App />
-            </Router>
+            <Intl>
+                <Router history={history}>
+                    <App />
+                </Router>
+            </Intl>
         </Provider>
         , root);
 }

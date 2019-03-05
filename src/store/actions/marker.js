@@ -1,10 +1,24 @@
 import {ADD_MARKER, DEL_MARKER} from "./types";
 
-export function addMarker() {
+const actions = {
+    addMarker(val) {
+        console.log(val);
+        return (dispatch, state) => {
+            dispatch({
+                type: ADD_MARKER,
+                val
+            });
+        };
+    },
+    delMarker(val) {
+        console.log(val);
+        return (dispatch, state) => {
+            dispatch({
+                type: DEL_MARKER,
+                val
+            });
+        };
+    }
+};
 
-    return {type: ADD_MARKER}
-}
-
-export function delMarker() {
-    return {type: DEL_MARKER}
-}
+export default actions;

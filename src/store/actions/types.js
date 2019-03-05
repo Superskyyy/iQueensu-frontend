@@ -1,3 +1,5 @@
+//Language
+export const CHANGE_LANGUAGE = 'CHANGE_LANGUAGE';
 
 //Marker
 export const ADD_MARKER = "ADD_MARKER";
