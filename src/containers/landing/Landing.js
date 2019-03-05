@@ -33,7 +33,7 @@ class Landing extends React.Component{
                         values={{ str: <b>{'Intl'}</b> }}
                     />
                 </p>
-                <button onClick={() => this.changeLanguage()}>{locale === 'zh' ? '英文' : 'Chinese'}</button>
+                <button onClick={() => this.changeLanguage()}>{locale === 'zh' ? '切換爲英文' : 'Change to Chinese'}</button>
             </React.Fragment>
         );
     }
