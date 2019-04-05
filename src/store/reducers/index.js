@@ -1,10 +1,8 @@
 import { combineReducers } from 'redux';
-import root from "./root";
-import marker from "./marker";
+import rootReducer from './root';
+import {connectRouter} from "connected-react-router";
 
-
-
-export default combineReducers({
-    root,
-    marker
-});
+export default (history) => combineReducers({
+  root: rootReducer,
+  router: connectRouter(history)
+})

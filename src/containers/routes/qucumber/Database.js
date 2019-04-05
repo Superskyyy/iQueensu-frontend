@@ -1,7 +1,7 @@
 import React from "react"
-import {withRouter} from "react-router-dom";
+import {NavLink, withRouter} from "react-router-dom";
 import styled from 'styled-components';
-import {btnGDBtn, btnCCBtn, btnDPBtn, btnSLBtn, DatabaseLogo} from "../../assets/exportImages";
+import {btnGDBtn, btnCCBtn, btnDPBtn, btnSLBtn, DatabaseLogo} from "../../../assets/exportImages";
 
 const Wrapper = styled.section`
   @media screen and (max-width: 700px) {
@@ -79,14 +79,14 @@ const FooterWrapper = styled.section`
 `;
 const Btn = (props) => {
     return(
-        <BtnWrapper style={{"background-image":"url(" + props.bg + ")"}}>
+        <BtnWrapper style={{"backgroundImage":"url(" + props.bg + ")"}}>
                 <h1>{props.title}</h1>
                 <h2>{props.subTitle}</h2>
         </BtnWrapper>
     );
 };
 
-class QucumberDatabase extends React.Component{
+class Database extends React.Component{
     render() {
         return(
             <React.Fragment>
@@ -96,6 +96,7 @@ class QucumberDatabase extends React.Component{
                         <h1>Qcumber Database</h1>
                         <h2>Everything about a Queen's course</h2>
                     </TitleBar>
+                    <NavLink to={"/qucumber"}>Back to Qucumber</NavLink><br/>
                     <Row>
                         <Col>
                             <Btn bg={btnGDBtn}
@@ -127,4 +128,4 @@ class QucumberDatabase extends React.Component{
     }
 }
 
-export default withRouter(QucumberDatabase)
+export default withRouter(Database)

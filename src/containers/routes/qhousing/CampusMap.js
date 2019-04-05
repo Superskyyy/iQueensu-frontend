@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import GoogleMap from "../../components/GoogleMap";
-import {MockPlaces, QueensUniversity} from "../../assets/exportLocations";
-import Marker from "../../components/Marker";
-import SearchBar from "../../components/SearchBar";
+import React, {Component, Fragment} from 'react';
+import GoogleMap from "../../../components/widgets/GoogleMap";
+import {MockPlaces, QueensUniversity} from "../../../assets/exportLocations";
+import Marker from "../../../components/accessories/Marker";
+import SearchBar from "../../../components/widgets/SearchBar";
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -86,7 +86,7 @@ class CampusMap extends Component {
             places, mapApiLoaded, mapInstance, mapApi,
         } = this.state;
         return (
-            <div>
+            <Fragment>
                 <Wrapper>
                     <MapWrapper style={{ height: '80vh', width: '70%' }}>
                         <GoogleMap
@@ -110,7 +110,7 @@ class CampusMap extends Component {
                         {mapApiLoaded && <SearchBar map={mapInstance} mapApi={mapApi} addplace={this.addPlace} />}
                     </SelectBoxWrapper>
                 </Wrapper>
-            </div>
+            </Fragment>
         );
     }
 

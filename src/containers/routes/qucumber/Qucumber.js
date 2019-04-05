@@ -1,21 +1,23 @@
 import React from "react"
-import {NavLink} from "react-router-dom";
-import {changeIcon} from "../../utils/domController";
+import {NavLink, withRouter} from "react-router-dom";
+import XHelmet from "../../../components/accessories/XHelmet";
+import {qucumber} from "../../../assets/exportImages";
 
 class Qucumber extends React.Component{
     render() {
         return(
             <React.Fragment>
+                <XHelmet title={"Qucumber"} favicon={qucumber}/>
                 <header>
                     Qucumber
                 </header>
                 <section>
                     <NavLink to={"/"}>Back to Home Page</NavLink><br/>
-                    <NavLink to={"/database"}><div onClick={changeIcon("%PUBLIC_URL%/qucumber_16.ico")}>Go to Database</div></NavLink>
+                    <NavLink to={"/database"}>Go to DataBase</NavLink><br/>
                 </section>
             </React.Fragment>
         );
     }
 }
 
-export default Qucumber
+export default withRouter(Qucumber);

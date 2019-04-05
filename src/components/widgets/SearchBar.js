@@ -36,7 +36,7 @@ class SearchBar extends Component {
             map.setZoom(17);
         }
 
-        //addplace(selected);
+        addplace(selected);
         this.searchInput.blur();
     };
 

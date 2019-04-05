@@ -1,11 +1,11 @@
-import {CHANGE_LANGUAGE} from "./types";
+import * as types from './types';
 
 const actions = {
   changeLanguage(val) {
-    console.log(val);
+    console.log("Current Language: " + val);
     return (dispatch, state) => {
       dispatch({
-        type: CHANGE_LANGUAGE,
+        type: types.CHANGE_LANGUAGE,
         val
       });
     };

@@ -1,19 +1,19 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-### ide files
+### ignore file
+# ignore ide files
 .idea/
+
 # dependencies
 /node_modules
 /.pnp
 .pnp.js
 
-### testing
+# testing
 /coverage
 
-### production
+# production
 /build
 
-### misc
+# misc
 .env.local
 .env.development.local
 .env.test.local

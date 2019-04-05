@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   width: 18px;
   height: 18px;
   background-color: #557fee;
-  background-image: url("../assets/buildings.svg");
+  background-image: url("../../assets/buildings.svg");
   border: 2px solid #fff;
   border-radius: 100%;
   user-select: none;
