@@ -96,7 +96,6 @@ class Database extends React.Component{
                         <h1>Qcumber Database</h1>
                         <h2>Everything about a Queen's course</h2>
                     </TitleBar>
-                    <NavLink to={"/qucumber"}>Back to Qucumber</NavLink><br/>
                     <Row>
                         <Col>
                             <Btn bg={btnGDBtn}

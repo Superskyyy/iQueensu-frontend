@@ -19,9 +19,6 @@ class Qhousing extends React.Component {
                 <header>
                     Qhousing
                 </header>
-                <section>
-                    <NavLink to={"/"}>Back to Home Page</NavLink><br/>
-                </section>
                 <CampusMapWrapper>
                     <CampusMap/>
                 </CampusMapWrapper>

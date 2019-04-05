@@ -12,7 +12,6 @@ class Qucumber extends React.Component{
                     Qucumber
                 </header>
                 <section>
-                    <NavLink to={"/"}>Back to Home Page</NavLink><br/>
                     <NavLink to={"/database"}>Go to DataBase</NavLink><br/>
                 </section>
             </React.Fragment>

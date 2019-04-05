@@ -23,7 +23,7 @@ class App extends Component {
       <div className="App">
         <Navigation>
           <NavItem event={() => {history.push("/")}} name={"Home"} />
-          <NavItem />
+          <NavItem event={() => {history.goBack()}} name={"Back"}/>
           <NavItem event={() => this.changeLanguage()} name={locale === 'zh' ? '英文' : 'Chinese'}/>
         </Navigation>
         <Switch>
