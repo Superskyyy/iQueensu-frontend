@@ -1,6 +1,10 @@
+<a name="top"/><br/>
 # iQueensu Web Front End
-## Project Information
 iQueensu Web Front End Project
+## Project Information
+Dependencies:
+react, react-dom, react-router-dom, redux, react-redux,
+ connected-react-router
 <a name="table"/><br/>
 ### Table of Contents  
 - [Get Start](#getstart)
@@ -14,7 +18,7 @@ Installs packeages & dependencies for the project
 ### `yarn run start`
 
 Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:2019) to view it in the browser.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
@@ -31,12 +35,12 @@ Builds the app for production to the `build` folder.<br>
 
 Creaete eslint src Module.
 
-[back to top](#table)
+[back to top](#top)
 
 <a name="people"/><br/>
 ## People
 ### `Developers`
-`EstKey`<br>
-`B.T`
+[`EstKey`](https://github.com/estKey)<br>
+[`B.T`](https://github.com/billtong)
 
-[back to top](#table)
+[back to top](#top)

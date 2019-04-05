@@ -6,13 +6,13 @@ import actions from "../store/actions/root";
 import {Redirect, Route, Switch, withRouter} from "react-router-dom";
 import Navigation, {NavItem} from "../components/layouts/Navigation"
 import Footer from "../components/layouts/Footer";
-
-//
+// Pages
 import Home from "./routes/Home";
 import NotFound from "./routes/NotFound";
 import Qhousing from "./routes/qhousing/Qhousing";
 import Qucumber from "./routes/qucumber/Qucumber";
 import Database from "./routes/qucumber/Database";
+
 class App extends Component {
   changeLanguage() {
     let lang = this.props.locale;

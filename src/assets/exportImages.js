@@ -1,9 +1,9 @@
 /** -----exportImage----- **/
 /** Logo **/
-export const logo = require("./favicons/favicon.ico");
-export const qucumber = require("./logos/qucumber.svg");
-export const qhousing = require("./logos/logo.svg");
-export const qwiki = require("./logos/qwiki.svg");
+export const logo = require("./images/favicons/favicon.ico");
+export const qucumber = require("./images/logos/qucumber.svg");
+export const qhousing = require("./images/logos/logo.svg");
+export const qwiki = require("./images/logos/qwiki.svg");
 /** Home **/
 
 /** Qhousing **/

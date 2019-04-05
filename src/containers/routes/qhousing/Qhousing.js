@@ -1,6 +1,6 @@
-import React from "react"
+import React,{Component, Fragment} from "react"
 import CampusMap from "./CampusMap";
-import {NavLink, withRouter} from "react-router-dom";
+import {withRouter} from "react-router-dom";
 import styled from 'styled-components';
 import XHelmet from "../../../components/accessories/XHelmet";
 import {qhousing} from "../../../assets/exportImages";
@@ -11,10 +11,11 @@ const CampusMapWrapper = styled.section`
   justify-content: center;
   width: 100%;
 `;
-class Qhousing extends React.Component {
+
+class Qhousing extends Component {
     render() {
         return(
-            <React.Fragment>
+            <Fragment>
                 <XHelmet title={"Qhousing"} favicon={qhousing}/>
                 <header>
                     Qhousing
@@ -22,7 +23,7 @@ class Qhousing extends React.Component {
                 <CampusMapWrapper>
                     <CampusMap/>
                 </CampusMapWrapper>
-            </React.Fragment>
+            </Fragment>
         );
     }
 }
