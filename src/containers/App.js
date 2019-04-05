@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
 import {connect} from "react-redux";
+import history from "../utils/history";
 import actions from "../store/actions/root";
 import {Redirect, Route, Switch, withRouter} from "react-router-dom";
-import NotFound from "./routes/NotFound";
-import Home from "./routes/Home";
 import Navigation, {NavItem} from "../components/layouts/Navigation"
-import history from "../utils/history";
+import Footer from "../components/layouts/Footer";
+
+//
+import Home from "./routes/Home";
+import NotFound from "./routes/NotFound";
 import Qhousing from "./routes/qhousing/Qhousing";
 import Qucumber from "./routes/qucumber/Qucumber";
 import Database from "./routes/qucumber/Database";
-
 class App extends Component {
   changeLanguage() {
     let lang = this.props.locale;
@@ -34,6 +36,7 @@ class App extends Component {
           <Route path={"/database"} exact component={Database}/>
           <Redirect from="*" to="/404" />
         </Switch>
+        <Footer />
       </div>
     );
   }
