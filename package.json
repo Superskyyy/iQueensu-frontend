@@ -19,7 +19,7 @@
     "not op_mini all"
   ],
   "dependencies": {
-    "connected-react-router": "^6.3.2",
+    "connected-react-router": "^6.5.2",
     "google-map-react": "^1.1.4",
     "history": "^4.9.0",
     "react": "^16.8.5",
