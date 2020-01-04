@@ -1,0 +1,19 @@
+.InternationalHeader {
+    background-image: url("../../assets/images/landing/MaskGroup1.png");
+    min-height: 717.3px;
+    margin: 0;
+    padding: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.testHeader{
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin: 0;
+    padding: 0;
+}
