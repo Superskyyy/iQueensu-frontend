@@ -21,17 +21,29 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer(history));
 
+const composeEnhancers = typeof window === "object" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : compose;
+
+//** Deprecated **//
+// export const store = createStore(
+//     persistedReducer,
+//     initialState,
+//     compose(
+//         applyMiddleware(
+//             routerMiddleware(history),
+//             ...middleware),
+//         window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+//         //** Deprecated **//
+//         // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+//     )
+// );
+
 export const store = createStore(
     persistedReducer,
     initialState,
-    compose(
+    composeEnhancers(
         applyMiddleware(
             routerMiddleware(history),
-            ...middleware),
-        window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
-        //** Deprecated **//
-        // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-    )
+            ...middleware))
 );
 
 export const persistor = persistStore(store);
