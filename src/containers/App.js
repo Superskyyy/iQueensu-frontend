@@ -23,11 +23,12 @@ class App extends Component {
     const { locale } = this.props;
     return (
       <div className="App">
-        <Navigation>
+        {/* remove later */}
+        {/* <Navigation>
           <NavItem event={() => {history.push("/")}} name={"Home"} />
           <NavItem event={() => {history.goBack()}} name={"Back"}/>
           <NavItem event={() => this.changeLanguage()} name={locale === 'zh' ? '英文' : 'Chinese'}/>
-        </Navigation>
+        </Navigation> */}
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/404" exact component={NotFound} />
