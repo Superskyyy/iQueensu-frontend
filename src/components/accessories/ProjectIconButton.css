@@ -1,0 +1,12 @@
+.cardImgClass{
+    height: 84px;
+    width: 84px;
+    display: inline-block;
+    padding-top: 172px;
+}
+
+.icon{
+    position: relative;
+    margin:auto;
+    border-radius: 50%;
+}

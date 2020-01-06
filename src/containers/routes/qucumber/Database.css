@@ -1,0 +1,69 @@
+#QcumberHeader{
+    display: flex;
+    height: 80px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#QcumberNavbar{
+    z-index: 10;
+    background-color: white;
+    text-align: center;
+    width: 70%;
+    margin: 0;
+    padding: 0;
+
+
+}
+
+#signUp{
+    border-radius: 4px;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.16);
+    background-color: #c8dfcb;}
+
+#QcumberNavbarRight{
+    z-index: 10;
+    background-color: white;
+    text-align: center;
+    width: 30%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#QcumberNavbarRight a{
+  display: flex;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0px 8px 0px 8px;
+  padding: 28px 15px;
+
+  color: #2d8e34;
+  text-align: center;
+  text-decoration: none;
+}
+
+
+.QcumberNavBarList a{
+  float: left;
+  display: flex;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0px 8px 0px 8px;
+  padding: 28px 15px;
+
+  color: black;
+  text-align: center;
+  text-decoration: none;
+}
+
+#QcumberNavbarRight a:hover,
+.QcumberNavBarList a:hover{
+    color: #2d8e34;
+    font-weight: 600;
+}
+
+.ContributionText{
+    margin-top: 112px;
+}

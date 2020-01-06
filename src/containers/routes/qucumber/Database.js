@@ -1,7 +1,14 @@
 import React from "react"
-import {withRouter} from "react-router-dom";
+import {NavLink, withRouter} from "react-router-dom";
 import styled from 'styled-components';
+import Text from "../../../components/accessories/Text";
 import {btnGDBtn, btnCCBtn, btnDPBtn, btnSLBtn, DatabaseLogo} from "../../../assets/exportImages";
+import test from "../../../assets/images/Qucumber/Q01GD-BG-2x.png"
+import './Database.css';
+import qucumberIcon from "../../../assets/images/logos/qucumber.svg";
+import { getMessageByTypes } from "../../../utilities/TypeHelper";
+import { TYPES, MESSAGE_KEYS } from "../../../utilities/constants/constants";
+import { injectIntl } from "react-intl";
 
 const Wrapper = styled.section`
   @media screen and (max-width: 700px) {
@@ -21,6 +28,7 @@ const Logo = styled.img`
   justify-content: center;
   width: 15%;
   height: 15%;
+  margin-top:80px;
 `;
 const TitleBar = styled.div`
   position: relative;
@@ -38,8 +46,7 @@ const TitleBar = styled.div`
   }
 `;
 const Row = styled.div`
-  width: 100%;
-  margin: 0;
+  margin: 0px 406px 0px 406px;
   padding: 0;
   content: "";
   clear: both;
@@ -47,13 +54,14 @@ const Row = styled.div`
 `;
 const Col = styled.div`
   float: left;
-  width: 23%;
+  width: 260px;
+  height: 250px;
   margin-bottom: 16px;
-  padding: 0 8px;
+  padding: 0px 8px 0px 0px;
 `;
 const BtnWrapper = styled.div`
-  width: 305px;
-  height: 298px;
+  width: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
   align-items: center;
@@ -88,9 +96,39 @@ const Btn = (props) => {
 
 class Database extends React.Component{
     render() {
+        const gradeDistributionDescp = this.props.intl.formatMessage(getMessageByTypes(MESSAGE_KEYS.DESCRIPTION, TYPES.GRADE_DISTRIBUTION))
+        console.log(gradeDistributionDescp)
         return(
             <React.Fragment>
-                <Wrapper>
+              <Wrapper>
+                <div className="QcumberHeader" id="QcumberHeader">
+                    {/* change h1 to nav items */}
+                    <div className="QcumberNavbar" id="QcumberNavbar">
+                        <div className="QcumberNavBarList">
+                        <NavLink to={"/qucumber"} style={
+                          {"margin":"0px 0px 0px 140px",
+                          "padding": "25px 0px"
+                          }}><img width={28.2} height={28.2} src={qucumberIcon} /></NavLink>
+                        <NavLink to={"/qucumber"} activeClassName="chosen" style={
+                          {"fontFamily": "CalistoMT",
+                           "fontSize": "20px",
+                           "padding": "28px 15px 28px 0px",
+                          }}>Qcumber</NavLink> 
+                        <NavLink to={"/"} activeClassName="chosen"><Text id={"home"}/></NavLink>
+                        <NavLink to={"/database"} activeClassName="chosen">Database</NavLink>
+                        <NavLink to={"/about"} activeClassName="chosen"><Text id={"about"}/></NavLink>
+                        </div>
+                     </div>
+
+                     <div id="QcumberNavbarRight">
+                       <div id="signUp">
+                        <NavLink to={"/about"}>Sign Up</NavLink>
+                        </div>
+                        <NavLink to={"/about"} style={
+                          {"padding": "28px 200px 28px 15px"
+                          }}>Sign In</NavLink>
+                     </div>
+                </div>
                     <Logo src={DatabaseLogo} alt={"DatabaseLogo"}/>
                     <TitleBar>
                         <h1>Qcumber Database</h1>
@@ -100,12 +138,12 @@ class Database extends React.Component{
                         <Col>
                             <Btn bg={btnGDBtn}
                                  title={"Grade Distribution"}
-                                 ubTitle={"Looking for a bird course?"}/>
+                                 subTitle={gradeDistributionDescp}/>
                         </Col>
                         <Col>
                             <Btn bg={btnCCBtn}
                                  title={"Grade Distribution"}
-                                 subTitle={"Looking for a bird course?"}/>
+                                 subTitle={gradeDistributionDescp}/>
                         </Col>
                         <Col>
                             <Btn bg={btnDPBtn}
@@ -118,6 +156,9 @@ class Database extends React.Component{
                                  subTitle={"Looking for a bird course?"}/>
                         </Col>
                     </Row>
+                    <div className="ContributionText">
+                      <p>Would you like to contribute to Qcumber's data? <br /> You may have what we're looking for. </p>
+                    </div>
                 </Wrapper>
                 <FooterWrapper>
                     Footer a
@@ -127,4 +168,4 @@ class Database extends React.Component{
     }
 }
 
-export default withRouter(Database)
+export default injectIntl(withRouter(Database))

@@ -5,7 +5,9 @@ const zh_CN = {
   notfound: '页面找不到了QAQ',
   forum: '论坛',
   contact: "联系我们",
-  about: "关于我们"
+  about: "关于我们",
+
+  gradeDistributionDescription: "要不找个简单点的？"
 };
 
 export default zh_CN;

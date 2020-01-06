@@ -6,6 +6,12 @@ const en_US = {
   forum: 'Forum',
   contact: 'Contact',
   about: 'About',
+
+  // Description
+  gradeDistributionDescription: 'Looking for a bird course?',
+  courseCatalogDescription: 'Everything SOLUS has',
+  degreePlanningDescription: 'What course to choose?',
+  secretLibrary: 'Place for good and free stuff',
 };
 
 export default en_US;
