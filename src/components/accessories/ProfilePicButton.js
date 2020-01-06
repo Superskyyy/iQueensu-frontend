@@ -1,8 +1,8 @@
 import React, {PureComponent, Fragment} from 'react';
 import Sanbai from '../../assets/images/logos/BEASTSanBei.png';
-import './ProjectIconButton.css';
+import './ProfilePicButton.css';
 
-class ProjectIconButton extends PureComponent{
+class ProfilePicButton extends PureComponent{
     state={
         icon: null,
         realIconLoading: false,
@@ -39,4 +39,4 @@ class ProjectIconButton extends PureComponent{
 
 }
 
-export default ProjectIconButton;
+export default ProfilePicButton;

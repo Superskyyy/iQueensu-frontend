@@ -4,7 +4,7 @@ import Text from "../../components/accessories/Text";
 import XHelmet from "../../components/accessories/XHelmet";
 import {logo} from "../../assets/exportImages";
 import './Home.css';
-import ProjectIconButton from '../../components/accessories/ProjectIconButton';
+import ProfilePicButton from '../../components/accessories/ProfilePicButton';
 
 class Home extends Component{
     render() {
@@ -34,7 +34,7 @@ class Home extends Component{
                     {/* refactor into a separate component */}
                     <div className="userBadge">
                         <div className="panel">
-                        <ProjectIconButton /> 
+                        <ProfilePicButton /> 
                         </div>         
                     </div>
                 </div>
