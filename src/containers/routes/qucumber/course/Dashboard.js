@@ -1,4 +1,4 @@
-import React,{Fragment} from "react"
+import React,{Fragment} from "react";
 import styled from 'styled-components';
 import PropTypes from "prop-types"
 import {Sections} from "./Section";
@@ -99,7 +99,7 @@ export default (props) => {
             <Wrapper>
                 {props.title}
                 <Legend/>
-                <Description title={props.description.title} content={props.description.content}/>
+                {/* <Description title={props.description.title} content={props.description.content}/> */}
                 <Prerequisite />
                 <Sections>
                     {props.children}

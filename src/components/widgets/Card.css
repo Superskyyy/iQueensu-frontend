@@ -1,0 +1,55 @@
+.CardFront{
+    width: 260px;
+    height: 250px;
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+.Tile{
+    background-position: center center;
+    background-size: 350px 340px;
+    height: 100%;
+    border-radius: 5px;
+    padding: 18px 18px 0px 18px;
+
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+}
+
+/* Background img for each type */
+/* no space in between */
+.Tile.gradeDistribution{
+    background-image: url("../../assets//images/Qucumber/Q01GD-BG-3x.png"); 
+}
+
+.Tile.courseCatalog{
+    background-image: url("../../assets//images/Qucumber/Q02CC-BG-3x.png");
+}
+
+.Tile.degreePlanning{
+    background-image: url("../../assets//images/Qucumber/Q03DP-BG-3x.png");
+}
+
+.Tile.secretLibrary{
+    background-image: url("../../assets//images/Qucumber/Q04SL-BG-3x.png");
+}
+
+.CardFrontTitle{
+    /* text-shadow: 0 0 20px rgba(0, 0, 0, 0.6); */
+    text-align: left;
+    line-height: 1.1;
+    width: 100%;
+    margin-bottom: 3px;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+}
+
+.CardFrontDescription{
+    text-align: left;
+    width: 100%;
+    line-height: 1.1;
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+}

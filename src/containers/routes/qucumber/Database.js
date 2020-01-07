@@ -1,7 +1,15 @@
 import React from "react"
 import {withRouter} from "react-router-dom";
 import styled from 'styled-components';
-import {btnGDBtn, btnCCBtn, btnDPBtn, btnSLBtn, DatabaseLogo} from "../../../assets/exportImages";
+import {DatabaseLogo} from "../../../assets/exportImages";
+import './Database.css';
+import { getMessageByTypes } from "../../../utilities/TypeHelper";
+import { CONTAINER_TYPES, MESSAGE_KEYS } from "../../../utilities/constants/constants";
+import { injectIntl } from "react-intl";
+import Card from "../../../components/widgets/Card";
+import HeaderBar from "../../../components/widgets/HeaderBar";
+import CustomButton from "../../../components/widgets/CustomButton";
+import messages from "../../../assets/languages/defaultMessage";
 
 const Wrapper = styled.section`
   @media screen and (max-width: 700px) {
@@ -10,6 +18,7 @@ const Wrapper = styled.section`
     display: block;
   }
 }
+  min-width: 1099px;
   position: relative;
   align-items: center;
   justify-content: center;
@@ -21,6 +30,7 @@ const Logo = styled.img`
   justify-content: center;
   width: 15%;
   height: 15%;
+  margin-top:80px;
 `;
 const TitleBar = styled.div`
   position: relative;
@@ -37,94 +47,52 @@ const TitleBar = styled.div`
   font-size: 16px;
   }
 `;
-const Row = styled.div`
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  content: "";
-  clear: both;
-  display: table;
-`;
-const Col = styled.div`
-  float: left;
-  width: 23%;
-  margin-bottom: 16px;
-  padding: 0 8px;
-`;
-const BtnWrapper = styled.div`
-  width: 305px;
-  height: 298px;
-  margin: 0;
-  padding: 0;
-  align-items: center;
-  background-size: 100% 100%;
-  h1{
-  padding-top: 30%;
-  color: white;
-  font-family: Raleway,sans-serif;
-  font-size: 64%;
-  margin-bottom: 0;
-  }
-  h2{
-  color: white;
-  font-family: Raleway,sans-serif;
-  font-size: 30%;
-  }
-`;
-const FooterWrapper = styled.section`
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-`;
-const Btn = (props) => {
-    return(
-        <BtnWrapper style={{"backgroundImage":"url(" + props.bg + ")"}}>
-                <h1>{props.title}</h1>
-                <h2>{props.subTitle}</h2>
-        </BtnWrapper>
-    );
-};
 
 class Database extends React.Component{
+
+    // an example for customized onClick prop for 'CustomButton' component
+    onToggle =()=>{
+      window.alert("this is a test");
+    }
+
     render() {
+
+        // hooked to api later
+        const supportedContainerTypeArray = [CONTAINER_TYPES.GRADE_DISTRIBUTION, CONTAINER_TYPES.COURSE_CATALOG, CONTAINER_TYPES.DEGREE_PLANNING, CONTAINER_TYPES.SECRET_LIBRARY];
+
+        //const gradeDistributionDescp = this.props.intl.formatMessage(getMessageByTypes(MESSAGE_KEYS.DESCRIPTION, CONTAINER_TYPES.GRADE_DISTRIBUTION))
         return(
             <React.Fragment>
-                <Wrapper>
-                    <Logo src={DatabaseLogo} alt={"DatabaseLogo"}/>
-                    <TitleBar>
-                        <h1>Qcumber Database</h1>
-                        <h2>Everything about a Queen's course</h2>
-                    </TitleBar>
-                    <Row>
-                        <Col>
-                            <Btn bg={btnGDBtn}
-                                 title={"Grade Distribution"}
-                                 ubTitle={"Looking for a bird course?"}/>
-                        </Col>
-                        <Col>
-                            <Btn bg={btnCCBtn}
-                                 title={"Grade Distribution"}
-                                 subTitle={"Looking for a bird course?"}/>
-                        </Col>
-                        <Col>
-                            <Btn bg={btnDPBtn}
-                                 title={"Grade Distribution"}
-                                 subTitle={"Looking for a bird course?"}/>
-                        </Col>
-                        <Col>
-                            <Btn bg={btnSLBtn}
-                                 title={"Grade Distribution"}
-                                 subTitle={"Looking for a bird course?"}/>
-                        </Col>
-                    </Row>
-                </Wrapper>
-                <FooterWrapper>
-                    Footer a
-                </FooterWrapper>
+              <Wrapper>
+                <HeaderBar hasRightAlignedItems={true}/>
+
+                <Logo src={DatabaseLogo} alt={"DatabaseLogo"}/>
+                <TitleBar>
+                    {/* need to intl-format */}
+                    <h1>Qcumber Database</h1>
+                    <h2>Everything about a Queen's course</h2>
+                </TitleBar>
+
+                <div className="QcumberCardsWrapper">
+                      {supportedContainerTypeArray.map((typeObject,index) => (
+                        <Card 
+                        key={index}
+                        backgroundImageName={typeObject}
+                        title={this.props.intl.formatMessage(getMessageByTypes(MESSAGE_KEYS.TITLE, typeObject))}
+                        description={this.props.intl.formatMessage(getMessageByTypes(MESSAGE_KEYS.DESCRIPTION, typeObject))}
+                      />))}
+                </div>
+
+                <div className="ContributionText">
+                  {/* need to intl-format */}
+                  <p>Would you like to contribute to Qcumber's data?<br />You may have what we're looking for.</p>
+                
+                  <CustomButton onClick={this.onToggle} btnText={this.props.intl.formatMessage(messages.checkOurPostings)}/>
+                </div>
+              </Wrapper>
             </React.Fragment>
         );
     }
 }
 
-export default withRouter(Database)
+export default injectIntl(withRouter(Database))
