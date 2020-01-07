@@ -12,8 +12,8 @@ class Home extends Component{
             <Fragment>
                 <div className="InternationalHeader">
                     {/* change h1 to nav items */}
-                    <div className="navbar" id="test">
-                        <div className="navBarList" id="test">
+                    <div className="navbar">
+                        <div className="navBarList">
                         {/* <XHelmet title={"iQueensU"} favicon={logo}/>
                         <h3><Text id={"home"}/></h3>
                         <NavLink to={"/qhousing"}>Go Qhousing</NavLink><br/>

@@ -1,5 +1,5 @@
 //TYPEs
-export const TYPES = {
+export const CONTAINER_TYPES = {
     GRADE_DISTRIBUTION: 'gradeDistribution',
     COURSE_CATALOG: 'courseCatalog',
     DEGREE_PLANNING: 'degreePlanning',
@@ -8,5 +8,6 @@ export const TYPES = {
 }
 
 export const MESSAGE_KEYS = {
+    TITLE: 'title',
     DESCRIPTION: 'description',
 }
