@@ -18,6 +18,7 @@ const Wrapper = styled.section`
     display: block;
   }
 }
+  min-width: 1099px;
   position: relative;
   align-items: center;
   justify-content: center;
