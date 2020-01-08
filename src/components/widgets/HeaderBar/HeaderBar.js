@@ -1,7 +1,7 @@
 import React,{Fragment} from "react";
 import {NavLink, withRouter} from "react-router-dom";
-import qucumberIcon from "../../assets/images/logos/qucumber.svg";
-import Text from "../../components/accessories/Text";
+import qucumberIcon from "../../../assets/images/logos/qucumber.svg";
+import Text from "../../../components/accessories/Text";
 import './HeaderBar.css';
 
 // props:

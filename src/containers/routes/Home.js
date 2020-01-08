@@ -43,4 +43,5 @@ class Home extends Component{
     }
 }
 
+// make sure 'withRouter()' is the outest func cuz it will generate <Route>{Childern}</Route> to help BOM figure out history
 export default withRouter(Home)

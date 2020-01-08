@@ -6,9 +6,9 @@ import './Database.css';
 import { getMessageByTypes } from "../../../utilities/TypeHelper";
 import { CONTAINER_TYPES, MESSAGE_KEYS } from "../../../utilities/constants/constants";
 import { injectIntl } from "react-intl";
-import Card from "../../../components/widgets/Card";
-import HeaderBar from "../../../components/widgets/HeaderBar";
-import CustomButton from "../../../components/widgets/CustomButton";
+import Card from "../../../components/widgets/Card/Card";
+import HeaderBar from "../../../components/widgets/HeaderBar/HeaderBar";
+import CustomButton from "../../../components/widgets/CustomButton/CustomButton";
 import messages from "../../../assets/languages/defaultMessage";
 
 const Wrapper = styled.section`
@@ -52,7 +52,8 @@ class Database extends React.Component{
 
     // an example for customized onClick prop for 'CustomButton' component
     onToggle =()=>{
-      window.alert("this is a test");
+      window.location.href="/database/course";
+      // window.alert("this is a test");
     }
 
     render() {
@@ -95,4 +96,4 @@ class Database extends React.Component{
     }
 }
 
-export default injectIntl(withRouter(Database))
+export default withRouter(injectIntl(Database));
