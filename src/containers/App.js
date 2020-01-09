@@ -3,6 +3,7 @@ import './App.css';
 import {connect} from "react-redux";
 import history from "../utils/history";
 import actions from "../store/actions/root";
+import styled from "styled-components";
 import {Redirect, Route, Switch, withRouter} from "react-router-dom";
 import Navigation, {NavItem} from "../components/layouts/Navigation"
 import Footer from "../components/layouts/Footer";
@@ -13,6 +14,10 @@ import Qhousing from "./routes/qhousing/Qhousing";
 import Qucumber from "./routes/qucumber/Qucumber";
 import Database from "./routes/qucumber/Database";
 import Course from './routes/qucumber/course/Course';
+
+const Wrapper = styled.main`
+  position: static;
+`
 
 class App extends Component {
   changeLanguage() {
@@ -30,15 +35,17 @@ class App extends Component {
           <NavItem event={() => {history.goBack()}} name={"Back"}/>
           <NavItem event={() => this.changeLanguage()} name={locale === 'zh' ? '英文' : 'Chinese'}/>
         </Navigation>
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/404" exact component={NotFound} />
-          <Route path="/qhousing" exact component={Qhousing} />
-          <Route path="/qucumber" exact component={Qucumber} />
-          <Route path={"/database"} exact component={Database}/>
-          <Route path={"/database/course"} exact component={Course}/>
-          <Redirect from="*" to="/404" />
-        </Switch>
+        <Wrapper>
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/404" exact component={NotFound} />
+            <Route path="/qhousing" exact component={Qhousing} />
+            <Route path="/qucumber" exact component={Qucumber} />
+            <Route path={"/database"} exact component={Database}/>
+            <Route path={"/database/course"} exact component={Course}/>
+            <Redirect from="*" to="/404" />
+          </Switch>
+        </Wrapper>
         <Footer />
       </div>
     );

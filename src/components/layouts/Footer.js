@@ -2,10 +2,11 @@ import React, {Fragment} from "react";
 import styled from 'styled-components';
 import PropTypes from "prop-types"
 
-const Wrapper = styled.section`
+const Wrapper = styled.footer`
   min-width: 100%;
   justify-content: center;
   background-color: #e8e8e8;
+  margin-top: auto !important;
 `;
 
 const year = new Date().getFullYear();
