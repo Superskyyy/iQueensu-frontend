@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import PropTypes from "prop-types"
 import {Sections} from "./Section";
 import Prerequisite from "./Prerequisite";
+import { store } from "../../../../store";
 
 const Wrapper = styled.section`
   min-width: 100%;
@@ -101,7 +102,7 @@ export default (props) => {
     return(
         <Fragment>
             <Wrapper>
-                {props.title}
+                {props.title, console.log(store.getState())}
                 <Legend/>
                 {/* <Description title={props.description.title} content={props.description.content}/> */}
                 <Prerequisite />

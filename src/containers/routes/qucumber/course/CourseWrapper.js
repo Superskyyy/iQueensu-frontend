@@ -1,23 +1,28 @@
-import React from "react";
-import Course from "./Course";
+import React, { Children } from "react";
 import { connect } from "react-redux";
 import { getCourse } from "../../../../store/actions/courseActions";
-import {withRouter} from "react-router-dom";
+import { store } from "../../../../store";
 
 class CourseWrapper extends React.Component{
 
     constructor(props){
-        super(props);
-
-        this.props.getCourseTest("d");
+        super(props);  
+        this.props.getCourseTest("noUse");
     }
 
-    render(){
-        console.log(this.props.currentCourse)
+    render(){    
         return(
-            <React.Fragment>
-                <Course courseObj={this.props.currentCourse}/>
-            </React.Fragment>
+            <div>
+                {/* <Fragment> */}
+                <div className={"test"}>
+                        {/* console.log(store.getState()) */}
+                        {this.props.currentCourse.length < 1 ? null : this.props.currentCourse[0]["units"]}
+                    </div>
+                    <div>
+                        {}
+                    </div>        
+                {/* </Fragment> */}
+            </div>
         )
     }
 }
@@ -28,11 +33,10 @@ const mapStateToProps = state => {
     }
 }
 
-
 const mapDispatchToProps = dispatch =>{
     return {
         getCourseTest: noUse => dispatch(getCourse(noUse)),
     }
 }
 
-export default withRouter(connect(mapStateToProps,mapDispatchToProps)(CourseWrapper));
+export default connect(mapStateToProps,mapDispatchToProps)(CourseWrapper);
