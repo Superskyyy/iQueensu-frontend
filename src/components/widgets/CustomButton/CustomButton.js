@@ -1,5 +1,6 @@
 import React from "react";
 import './CustomButton.css';
+import {NavLink} from "react-router-dom";
 
 class CustomButton extends React.Component{
 
@@ -16,7 +17,7 @@ class CustomButton extends React.Component{
         return(
             <React.Fragment>
                 <div className="ContributionTextBtnWrapper">
-                    <button onClick={this.handleOnClick} className="ContributionTextBtn">{this.props.btnText}</button>
+                    <NavLink to={this.props.toWhere} className="ContributionTextBtn">{this.props.btnText}</NavLink>
                 </div>
             </React.Fragment>
         )

@@ -88,7 +88,7 @@ class Database extends React.Component{
                   {/* need to intl-format */}
                   <p>Would you like to contribute to Qcumber's data?<br />You may have what we're looking for.</p>
                 
-                  <CustomButton onClick={this.onToggle} btnText={this.props.intl.formatMessage(messages.checkOurPostings)}/>
+                  <CustomButton toWhere="/database/course" btnText={this.props.intl.formatMessage(messages.checkOurPostings)}/>
                 </div>
               </Wrapper>
             </React.Fragment>

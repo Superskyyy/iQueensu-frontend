@@ -13,11 +13,14 @@ import App from './containers/App';
 ReactDOM.render(
     <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-            <Router history={history}>
-                <Intl>
-                    <App />
-                </Intl>
-            </Router>
+            {/* initializing states in redux store */}
+            {/* <BootStrap> */}
+                <Router history={history}>
+                    <Intl>
+                        <App />
+                    </Intl>
+                </Router>
+            {/* </BootStrap> */}
         </PersistGate>
     </Provider>
 , document.getElementById('root'));

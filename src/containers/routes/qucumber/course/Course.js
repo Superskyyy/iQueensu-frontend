@@ -8,15 +8,19 @@ class Course extends Component{
     constructor(props){
         super(props);
         this.state = {
-            id: ""
+            id: "",
         }
     }
+    // componentDidMount(){
+    //     console.log(this.props.current)
+    // }
 
     render() {
+        console.log(this.props.courseObj)
         return(
             <Fragment>
-                <div>
-                    {}
+                <div className={"test"}>
+                    {this.props.courseObj === undefined ? null : this.props.courseObj["default"]["units"]}
                 </div>
                 <Dashboard />
                 <div>
@@ -27,4 +31,4 @@ class Course extends Component{
     }
 }
 
-export default withRouter(Course)
+export default withRouter((Course))

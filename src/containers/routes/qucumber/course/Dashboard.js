@@ -13,14 +13,16 @@ const Wrapper = styled.section`
 const Legend = (props) => (
     <Fragment>
         <table>
-            <tr>
-                <td>{props.career}</td>
-                <td>{props.faculty}</td>
-            </tr>
-            <tr>
-                <td>{props.units}</td>
-                <td>{props.department}</td>
-            </tr>
+            <tbody>
+                <tr>
+                    <td>{props.career}</td>
+                    <td>{props.faculty}</td>
+                </tr>
+                <tr>
+                    <td>{props.units}</td>
+                    <td>{props.department}</td>
+                </tr>
+            </tbody>
         </table>
     </Fragment>
 );
@@ -56,22 +58,24 @@ let i = 0;
 const CourseLoad = (props) => (
     <Fragment>
         <table>
-            <tr>
-                <td>{props.lecture}</td>
-                <td>{props.tutorial}</td>
-                <td>{props.lab}</td>
-                <td>{props.practice}</td>
-                <td>{props.total}</td>
-                <td>{props.load}</td>
-            </tr>
-            <tr>
-                <td>{props.info[i++]}</td>
-                <td>{props.info[i++]}</td>
-                <td>{props.info[i++]}</td>
-                <td>{props.info[i++]}</td>
-                <td>{props.info[i++]}</td>
-                <td>{props.info[i]}</td>
-            </tr>
+            <tbody>
+                <tr>
+                    <td>{props.lecture}</td>
+                    <td>{props.tutorial}</td>
+                    <td>{props.lab}</td>
+                    <td>{props.practice}</td>
+                    <td>{props.total}</td>
+                    <td>{props.load}</td>
+                </tr>
+                <tr>
+                    <td>{props.info[i++]}</td>
+                    <td>{props.info[i++]}</td>
+                    <td>{props.info[i++]}</td>
+                    <td>{props.info[i++]}</td>
+                    <td>{props.info[i++]}</td>
+                    <td>{props.info[i]}</td>
+                </tr>
+            </tbody>
         </table>
     </Fragment>
 );

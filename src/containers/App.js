@@ -13,6 +13,7 @@ import Qhousing from "./routes/qhousing/Qhousing";
 import Qucumber from "./routes/qucumber/Qucumber";
 import Database from "./routes/qucumber/Database";
 import Course from './routes/qucumber/course/Course';
+import CourseWrapper from './routes/qucumber/course/CourseWrapper';
 
 class App extends Component {
   changeLanguage() {
@@ -36,7 +37,7 @@ class App extends Component {
           <Route path="/qhousing" exact component={Qhousing} />
           <Route path="/qucumber" exact component={Qucumber} />
           <Route path={"/database"} exact component={Database}/>
-          <Route path={"/database/course"} exact component={Course}/>
+          <Route path={"/database/course"} exact component={CourseWrapper}/>
           <Redirect from="*" to="/404" />
         </Switch>
         <Footer />
