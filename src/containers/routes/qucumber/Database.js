@@ -8,7 +8,7 @@ import { CONTAINER_TYPES, MESSAGE_KEYS } from "../../../utilities/constants/cons
 import { injectIntl } from "react-intl";
 import Card from "../../../components/widgets/Card/Card";
 import HeaderBar from "../../../components/widgets/HeaderBar/HeaderBar";
-import CustomButton from "../../../components/widgets/CustomButton/CustomButton";
+import CustomNavButton from "../../../components/widgets/CustomNavButton/CustomNavButton";
 import messages from "../../../assets/languages/defaultMessage";
 
 const Wrapper = styled.section`
@@ -88,7 +88,7 @@ class Database extends React.Component{
                   {/* need to intl-format */}
                   <p>Would you like to contribute to Qcumber's data?<br />You may have what we're looking for.</p>
                 
-                  <CustomButton toWhere="/database/course" btnText={this.props.intl.formatMessage(messages.checkOurPostings)}/>
+                  <CustomNavButton toWhere="/database/course" btnText={this.props.intl.formatMessage(messages.checkOurPostings)}/>
                 </div>
               </Wrapper>
             </React.Fragment>

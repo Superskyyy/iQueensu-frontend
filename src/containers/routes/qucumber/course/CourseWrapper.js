@@ -1,7 +1,7 @@
-import React, { Children } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { getCourse } from "../../../../store/actions/courseActions";
-import { store } from "../../../../store";
+import './CourseWrapper.css';
 
 class CourseWrapper extends React.Component{
 
@@ -12,15 +12,30 @@ class CourseWrapper extends React.Component{
 
     render(){    
         return(
-            <div>
+            <div  className="coursePageFlewContainer">
                 {/* <Fragment> */}
-                <div className={"test"}>
-                        {/* console.log(store.getState()) */}
-                        {this.props.currentCourse.length < 1 ? null : this.props.currentCourse[0]["units"]}
-                    </div>
-                    <div>
-                        {}
-                    </div>        
+                <div className={"coursePageLeftPart"}>
+                    {/* temp */}
+                    {this.props.currentCourse.length < 1 ? null : this.props.currentCourse[0]["units"]}
+                </div>      
+
+                <div className={"coursePageCenterPart"}>
+                    {/* <backtrace /> */}
+                    <h1 className={"coursePageCourseSubjAndNum"}>
+                        {this.props.currentCourse.length < 1 ? null : this.props.currentCourse[0]["subject"]
+                        + " " + this.props.currentCourse[0]["number"]}
+                    </h1>
+
+                    <h1 className={"coursePageCourseSubjAndNum"}>
+                        {this.props.currentCourse.length < 1 ? null : this.props.currentCourse[0]["subject"]
+                        + " " + this.props.currentCourse[0]["number"]}
+                    </h1>
+                </div>
+
+                <div className={"coursePageRightPart"}>
+                    {/* temp */}
+                    {this.props.currentCourse.length < 1 ? null : this.props.currentCourse[0]["units"]}
+                </div> 
                 {/* </Fragment> */}
             </div>
         )

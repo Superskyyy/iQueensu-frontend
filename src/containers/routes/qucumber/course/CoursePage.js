@@ -1,6 +1,7 @@
 import React,{Component, Fragment} from "react"
 import {withRouter} from "react-router-dom";
 import CourseWrapper from "./CourseWrapper";
+import HeaderBar from "../../../../components/widgets/HeaderBar/HeaderBar";
 
 class CoursePage extends Component{
     constructor(props){
@@ -12,9 +13,14 @@ class CoursePage extends Component{
 
     render() {
         return(
-            <CourseWrapper>
+            // put this into a separate css file?
+            <div style={{"minWidth": "1099px"}}>
+                <HeaderBar hasRightAlignedItems={true} />
+
+                <CourseWrapper>
                 {/* childern render first, because its part of property */}
-            </CourseWrapper>
+                </CourseWrapper>
+            </div>
         );
     }
 }

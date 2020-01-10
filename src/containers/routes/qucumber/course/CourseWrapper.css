@@ -1,0 +1,27 @@
+.coursePageFlewContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.coursePageLeftPart{
+    background-color: DodgerBlue;
+}
+
+.coursePageCenterPart{
+    background-color: DodgerBlue;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.coursePageRightPart{
+    background-color: DodgerBlue;
+}
+
+.coursePageCourseSubjAndNum{
+    /* float: left;
+    display: flex; */
+    float: left;
+}

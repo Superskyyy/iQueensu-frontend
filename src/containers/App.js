@@ -26,11 +26,6 @@ class App extends Component {
     return (
       <div className="App">
         {/* remove later */}
-        <Navigation>
-          <NavItem event={() => {history.push("/")}} name={"Home"} />
-          <NavItem event={() => {history.goBack()}} name={"Back"}/>
-          <NavItem event={() => this.changeLanguage()} name={locale === 'zh' ? '英文' : 'Chinese'}/>
-        </Navigation>
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/404" exact component={NotFound} />
@@ -40,6 +35,11 @@ class App extends Component {
           <Route path={"/database/course"} exact component={CoursePage}/>
           <Redirect from="*" to="/404" />
         </Switch>
+        <Navigation>
+          <NavItem event={() => {history.push("/")}} name={"Home"} />
+          <NavItem event={() => {history.goBack()}} name={"Back"}/>
+          <NavItem event={() => this.changeLanguage()} name={locale === 'zh' ? '英文' : 'Chinese'}/>
+        </Navigation>
         <Footer />
       </div>
     );
