@@ -1,7 +1,7 @@
 // returned formal object should follow this format
 
 export const courseObj = [
-    {
+  {
     "subject": "CISC",
     "number": "199",
     "name": "HelloDiscreteMath",
@@ -14,8 +14,8 @@ export const courseObj = [
     "academic_organization": "School of Computing",
     "enrollment": "idkokay",
     "course_description": "Topics covered in the course include operations with vectors, scalar multiplications dot and cross products, projections, equations of lines and planes, systems of equations, Gaussian elimination, operations with matrices, determinants, binomial theorem, proof by mathematical induction, complex numbers.Topics covered in the course include operations with vectors, scalar multiplications dot and cross products, projections, equations of lines and planes, systems of equations, Gaussian elimination, operations with matrices, determinants, binomial theorem, proof by mathematical induction, complex numbers.Topics covered in the course include operations with vectors, scalar multiplications dot and cross products, projections, equations of lines and planes, systems of equations, Gaussian elimination, operations with matrices, determinants, binomial theorem, proof by mathematical induction, complex numbers."
-    },
-    {
+  },
+  {
     "subject": "ELEC",
     "Number": "201",
     "name": "HelloAlgorithm",
@@ -28,5 +28,5 @@ export const courseObj = [
     "academic_organization": "Department of Electrical and Computer Engineering",
     "enrollment": "idkokay",
     "course_description": "Topics covered in the course include operations with vectors, scalar multiplications dot and cross products, projections, equations of lines and planes, systems of equations, Gaussian elimination, operations with matrices, determinants, binomial theorem, proof by mathematical induction, complex numbers.Topics covered in the course include operations with vectors, scalar multiplications dot and cross products, projections, equations of lines and planes, systems of equations, Gaussian elimination, operations with matrices, determinants, binomial theorem, proof by mathematical induction, complex numbers.Topics covered in the course include operations with vectors, scalar multiplications dot and cross products, projections, equations of lines and planes, systems of equations, Gaussian elimination, operations with matrices, determinants, binomial theorem, proof by mathematical induction, complex numbers."
-    }
-]
+  }
+];

@@ -1,5 +1,6 @@
-import {courseObj} from "./MockCourse"
+//
+import {courseObj} from "./MockCourse";
 
-export const getCourseAPI = () =>{
-    return courseObj;
-}
+export const getCourseAPI = () => {
+  return courseObj;
+};

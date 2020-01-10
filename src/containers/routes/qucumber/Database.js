@@ -1,15 +1,18 @@
-import React from "react"
-import {withRouter} from "react-router-dom";
-import styled from 'styled-components';
-import {DatabaseLogo} from "../../../assets/exportImages";
-import './Database.css';
-import { getMessageByTypes } from "../../../utilities/TypeHelper";
-import { CONTAINER_TYPES, MESSAGE_KEYS } from "../../../utilities/constants/constants";
-import { injectIntl } from "react-intl";
-import Card from "../../../components/widgets/Card/Card";
-import HeaderBar from "../../../components/widgets/HeaderBar/HeaderBar";
-import CustomNavButton from "../../../components/widgets/CustomNavButton/CustomNavButton";
-import messages from "../../../assets/languages/defaultMessage";
+// Packages
+import React                           from "react";
+import {injectIntl}                    from "react-intl";
+import {withRouter}                    from "react-router-dom";
+import styled                          from 'styled-components';
+//
+import {DatabaseLogo}                  from "../../../assets/exportImages";
+import messages                        from "../../../assets/languages/defaultMessage";
+import Card                            from "../../../components/widgets/Card/Card";
+import CustomNavButton                 from "../../../components/widgets/CustomNavButton/CustomNavButton";
+import HeaderBar                       from "../../../components/widgets/HeaderBar/HeaderBar";
+import {CONTAINER_TYPES, MESSAGE_KEYS} from "../../../utilities/constants/constants";
+import {getMessageByTypes}             from "../../../utilities/TypeHelper";
+// Styles
+import styles                          from './Database.module.css';
 
 const Wrapper = styled.section`
   @media screen and (max-width: 700px) {
@@ -48,52 +51,53 @@ const TitleBar = styled.div`
   }
 `;
 
-class Database extends React.Component{
+class Database extends React.Component {
 
-    // an example for customized onClick prop for 'CustomButton' component
-    onToggle =()=>{
-      window.location.href="/database/course";
-      // window.alert("this is a test");
-    }
+  // an example for customized onClick prop for 'CustomButton' component
+  onToggle = () => {
+    window.location.href = "/database/course";
+    // window.alert("this is a test");
+  };
 
-    render() {
+  render() {
 
-        // hooked to api later
-        const supportedContainerTypeArray = [CONTAINER_TYPES.GRADE_DISTRIBUTION, CONTAINER_TYPES.COURSE_CATALOG, CONTAINER_TYPES.DEGREE_PLANNING, CONTAINER_TYPES.SECRET_LIBRARY];
+    // hooked to api later
+    const supportedContainerTypeArray = [CONTAINER_TYPES.GRADE_DISTRIBUTION, CONTAINER_TYPES.COURSE_CATALOG, CONTAINER_TYPES.DEGREE_PLANNING, CONTAINER_TYPES.SECRET_LIBRARY];
 
-        //const gradeDistributionDescp = this.props.intl.formatMessage(getMessageByTypes(MESSAGE_KEYS.DESCRIPTION, CONTAINER_TYPES.GRADE_DISTRIBUTION))
-        return(
-            <React.Fragment>
-              <Wrapper>
-                <HeaderBar hasRightAlignedItems={true}/>
+    //const gradeDistributionDescp = this.props.intl.formatMessage(getMessageByTypes(MESSAGE_KEYS.DESCRIPTION, CONTAINER_TYPES.GRADE_DISTRIBUTION))
+    return (
+      <React.Fragment>
+        <Wrapper>
+          <HeaderBar hasRightAlignedItems={true}/>
 
-                <Logo src={DatabaseLogo} alt={"DatabaseLogo"}/>
-                <TitleBar>
-                    {/* need to intl-format */}
-                    <h1>Qcumber Database</h1>
-                    <h2>Everything about a Queen's course</h2>
-                </TitleBar>
+          <Logo src={DatabaseLogo} alt={"DatabaseLogo"}/>
+          <TitleBar>
+            {/* need to intl-format */}
+            <h1>Qcumber Database</h1>
+            <h2>Everything about a Queen's course</h2>
+          </TitleBar>
 
-                <div className="QcumberCardsWrapper">
-                      {supportedContainerTypeArray.map((typeObject,index) => (
-                        <Card 
-                        key={index}
-                        backgroundImageName={typeObject}
-                        title={this.props.intl.formatMessage(getMessageByTypes(MESSAGE_KEYS.TITLE, typeObject))}
-                        description={this.props.intl.formatMessage(getMessageByTypes(MESSAGE_KEYS.DESCRIPTION, typeObject))}
-                      />))}
-                </div>
+          <div className={styles.QcumberCardsWrapper}>
+            {supportedContainerTypeArray.map((typeObject, index) => (
+              <Card
+                key={index}
+                backgroundImageName={typeObject}
+                title={this.props.intl.formatMessage(getMessageByTypes(MESSAGE_KEYS.TITLE, typeObject))}
+                description={this.props.intl.formatMessage(getMessageByTypes(MESSAGE_KEYS.DESCRIPTION, typeObject))}
+              />))}
+          </div>
 
-                <div className="ContributionText">
-                  {/* need to intl-format */}
-                  <p>Would you like to contribute to Qcumber's data?<br />You may have what we're looking for.</p>
-                
-                  <CustomNavButton toWhere="/database/course" btnText={this.props.intl.formatMessage(messages.checkOurPostings)}/>
-                </div>
-              </Wrapper>
-            </React.Fragment>
-        );
-    }
+          <div className={styles.ContributionText}>
+            {/* need to intl-format */}
+            <p>Would you like to contribute to Qcumber's data?<br/>You may have what we're looking for.</p>
+
+            <CustomNavButton toWhere="/database/course"
+                             btnText={this.props.intl.formatMessage(messages.checkOurPostings)}/>
+          </div>
+        </Wrapper>
+      </React.Fragment>
+    );
+  }
 }
 
 export default withRouter(injectIntl(Database));
