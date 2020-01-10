@@ -12,30 +12,31 @@ class CourseWrapper extends React.Component{
 
     render(){    
         return(
-            <div  className="coursePageFlewContainer">
+            <div  className="coursePageDashBoard">
                 {/* <Fragment> */}
-                <div className={"coursePageLeftPart"}>
-                    {/* temp */}
-                    {this.props.currentCourse.length < 1 ? null : this.props.currentCourse[0]["units"]}
-                </div>      
+                    <div className={"coursePageLeftPart"}>
+                        {/* temp */}
+                        {this.props.currentCourse.length < 1 ? null : this.props.currentCourse[0]["units"]}
+                    </div>      
 
-                <div className={"coursePageCenterPart"}>
-                    {/* <backtrace /> */}
-                    <h1 className={"coursePageCourseSubjAndNum"}>
-                        {this.props.currentCourse.length < 1 ? null : this.props.currentCourse[0]["subject"]
-                        + " " + this.props.currentCourse[0]["number"]}
-                    </h1>
+                    <div className={"coursePageCenterPart"}>
+                        {/* <backtrace /> */}
+                        <div>
+                            <h1 className={"coursePageCourseSubjAndNum"}>
+                                {this.props.currentCourse.length < 1 ? null : this.props.currentCourse[0]["subject"]
+                                + " " + this.props.currentCourse[0]["number"]}
+                            </h1>
+                        </div>
+                        {/* <span className={"coursePageCourseSubjAndNum"}>
+                            {this.props.currentCourse.length < 1 ? null : this.props.currentCourse[0]["subject"]
+                            + " " + this.props.currentCourse[0]["number"]}
+                        </span> */}
+                    </div>
 
-                    <h1 className={"coursePageCourseSubjAndNum"}>
-                        {this.props.currentCourse.length < 1 ? null : this.props.currentCourse[0]["subject"]
-                        + " " + this.props.currentCourse[0]["number"]}
-                    </h1>
-                </div>
-
-                <div className={"coursePageRightPart"}>
-                    {/* temp */}
-                    {this.props.currentCourse.length < 1 ? null : this.props.currentCourse[0]["units"]}
-                </div> 
+                    <div className={"coursePageRightPart"}>
+                        {/* temp */}
+                        {this.props.currentCourse.length < 1 ? null : this.props.currentCourse[0]["units"]}
+                    </div> 
                 {/* </Fragment> */}
             </div>
         )
