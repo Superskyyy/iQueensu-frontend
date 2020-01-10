@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import {connect} from "react-redux";
 import history from "../utils/history";
 import actions from "../store/actions/root";
@@ -14,6 +13,9 @@ import Qucumber from "./routes/qucumber/Qucumber";
 import Database from "./routes/qucumber/Database";
 import CoursePage from './routes/qucumber/course/CoursePage';
 import CourseWrapper from './routes/qucumber/course/CourseWrapper';
+// Styles
+import './App.css';
+import wrapper from './App.module.css'
 
 class App extends Component {
   changeLanguage() {
@@ -25,16 +27,18 @@ class App extends Component {
     const { locale } = this.props;
     return (
       <div className="App">
+        <main className={wrapper.main}>
         {/* remove later */}
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/404" exact component={NotFound} />
-          <Route path="/qhousing" exact component={Qhousing} />
-          <Route path="/qucumber" exact component={Qucumber} />
-          <Route path={"/database"} exact component={Database}/>
-          <Route path={"/database/course"} exact component={CoursePage}/>
-          <Redirect from="*" to="/404" />
-        </Switch>
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/404" exact component={NotFound} />
+            <Route path="/qhousing" exact component={Qhousing} />
+            <Route path="/qucumber" exact component={Qucumber} />
+            <Route path={"/database"} exact component={Database}/>
+            <Route path={"/database/course"} exact component={CoursePage}/>
+            <Redirect from="*" to="/404" />
+          </Switch>
+        </main>
         <Navigation>
           <NavItem event={() => {history.push("/")}} name={"Home"} />
           <NavItem event={() => {history.goBack()}} name={"Back"}/>
