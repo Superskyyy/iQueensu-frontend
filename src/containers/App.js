@@ -12,7 +12,8 @@ import NotFound from "./routes/NotFound";
 import Qhousing from "./routes/qhousing/Qhousing";
 import Qucumber from "./routes/qucumber/Qucumber";
 import Database from "./routes/qucumber/Database";
-import Course from './routes/qucumber/course/Course';
+import CoursePage from './routes/qucumber/course/CoursePage';
+import CourseWrapper from './routes/qucumber/course/CourseWrapper';
 
 class App extends Component {
   changeLanguage() {
@@ -25,20 +26,20 @@ class App extends Component {
     return (
       <div className="App">
         {/* remove later */}
-        <Navigation>
-          <NavItem event={() => {history.push("/")}} name={"Home"} />
-          <NavItem event={() => {history.goBack()}} name={"Back"}/>
-          <NavItem event={() => this.changeLanguage()} name={locale === 'zh' ? '英文' : 'Chinese'}/>
-        </Navigation>
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/404" exact component={NotFound} />
           <Route path="/qhousing" exact component={Qhousing} />
           <Route path="/qucumber" exact component={Qucumber} />
           <Route path={"/database"} exact component={Database}/>
-          <Route path={"/database/course"} exact component={Course}/>
+          <Route path={"/database/course"} exact component={CoursePage}/>
           <Redirect from="*" to="/404" />
         </Switch>
+        <Navigation>
+          <NavItem event={() => {history.push("/")}} name={"Home"} />
+          <NavItem event={() => {history.goBack()}} name={"Back"}/>
+          <NavItem event={() => this.changeLanguage()} name={locale === 'zh' ? '英文' : 'Chinese'}/>
+        </Navigation>
         <Footer />
       </div>
     );
