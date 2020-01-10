@@ -1,13 +1,9 @@
-import React,{Fragment} from "react"
-import styled from 'styled-components';
-import PropTypes from "prop-types"
-import {TermChoice} from "../../../../components/accessories/ChoiceBox";
-
-const Wrapper = styled.section`
-  min-width: 100%;
-  justify-content: center;
-  background-color: #e8e8e8;
-`;
+// Packages
+import PropTypes         from "prop-types";
+import React, {Fragment} from "react";
+//
+import {TermChoice}      from "../../../../components/accessories/ChoiceBox";
+// Styles
 
 export const Section = (props) => (
     <Fragment>
@@ -32,7 +28,7 @@ Section.defaultProps = {
 
 export const Sections = (props) => (
     <Fragment>
-        <TermChoice />
+        <TermChoice/>
         {props.status}
         {props.children}
     </Fragment>

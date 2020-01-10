@@ -1,22 +1,23 @@
-import { createStore, applyMiddleware, compose } from "redux";
-import thunk from "redux-thunk";
-import rootReducer from "./reducers";
-import {persistStore, persistReducer} from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
-import transforms from "./transform";
-import history from "../utils/history"
-import {routerMiddleware} from "connected-react-router";
+// Packages
+import {routerMiddleware}                      from "connected-react-router";
+import {applyMiddleware, compose, createStore} from "redux";
+import {persistReducer, persistStore}          from 'redux-persist';
+import storage                                 from 'redux-persist/lib/storage';
+import thunk                                   from "redux-thunk";
+//
+import history                                 from "../utils/history";
+import rootReducer                             from "./reducers";
+import transforms                              from "./transform";
 
-const initialState = {
-};
+const initialState = {};
 const middleware = [thunk];
 
 const persistConfig = {
-     key: 'root',
-     storage: storage,
-     //stateReconciler: hardSet,
-     transforms: [transforms],
-     whitelist: ['root']
+    key: 'root',
+    storage: storage,
+    //stateReconciler: hardSet,
+    transforms: [transforms],
+    whitelist: ['root']
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer(history));

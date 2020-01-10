@@ -1,5 +1,6 @@
+// Packages
+import PropTypes         from "prop-types";
 import React, {Fragment} from "react";
-import PropTypes from "prop-types";
 
 const Item = (props) => (
     <Fragment>

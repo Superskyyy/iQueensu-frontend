@@ -1,20 +1,20 @@
+// Packages
+import PropTypes                    from "prop-types";
 import React, {Component, Fragment} from 'react';
-import {FormattedMessage} from "react-intl";
-import PropTypes from "prop-types";
+import {FormattedMessage}           from "react-intl";
 
 class Text extends Component {
     render() {
-        return(
+        return (
             <Fragment>
                 <FormattedMessage
-                    id = {this.props.id}
-                    values = {this.props.values}
+                    id={this.props.id}
+                    values={this.props.values}
                 />
             </Fragment>
-        )
+        );
     }
 }
-
 
 
 Text.propTypes = {
@@ -28,4 +28,4 @@ Text.defaultProps = {
     children: null,
 };
 
-export default Text
+export default Text;

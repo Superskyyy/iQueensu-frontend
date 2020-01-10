@@ -1,5 +1,6 @@
-import { CONTAINER_TYPES, MESSAGE_KEYS } from "./constants/constants";
-import messages from "../assets/languages/defaultMessage";
+//
+import messages                        from "../assets/languages/defaultMessage";
+import {CONTAINER_TYPES, MESSAGE_KEYS} from "./constants/constants";
 
 const specificProjectTypeMessages = {
     [CONTAINER_TYPES.GRADE_DISTRIBUTION]: {
@@ -26,18 +27,18 @@ const specificProjectTypeMessages = {
         [MESSAGE_KEYS.TITLE]: messages.gradeDistributionTitle,
         [MESSAGE_KEYS.DESCRIPTION]: messages.gradeDistributionDescription
     }
-}
+};
 
-export const getMessageByTypes = (msgType, projectType) =>{
+export const getMessageByTypes = (msgType, projectType) => {
     let key = projectType;
-    if(!specificProjectTypeMessages.hasOwnProperty(projectType)){
+    if (!specificProjectTypeMessages.hasOwnProperty(projectType)) {
         key = CONTAINER_TYPES.DEFAULT;
     }
 
-    if(specificProjectTypeMessages[key].hasOwnProperty(msgType)){
+    if (specificProjectTypeMessages[key].hasOwnProperty(msgType)) {
         return specificProjectTypeMessages[key][msgType];
-    }else{
+    } else {
         console.error("no msg defined");
         return;
     }
-} 
+};

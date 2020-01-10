@@ -1,36 +1,24 @@
+// Packages
+import PropTypes         from "prop-types";
 import React, {Fragment} from "react";
-import styled from 'styled-components';
-import PropTypes from "prop-types";
-
-const Wrapper = styled.table`
-  justify-content: center;
-  margin-bottom: 10px;
-  min-width: 100%;
-`;
-const Button = styled.td`
-  margin-left: 10px;
-  margin-right: 10px;
-  border: 1px solid transparent;
-  &:hover {
-    border: 1px solid #716861;
-  }
-`;
+// Styles
+import styles from "./Navigation.module.css"
 
 export const NavItem = (props) => (
     <Fragment>
-        <Button onClick={props.event} title={props.name}>{props.name}</Button>
+        <td className={styles.Button} onClick={props.event} title={props.name}>{props.name}</td>
     </Fragment>
 );
 
 export default (props) => (
     <Fragment>
-        <Wrapper>
+        <table className={styles.Wrapper}>
             <tbody>
-                <tr>
-                    {props.children}
-                </tr>
+            <tr>
+                {props.children}
+            </tr>
             </tbody>
-        </Wrapper>
+        </table>
     </Fragment>
 );
 
