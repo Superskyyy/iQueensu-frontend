@@ -1,40 +1,43 @@
-import React, {PureComponent, Fragment} from 'react';
-import Sanbai from '../../assets/images/logos/BEASTSanBei.png';
-import './ProfilePicButton.css';
+// Packages
+import React, {Fragment, PureComponent} from 'react';
+//
+import Sanbai                           from '../../assets/images/logos/BEASTSanBei.png';
+// Styles
+import styles from './ProfilePicButton.module.css';
 
-class ProfilePicButton extends PureComponent{
-    state={
+class ProfilePicButton extends PureComponent {
+    state = {
         icon: null,
         realIconLoading: false,
-    }
+    };
 
-    updateIcon = (isIconSet) =>{
-        if(isIconSet){
+    updateIcon = (isIconSet) => {
+        if (isIconSet) {
             // API handling
             // getUserIcon();
-        }else{
-            const generatedIcon = 
-                        <img className="icon" src={Sanbai} />
+        } else {
+            const generatedIcon =
+                <img className={styles.Icon} src={Sanbai}/>;
 
-            this.setState({icon: generatedIcon})
+            this.setState({icon: generatedIcon});
         }
-    }
+    };
 
-    componentDidMount(props){
+    componentDidMount(props) {
         this.updateIcon(false);
     }
 
-    render(){
+    render() {
         // this.updateIcon(false);
 
-        return(
+        return (
             <Fragment>
-                {this.state.icon != null && 
-                    <div className="cardImgClass">
-                        {this.state.icon}
-                    </div>}
+                {this.state.icon != null &&
+                <div className={styles.CardImg}>
+                    {this.state.icon}
+                </div>}
             </Fragment>
-        )
+        );
     }
 
 }

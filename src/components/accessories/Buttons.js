@@ -1,16 +1,12 @@
-
+// Packages
+import PropTypes         from "prop-types";
 import React, {Fragment} from "react";
-import styled from 'styled-components';
-import PropTypes from "prop-types";
 
-const Wrapper = styled.div`
-  justify-content: center;
-`;
 export const LanBtn = (props) => (
     <Fragment>
-        <Wrapper>
+        <div className="j-Center">
             {props.text}
-        </Wrapper>
+        </div>
     </Fragment>
 );
 

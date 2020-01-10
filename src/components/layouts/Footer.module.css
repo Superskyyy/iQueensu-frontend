@@ -1,0 +1,6 @@
+.Wrapper {
+    min-width: 100%;
+    justify-content: center;
+    background-color: #e8e8e8;
+    margin-top: auto !important;
+}

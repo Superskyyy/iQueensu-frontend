@@ -1,7 +1,8 @@
 // Locations
 
 // Mock Place
-import {places} from "./mock-places"
+import {places} from "./mock-places";
+
 export const MockPlaces = places;
 
 /**

@@ -1,12 +1,12 @@
-.cardImgClass{
+.CardImg {
     height: 84px;
     width: 84px;
     display: inline-block;
     padding-top: 172px;
 }
 
-.icon{
+.Icon {
     position: relative;
-    margin:auto;
+    margin: auto;
     border-radius: 50%;
 }

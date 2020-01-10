@@ -1,5 +1,7 @@
-import { defineMessages } from "react-intl";
-import en_US from "./en_US";
+// Packages
+import {defineMessages} from "react-intl";
+//
+import en_US            from "./en_US";
 
 export const messages = defineMessages({
     // Title
@@ -21,28 +23,28 @@ export const messages = defineMessages({
     },
 
     // Description
-    gradeDistributionDescription:{
+    gradeDistributionDescription: {
         id: "gradeDistributionDescription",
         defaultMessage: en_US.gradeDistributionDescription
     },
-    courseCatalogDescription:{
+    courseCatalogDescription: {
         id: "courseCatalogDescription",
         defaultMessage: en_US.courseCatalogDescription
     },
-    degreePlanningDescription:{
+    degreePlanningDescription: {
         id: "degreePlanningDescription",
         defaultMessage: en_US.degreePlanningDescription
     },
-    secretLibraryDescription:{
+    secretLibraryDescription: {
         id: "secretLibraryDescription",
         defaultMessage: en_US.secretLibraryDescription
     },
 
     // Button text
-    checkOurPostings:{
+    checkOurPostings: {
         id: "checkOurPostings",
         defaultMessage: en_US.checkOurPostings
     },
-})
+});
 
 export default messages;

@@ -1,13 +1,14 @@
+// Packages
+import PropTypes         from "prop-types";
 import React, {Fragment} from "react";
-import {Helmet} from "react-helmet";
-import PropTypes from "prop-types";
+import {Helmet}          from "react-helmet";
 
 
 const XHelmet = (props) => (
     <Fragment>
         <Helmet>
             <meta charSet="utf-8"/>
-            <link rel="icon" href= {"../../assets/logos/qucumber.svg"} type="image/x-icon"/>
+            <link rel="icon" href={"../../assets/logos/qucumber.svg"} type="image/x-icon"/>
             <link rel="shortcut icon" href={"../../assets/logos/qucumber.svg"} type="image/x-icon"/>
             <meta
                 name="viewport"
@@ -33,4 +34,4 @@ XHelmet.defaultProps = {
     manifest: "manifest.json",
     title: "React Helmet"
 };
-export default XHelmet
+export default XHelmet;

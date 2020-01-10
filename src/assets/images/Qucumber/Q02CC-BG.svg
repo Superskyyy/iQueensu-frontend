@@ -26,9 +26,11 @@
             <rect id="Rectangle_126-2" width="260" height="240" class="cls-2" rx="5" transform="translate(22.5 17.5)"/>
         </g>
         <path id="Rectangle_123" d="M0 0h143.964v56.535H0z" class="cls-3" transform="rotate(90 41.611 726.458)"/>
-        <path id="Path_270" d="M92.98-12.489l50.984 39.01v66.256L6.91-12.489z" class="cls-4" transform="rotate(90 60.111 744.958)"/>
+        <path id="Path_270" d="M92.98-12.489l50.984 39.01v66.256L6.91-12.489z" class="cls-4"
+              transform="rotate(90 60.111 744.958)"/>
         <path id="Rectangle_124" d="M0 0h39.336v52.535H0z" class="cls-5" transform="rotate(90 62.615 852.664)"/>
-        <ellipse id="Ellipse_2" cx="40.513" cy="40.082" class="cls-3" rx="40.513" ry="40.082" transform="translate(807.681 695.51)"/>
+        <ellipse id="Ellipse_2" cx="40.513" cy="40.082" class="cls-3" rx="40.513" ry="40.082"
+                 transform="translate(807.681 695.51)"/>
         <path id="Rectangle_125" d="M0 0h36.198v35.791H0z" class="cls-2" transform="translate(721.229 754.231)"/>
     </g>
 </svg>

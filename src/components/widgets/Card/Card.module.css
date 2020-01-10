@@ -1,11 +1,11 @@
-.CardFront{
+.CardFront {
     width: 260px;
     height: 250px;
     margin-right: 16px;
     cursor: pointer;
 }
 
-.Tile{
+.Tile {
     background-position: center center;
     background-size: 350px 340px;
     height: 100%;
@@ -17,29 +17,29 @@
     border-radius: 5px;
 }
 
-.Tile:hover{
+.Tile:hover {
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.4);
 }
 
 /* Background img for each type */
 /* no space in between */
-.Tile.gradeDistribution{
-    background-image: url("../../../assets//images/Qucumber/Q01GD-BG-3x.png"); 
+.gradeDistribution {
+    background-image: url("../../../assets/images/Qucumber/Q01GD-BG-3x.png");
 }
 
-.Tile.courseCatalog{
-    background-image: url("../../../assets//images/Qucumber/Q02CC-BG-3x.png");
+.courseCatalog {
+    background-image: url("../../../assets/images/Qucumber/Q02CC-BG-3x.png");
 }
 
-.Tile.degreePlanning{
-    background-image: url("../../../assets//images/Qucumber/Q03DP-BG-3x.png");
+.degreePlanning {
+    background-image: url("../../../assets/images/Qucumber/Q03DP-BG-3x.png");
 }
 
-.Tile.secretLibrary{
-    background-image: url("../../../assets//images/Qucumber/Q04SL-BG-3x.png");
+.secretLibrary {
+    background-image: url("../../../assets/images/Qucumber/Q04SL-BG-3x.png");
 }
 
-.CardFrontTitle{
+.CardFrontTitle {
     text-align: left;
     line-height: 1.1;
     width: 100%;
@@ -49,7 +49,7 @@
     color: white;
 }
 
-.CardFrontDescription{
+.CardFrontDescription {
     text-align: left;
     width: 100%;
     line-height: 1.1;

@@ -1,14 +1,14 @@
 const initialState = {
-  language: 'en'
+    language: 'en'
 };
 
 const getRootReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case 'CHANGE_LANGUAGE':
-      return {language: action.val};
-    default:
-      return state;
-  }
+    switch (action.type) {
+        case 'CHANGE_LANGUAGE':
+            return {language: action.val};
+        default:
+            return state;
+    }
 };
 
 export default getRootReducer;

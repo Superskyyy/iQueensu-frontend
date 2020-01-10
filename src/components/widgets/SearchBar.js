@@ -1,13 +1,7 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-
-const Wrapper = styled.div`
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 20px;
-`;
+// Packages
+import React, {Component} from 'react';
+// Styles
+import styles             from "./SearchBar.module.css";
 
 class SearchBar extends Component {
     constructor(props) {
@@ -15,19 +9,19 @@ class SearchBar extends Component {
         this.clearSearchBox = this.clearSearchBox.bind(this);
     }
 
-    componentDidMount({ map, mapApi } = this.props) {
+    componentDidMount({map, mapApi} = this.props) {
         this.searchBox = new mapApi.places.SearchBox(this.searchInput);
         this.searchBox.addListener('places_changed', this.onPlacesChanged);
         this.searchBox.bindTo('bounds', map);
     }
 
-    componentWillUnmount({ mapApi } = this.props) {
+    componentWillUnmount({mapApi} = this.props) {
         mapApi.event.clearInstanceListeners(this.searchInput);
     }
 
-    onPlacesChanged = ({ map, addplace } = this.props) => {
+    onPlacesChanged = ({map, addplace} = this.props) => {
         const selected = this.searchBox.getPlaces();
-        const { 0: place } = selected;
+        const {0: place} = selected;
         if (!place.geometry) return;
         if (place.geometry.viewport) {
             map.fitBounds(place.geometry.viewport);
@@ -46,7 +40,7 @@ class SearchBar extends Component {
 
     render() {
         return (
-            <Wrapper>
+            <div className={styles.Wrapper}>
                 <input
                     ref={(ref) => {
                         this.searchInput = ref;
@@ -55,7 +49,7 @@ class SearchBar extends Component {
                     onFocus={this.clearSearchBox}
                     placeholder="Enter a location"
                 />
-            </Wrapper>
+            </div>
         );
     }
 }

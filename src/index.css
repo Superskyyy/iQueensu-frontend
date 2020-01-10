@@ -1,5 +1,7 @@
-/*I think it's better to put global css snippets here.
-simply not making this modularize*/
+/*
+    I think it's better to put global css snippets here.
+    Simply not making this file modularize
+*/
 
 html, body {
     margin: 0;
@@ -16,4 +18,8 @@ html, body {
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.j-Center {
+    justify-content: center !important;
 }

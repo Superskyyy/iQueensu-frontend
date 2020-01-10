@@ -1,0 +1,23 @@
+.Wrapper {
+    display: table;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.MapWrapper {
+    display: table-cell;
+    align-items: center;
+    justify-content: center;
+    height: 80vh !important;
+    width: 70% !important;
+}
+
+.SelectBoxWrapper {
+    display: table-cell;
+    align-items: center;
+    text-align-all: center;
+    justify-content: center;
+    height: 80vh !important;
+    width: 30% !important;
+}

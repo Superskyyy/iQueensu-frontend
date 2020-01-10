@@ -3,11 +3,11 @@ root = true
 [*]
 charset = utf-8
 end_of_line = crlf
-indent_size = 2
+indent_size = 4
 indent_style = space
 insert_final_newline = true
 max_line_length = 120
-ij_continuation_indent_size = 2
+ij_continuation_indent_size = 4
 # ij_formatter_off_tag = @formatter:off
 # ij_formatter_on_tag = @formatter:on
 # ij_formatter_tags_enabled = false
@@ -15,8 +15,6 @@ ij_continuation_indent_size = 2
 # ij_wrap_on_typing = false
 
 [*.css]
-indent_size = 4
-ij_continuation_indent_size = 4
 ij_css_align_closing_brace_with_properties = false
 ij_css_blank_lines_around_nested_selector = 1
 ij_css_blank_lines_between_blocks = 1
@@ -87,7 +85,6 @@ ij_javascript_force_semicolon_style = true
 # ij_javascript_import_merge_members = global
 # ij_javascript_import_prefer_absolute_path = global
 ij_javascript_import_sort_members = true
-ij_javascript_import_sort_module_name = true
 ij_javascript_import_use_node_resolution = true
 # ij_javascript_imports_wrap = on_every_item
 # ij_javascript_indent_case_from_switch = true

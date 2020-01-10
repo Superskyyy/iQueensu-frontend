@@ -1,26 +1,26 @@
 const en_US = {
-  hello: "Hello, world!",
-  name: "my name is {name}",
-  home: "Home",
-  notfound: "Page Not Found",
-  forum: 'Forum',
-  contact: 'Contact',
-  about: 'About',
+    hello: "Hello, world!",
+    name: "my name is {name}",
+    home: "Home",
+    notfound: "Page Not Found",
+    forum: 'Forum',
+    contact: 'Contact',
+    about: 'About',
 
-  // Title
-  gradeDistributionTitle: "Grade Distribution",
-  courseCatalogTitle: "Course Catalog",
-  degreePlanningTitle: "Degree Planning",
-  secretLibraryTitle: "Secret Library",
+    // Title
+    gradeDistributionTitle: "Grade Distribution",
+    courseCatalogTitle: "Course Catalog",
+    degreePlanningTitle: "Degree Planning",
+    secretLibraryTitle: "Secret Library",
 
-  // Description
-  gradeDistributionDescription: 'Looking for a bird course?',
-  courseCatalogDescription: 'Everything SOLUS has',
-  degreePlanningDescription: 'What course to choose?',
-  secretLibraryDescription: 'Place for good and free stuff',
+    // Description
+    gradeDistributionDescription: 'Looking for a bird course?',
+    courseCatalogDescription: 'Everything SOLUS has',
+    degreePlanningDescription: 'What course to choose?',
+    secretLibraryDescription: 'Place for good and free stuff',
 
-  // Button text
-  checkOurPostings: 'Check Our Postings',
+    // Button text
+    checkOurPostings: 'Check Our Postings',
 
 };
 
