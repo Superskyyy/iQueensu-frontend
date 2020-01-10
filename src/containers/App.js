@@ -14,8 +14,7 @@ import Database from "./routes/qucumber/Database";
 import CoursePage from './routes/qucumber/course/CoursePage';
 import CourseWrapper from './routes/qucumber/course/CourseWrapper';
 // Styles
-import './App.css';
-import wrapper from './App.module.css'
+import styles from './App.module.css'
 
 class App extends Component {
   changeLanguage() {
@@ -26,8 +25,8 @@ class App extends Component {
   render() {
     const { locale } = this.props;
     return (
-      <div className="App">
-        <main className={wrapper.main}>
+      <div className={styles.App}>
+        <main className={styles.MainContent}>
         {/* remove later */}
           <Switch>
             <Route path="/" exact component={Home} />

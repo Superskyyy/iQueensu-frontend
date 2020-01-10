@@ -1,3 +1,6 @@
+/*I think it's better to put global css snippets here.
+simply not making this modularize*/
+
 html, body {
   margin: 0;
   padding: 0;
