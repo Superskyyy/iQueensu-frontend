@@ -12,30 +12,34 @@
     border-radius: 5px;
     padding: 18px 18px 0px 18px;
 
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+
+    transition: box-shadow 0.5s;
     border-radius: 5px;
+}
+
+.Tile:hover{
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.4);
 }
 
 /* Background img for each type */
 /* no space in between */
 .Tile.gradeDistribution{
-    background-image: url("../../assets//images/Qucumber/Q01GD-BG-3x.png"); 
+    background-image: url("../../../assets//images/Qucumber/Q01GD-BG-3x.png"); 
 }
 
 .Tile.courseCatalog{
-    background-image: url("../../assets//images/Qucumber/Q02CC-BG-3x.png");
+    background-image: url("../../../assets//images/Qucumber/Q02CC-BG-3x.png");
 }
 
 .Tile.degreePlanning{
-    background-image: url("../../assets//images/Qucumber/Q03DP-BG-3x.png");
+    background-image: url("../../../assets//images/Qucumber/Q03DP-BG-3x.png");
 }
 
 .Tile.secretLibrary{
-    background-image: url("../../assets//images/Qucumber/Q04SL-BG-3x.png");
+    background-image: url("../../../assets//images/Qucumber/Q04SL-BG-3x.png");
 }
 
 .CardFrontTitle{
-    /* text-shadow: 0 0 20px rgba(0, 0, 0, 0.6); */
     text-align: left;
     line-height: 1.1;
     width: 100%;
