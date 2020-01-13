@@ -12,7 +12,7 @@ import Qhousing from "./routes/qhousing/Qhousing";
 import Qucumber from "./routes/qucumber/Qucumber";
 import Database from "./routes/qucumber/Database";
 import CoursePage from './routes/qucumber/course/CoursePage';
-import CourseWrapper from './routes/qucumber/course/CourseWrapper';
+
 // Styles
 import './App.css';
 import wrapper from './App.module.css'
