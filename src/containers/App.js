@@ -39,11 +39,11 @@ class App extends Component {
             <Redirect from="*" to="/404" />
           </Switch>
         </main>
-        <Navigation>
+        {/* <Navigation>
           <NavItem event={() => {history.push("/")}} name={"Home"} />
           <NavItem event={() => {history.goBack()}} name={"Back"}/>
           <NavItem event={() => this.changeLanguage()} name={locale === 'zh' ? '英文' : 'Chinese'}/>
-        </Navigation>
+        </Navigation> */}
         <Footer />
       </div>
     );
