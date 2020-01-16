@@ -1,0 +1,55 @@
+.ContributionText {
+    margin-top: 112px;
+    margin-bottom: 56px;
+}
+
+.QcumberCardsWrapper {
+    height: 100%;
+    margin-top: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+@media screen and (max-width: 700px) {
+    .Wrapper > .column {
+        width: 100%;
+        display: block;
+    }
+}
+
+.Wrapper {
+    min-width: 1099px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.Logo {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    height: 15%;
+    margin-top: 80px;
+}
+
+.TitleBar {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.TitleBar > h1 {
+    font-family: Raleway, sans-serif;
+    font-size: 36px;
+    margin-bottom: 0;
+}
+
+.TitleBar > h2 {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+}

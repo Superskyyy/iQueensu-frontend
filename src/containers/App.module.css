@@ -1,3 +1,12 @@
-.main {
+.MainContent {
     position: static;
+}
+
+.App {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    display: flex !important;
+    flex-direction: column;
+    min-height: 100vh !important;
 }

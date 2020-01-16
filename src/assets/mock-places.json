@@ -1,88 +1,88 @@
 {
-  "places": [
-    {
-      "id": "01",
-      "name": "SkyLine Apartment",
-      "info": {
-        "type": "apartment",
-        "description": "this is fifth",
-        "title": "SkyLine Apartment",
-        "bedroom": 2,
-        "washroom": 3,
-        "image": "./buildings.svg"
-      },
-      "geometry": {
-        "location": {
-          "lat":44.2318514,
-          "lng":-76.4919847
+    "places": [
+        {
+            "id": "01",
+            "name": "SkyLine Apartment",
+            "info": {
+                "type": "apartment",
+                "description": "this is fifth",
+                "title": "SkyLine Apartment",
+                "bedroom": 2,
+                "washroom": 3,
+                "image": "./buildings.svg"
+            },
+            "geometry": {
+                "location": {
+                    "lat": 44.2318514,
+                    "lng": -76.4919847
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 44.19258172989272,
+                        "lng": -76.2780556701073
+                    },
+                    "southwest": {
+                        "lat": 44.28988207010728,
+                        "lng": -76.2807553298927
+                    }
+                }
+            }
         },
-        "viewport": {
-          "northeast": {
-            "lat": 44.19258172989272,
-            "lng": -76.2780556701073
-          },
-          "southwest": {
-            "lat": 44.28988207010728,
-            "lng": -76.2807553298927
-          }
-        }
-      }
-    },
-    {
-      "id": "02",
-      "name": "Place two",
-      "info": {
-        "type": "apartment",
-        "description": "this is fifth",
-        "title": "Place two",
-        "bedroom": 1,
-        "washroom": 1,
-        "image": "./buildings.svg"
-      },
-      "geometry": {
-        "location": {
-          "lat":44.230108,
-          "lng":-76.494187
+        {
+            "id": "02",
+            "name": "Place two",
+            "info": {
+                "type": "apartment",
+                "description": "this is fifth",
+                "title": "Place two",
+                "bedroom": 1,
+                "washroom": 1,
+                "image": "./buildings.svg"
+            },
+            "geometry": {
+                "location": {
+                    "lat": 44.230108,
+                    "lng": -76.494187
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 44.19258172989272,
+                        "lng": -76.2780556701073
+                    },
+                    "southwest": {
+                        "lat": 44.28988207010728,
+                        "lng": -76.2807553298927
+                    }
+                }
+            }
         },
-        "viewport": {
-          "northeast": {
-            "lat": 44.19258172989272,
-            "lng": -76.2780556701073
-          },
-          "southwest": {
-            "lat": 44.28988207010728,
-            "lng": -76.2807553298927
-          }
+        {
+            "id": "03",
+            "name": "Place two",
+            "info": {
+                "type": "apartment",
+                "description": "this is fifth",
+                "title": "Place two",
+                "bedroom": 2,
+                "washroom": 1,
+                "image": "./buildings.svg"
+            },
+            "geometry": {
+                "location": {
+                    "lat": 44.223232,
+                    "lng": -76.488955
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 44.19258172989272,
+                        "lng": -76.2780556701073
+                    },
+                    "southwest": {
+                        "lat": 44.28988207010728,
+                        "lng": -76.2807553298927
+                    }
+                }
+            }
         }
-      }
-    },
-    {
-      "id": "03",
-      "name": "Place two",
-      "info": {
-        "type": "apartment",
-        "description": "this is fifth",
-        "title": "Place two",
-        "bedroom": 2,
-        "washroom": 1,
-        "image": "./buildings.svg"
-      },
-      "geometry": {
-        "location": {
-          "lat":44.223232,
-          "lng":-76.488955
-        },
-        "viewport": {
-          "northeast": {
-            "lat": 44.19258172989272,
-            "lng": -76.2780556701073
-          },
-          "southwest": {
-            "lat": 44.28988207010728,
-            "lng": -76.2807553298927
-          }
-        }
-      }
-    }
-  ]
+    ]
 }

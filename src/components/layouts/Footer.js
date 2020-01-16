@@ -1,13 +1,8 @@
+// Packages
+import PropTypes         from "prop-types";
 import React, {Fragment} from "react";
-import styled from 'styled-components';
-import PropTypes from "prop-types"
-
-const Wrapper = styled.footer`
-  min-width: 100%;
-  justify-content: center;
-  background-color: #e8e8e8;
-  margin-top: auto !important;
-`;
+// Styles
+import styles            from "./Footer.module.css";
 
 const year = new Date().getFullYear();
 
@@ -46,9 +41,9 @@ Info.defaultProps = {
 
 export default () => (
     <Fragment>
-        <Wrapper>
+        <footer className={styles.Wrapper}>
             <Info/>
             <Copyright year={year} name={"iQueensU"}/>
-        </Wrapper>
+        </footer>
     </Fragment>
 );

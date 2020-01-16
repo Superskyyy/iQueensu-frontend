@@ -1,3 +1,4 @@
+<<<<<<< HEAD:src/containers/routes/qucumber/course/CourseWrapper.css
 .coursePageLeftPart{
     background-color: #f5f5f5;
     width:260px;
@@ -8,6 +9,19 @@
 
 .coursePageCenterPart{
     /* background-color: #f5f5f5; */
+=======
+.CoursePageFlewContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.CoursePageLeftPart {
+    background-color: DodgerBlue;
+}
+
+.CoursePageCenterPart {
+    background-color: DodgerBlue;
+>>>>>>> master:src/containers/routes/qucumber/course/CourseWrapper.module.css
     margin-left: 2.5rem;
     margin-right: 2.5rem;
     width:100%;
@@ -15,6 +29,7 @@
     flex-direction: column;
 }
 
+<<<<<<< HEAD:src/containers/routes/qucumber/course/CourseWrapper.css
 .coursePageRightPart{
     background-color: #f5f5f5;
     width:260px;
@@ -71,3 +86,14 @@
     display: table-column;
     width: 100%;
   }
+=======
+.CoursePageRightPart {
+    background-color: DodgerBlue;
+}
+
+.CoursePageCourseSubjAndNum {
+    /* float: left;
+    display: flex; */
+    float: left;
+}
+>>>>>>> master:src/containers/routes/qucumber/course/CourseWrapper.module.css

@@ -1,28 +1,25 @@
-import React,{Fragment} from "react";
-import styled from 'styled-components';
-import PropTypes from "prop-types"
-import {Sections} from "./Section";
-import Prerequisite from "./Prerequisite";
-import { store } from "../../../../store";
-
-const Wrapper = styled.section`
-  min-width: 100%;
-  justify-content: center;
-  background-color: #e8e8e8;
-`;
+// Packages
+import PropTypes         from "prop-types";
+import React, {Fragment} from "react";
+//
+import {Sections}        from "./Section";
+import {store}           from "../../../../store";
+import Prerequisite      from "./Prerequisite";
+// Styles
+import styles            from "./Dashboard.module.css";
 
 const Legend = (props) => (
     <Fragment>
         <table>
             <tbody>
-                <tr>
-                    <td>{props.career}</td>
-                    <td>{props.faculty}</td>
-                </tr>
-                <tr>
-                    <td>{props.units}</td>
-                    <td>{props.department}</td>
-                </tr>
+            <tr>
+                <td>{props.career}</td>
+                <td>{props.faculty}</td>
+            </tr>
+            <tr>
+                <td>{props.units}</td>
+                <td>{props.department}</td>
+            </tr>
             </tbody>
         </table>
     </Fragment>
@@ -41,10 +38,10 @@ Legend.defaultProps = {
 };
 
 const Description = (props) => (
-  <Fragment>
-      <h1>{props.title}</h1>
-      <p>{props.content}</p>
-  </Fragment>
+    <Fragment>
+        <h1>{props.title}</h1>
+        <p>{props.content}</p>
+    </Fragment>
 );
 Description.prototype = {
     title: PropTypes.string,
@@ -60,22 +57,22 @@ const CourseLoad = (props) => (
     <Fragment>
         <table>
             <tbody>
-                <tr>
-                    <td>{props.lecture}</td>
-                    <td>{props.tutorial}</td>
-                    <td>{props.lab}</td>
-                    <td>{props.practice}</td>
-                    <td>{props.total}</td>
-                    <td>{props.load}</td>
-                </tr>
-                <tr>
-                    <td>{props.info[i++]}</td>
-                    <td>{props.info[i++]}</td>
-                    <td>{props.info[i++]}</td>
-                    <td>{props.info[i++]}</td>
-                    <td>{props.info[i++]}</td>
-                    <td>{props.info[i]}</td>
-                </tr>
+            <tr>
+                <td>{props.lecture}</td>
+                <td>{props.tutorial}</td>
+                <td>{props.lab}</td>
+                <td>{props.practice}</td>
+                <td>{props.total}</td>
+                <td>{props.load}</td>
+            </tr>
+            <tr>
+                <td>{props.info[i++]}</td>
+                <td>{props.info[i++]}</td>
+                <td>{props.info[i++]}</td>
+                <td>{props.info[i++]}</td>
+                <td>{props.info[i++]}</td>
+                <td>{props.info[i]}</td>
+            </tr>
             </tbody>
         </table>
     </Fragment>
@@ -98,18 +95,18 @@ CourseLoad.defaultProps = {
 };
 
 export default (props) => {
-
-    return(
+    return (
         <Fragment>
-            <Wrapper>
-                {props.title, console.log(store.getState())}
-                <Legend/>
+            <div className={styles.Wrapper}>
+                {props.title}
+                {console.log(store.getState())}
+                Legend/>
                 {/* <Description title={props.description.title} content={props.description.content}/> */}
-                <Prerequisite />
+                <Prerequisite/>
                 <Sections>
                     {props.children}
                 </Sections>
-            </Wrapper>
+            </div>
         </Fragment>
     );
 }

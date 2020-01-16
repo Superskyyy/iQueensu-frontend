@@ -1,5 +1,5 @@
-import { store } from "./store";
+import {store} from "./store";
 
-export const getReduxStore = () =>{
+export const getReduxStore = () => {
     return store;
-}
+};

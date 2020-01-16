@@ -1,41 +1,28 @@
-import React, {Component, Fragment} from 'react';
-import GoogleMap from "../../../components/widgets/GoogleMap";
+// Packages
+import React, {Component, Fragment}   from 'react';
+//
+import GoogleMap                      from "../../../components/widgets/GoogleMap";
+import SearchBar                      from "../../../components/widgets/SearchBar";
 import {MockPlaces, QueensUniversity} from "../../../assets/exportLocations";
-import Marker from "../../../components/accessories/Marker";
-import SearchBar from "../../../components/widgets/SearchBar";
-import styled from 'styled-components';
+import Marker                         from "../../../components/accessories/Marker";
+// Styles
+import styles                         from "./CampusMap.module.css";
 
-const Wrapper = styled.div`
-  display: table;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-`;
-const MapWrapper = styled.div`
-  display: table-cell;
-  align-items: center;
-  justify-content: center;
-`;
-const SelectBoxWrapper = styled.div`
-  display: table-cell;
-  align-items: center;
-  text-align-all: center;
-  justify-content: center;
-`;
 class CampusMap extends Component {
+    static defaultProps = {
+        center: QueensUniversity,
+        zoom: 16
+    };
+
     constructor(props) {
         super(props);
         this.state = {
             mapApiLoaded: false,
             mapInstance: null,
             mapApi: null,
-            places: [MockPlaces[0],MockPlaces[1]],
+            places: [MockPlaces[0], MockPlaces[1]],
         };
     }
-    static defaultProps = {
-        center: QueensUniversity,
-        zoom: 16
-    };
 
     getMapOptions = (maps) => {
         return {
@@ -67,7 +54,7 @@ class CampusMap extends Component {
             },
             zoomControl: true,
             clickableIcons: true
-        }
+        };
     };
 
     apiHasLoaded = (map, maps) => {
@@ -79,21 +66,22 @@ class CampusMap extends Component {
     };
 
     addPlace = (place) => {
-        this.setState({ places: place });
+        this.setState({places: place});
     };
+
     render() {
         const {
             places, mapApiLoaded, mapInstance, mapApi,
         } = this.state;
         return (
             <Fragment>
-                <Wrapper>
-                    <MapWrapper style={{ height: '80vh', width: '70%' }}>
+                <div className={styles.Wrapper}>
+                    <div className={styles.MapWrapper}>
                         <GoogleMap
                             defaultCenter={this.props.center}
                             defaultZoom={this.props.zoom}
-                            options = {this.getMapOptions}
-                            onGoogleApiLoaded={({ map, maps }) => this.apiHasLoaded(map, maps)}
+                            options={this.getMapOptions}
+                            onGoogleApiLoaded={({map, maps}) => this.apiHasLoaded(map, maps)}
                         >
                             {places.map(place => (
                                 <Marker
@@ -105,11 +93,11 @@ class CampusMap extends Component {
                             ))}
 
                         </GoogleMap>
-                    </MapWrapper>
-                    <SelectBoxWrapper style={{ height: '80vh', width: '30%' }}>
-                        {mapApiLoaded && <SearchBar map={mapInstance} mapApi={mapApi} addplace={this.addPlace} />}
-                    </SelectBoxWrapper>
-                </Wrapper>
+                    </div>
+                    <div className={styles.SelectBoxWrapper}>
+                        {mapApiLoaded && <SearchBar map={mapInstance} mapApi={mapApi} addplace={this.addPlace}/>}
+                    </div>
+                </div>
             </Fragment>
         );
     }

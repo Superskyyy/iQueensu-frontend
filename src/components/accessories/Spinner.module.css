@@ -1,0 +1,10 @@
+.Wrapper {
+    justify-content: center;
+    animation: spin infinite 3s linear;
+    height: 30vmax;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg) }
+    to { transform: rotate(360deg) }
+}

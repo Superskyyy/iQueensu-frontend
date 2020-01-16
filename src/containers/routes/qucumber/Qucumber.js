@@ -1,11 +1,13 @@
-import React from "react"
+// Packages
+import React                 from "react";
 import {NavLink, withRouter} from "react-router-dom";
-import XHelmet from "../../../components/accessories/XHelmet";
-import {qucumber} from "../../../assets/exportImages";
+//
+import {qucumber}            from "../../../assets/exportImages";
+import XHelmet               from "../../../components/accessories/XHelmet";
 
-class Qucumber extends React.Component{
+class Qucumber extends React.Component {
     render() {
-        return(
+        return (
             <React.Fragment>
                 <XHelmet title={"Qucumber"} favicon={qucumber}/>
                 <header>
