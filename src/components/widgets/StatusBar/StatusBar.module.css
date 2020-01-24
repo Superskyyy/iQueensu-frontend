@@ -1,0 +1,35 @@
+.validBg{
+    background-color: #e7efe8;
+}
+
+.nonValidBg{
+    background-color: #f8ecec;
+}
+
+.levelStatus{
+    line-height: 40px;
+}
+
+.levelStatusRight{
+    line-height: 40px;
+    margin-right: 1rem;
+
+    font-weight: 600;
+}
+
+.validTx{
+    color: #2d8e34;
+}
+
+.nonValidTx{
+    color: #ad2121;
+}
+
+.levelStatusBar{
+    height: 40px;
+    
+    border-radius: 4px;
+    margin-top: 3px;
+    display: flex;
+    justify-content: space-between;
+}

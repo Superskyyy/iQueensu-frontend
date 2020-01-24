@@ -1,7 +1,7 @@
 // Packages
 import React, {Fragment, PureComponent} from 'react';
 //
-import Sanbai                           from '../../assets/images/logos/BEASTSanBei.png';
+import Sanbai from '../../assets/images/logos/BEASTSanBei.png';
 // Styles
 import styles from './ProfilePicButton.module.css';
 

@@ -39,6 +39,26 @@ react, react-dom, react-router-dom, redux, react-redux,
 
 <a name="getstart"/><br/>
 ## Get Start
+
+### `fetch the Project`
+
+<pre><code>git clone https://github.com/Superskyyy/iQueensu-frontend.git</code></pre>
+
+then checkout local branches
+
+<pre><code>git branch</code></pre>
+
+to create your own branch:
+
+<pre><code>git checkout -b {your_branch_name}</code></pre>
+
+to merge the latest code from master branch:
+<pre><code>git checkout master
+git pull
+git checkout {existing_local_branch_name}
+git merge master</code></pre>
+
+
 ### `yarn install`
 
 Installs packeages & dependencies for the project
