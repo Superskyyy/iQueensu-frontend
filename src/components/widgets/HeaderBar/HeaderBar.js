@@ -20,7 +20,7 @@ class HeaderBar extends React.Component {
                         <div className={styles.QNavBarList}>
                             {/* change css to design in left card.css */}
                             <NavLink to={"/qucumber"} className={styles.QLogo}>
-                                <img width={28.2} height={28.2} src={qucumberIcon}/>
+                                <img width={28.2} height={28.2} src={qucumberIcon} alt={"qcumberIcon"}/>
                             </NavLink>
 
                             {/* or refactor into a separate component */}

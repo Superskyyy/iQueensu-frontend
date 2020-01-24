@@ -17,7 +17,7 @@ class ProfilePicButton extends PureComponent {
             // getUserIcon();
         } else {
             const generatedIcon =
-                <img className={styles.Icon} src={Sanbai}/>;
+                <img className={styles.Icon} src={Sanbai} alt="userProfilePicture"/>;
 
             this.setState({icon: generatedIcon});
         }
