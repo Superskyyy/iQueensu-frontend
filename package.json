@@ -8,7 +8,7 @@
         "test": "jest",
         "test-continuous": "react-scripts test",
         "lint": "eslint src",
-        "precommit": "yarn run lint",
+        "precommit": "yarn run lint"
     },
     "eslintConfig": {
         "extends": "react-app"
