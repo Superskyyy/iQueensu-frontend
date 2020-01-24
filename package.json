@@ -7,8 +7,12 @@
         "build": "react-scripts build",
         "test": "jest",
         "test-continuous": "react-scripts test",
-        "lint": "eslint eslint --ext .js",
-        "precommit": "yarn run lint"
+        "lint": "eslint eslint --ext .js"
+    },
+    "husky": {
+        "hooks": {
+          "pre-commit": "yarn run lint"
+        }
     },
     "eslintConfig": {
         "extends": "react-app"
