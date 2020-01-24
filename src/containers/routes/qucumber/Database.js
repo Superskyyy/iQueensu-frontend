@@ -29,8 +29,6 @@ class Database extends React.Component {
         return (
             <React.Fragment>
                 <section className={styles.Wrapper}>
-                    <HeaderBar hasRightAlignedItems={true}/>
-
                     <img className={styles.Logo} src={DatabaseLogo} alt={"DatabaseLogo"}/>
                     <div className={styles.TitleBar}>
                         {/* need to intl-format */}

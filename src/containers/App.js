@@ -13,9 +13,7 @@ import styles                                from './App.module.css';
 import Home                                  from "./routes/Home";
 import NotFound                              from "./routes/NotFound";
 import Qhousing                              from "./routes/qhousing/Qhousing";
-import CoursePage                            from './routes/qucumber/course/CoursePage';
-import Database                              from "./routes/qucumber/Database";
-import Qucumber                              from "./routes/qucumber/Qucumber";
+import QcumberLayout from './routes/qucumber/QcumberLayout';
 
 class App extends Component {
     constructor(props) {
@@ -35,15 +33,18 @@ class App extends Component {
             <div className={styles.App}>
                 <main className={styles.MainContent}>
                     {/* remove later */}
-                    <Switch>
-                        <Route path="/" exact component={Home}/>
-                        <Route path="/404" exact component={NotFound}/>
-                        <Route path="/qhousing" exact component={Qhousing}/>
-                        <Route path="/qucumber" exact component={Qucumber}/>
-                        <Route path={"/database"} exact component={Database}/>
-                        <Route path={"/database/course"} exact component={CoursePage}/>
-                        <Redirect from="*" to="/404"/>
-                    </Switch>
+                    {/* <QcumberWrapper > */}
+                        <Switch>
+                            <Route path="/" exact component={Home}/>
+                            <Route path="/404" exact component={NotFound}/>
+                            <Route path="/qhousing" exact component={Qhousing}/>
+                            {/* <Route path="/qucumber" exact component={Qucumber}/> */}
+                            <Route path="/qucumber" exact component={QcumberLayout}/>
+                            <Route path={"/database"} exact component={QcumberLayout}/>
+                            <Route path={"/database/course"} exact component={QcumberLayout}/>
+                            <Redirect from="*" to="/404"/>
+                        </Switch>
+                    {/* </QcumberWrapper> */}
                 </main>
                 <Navigation>
                     <NavItem event={() => {

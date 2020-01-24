@@ -19,8 +19,6 @@ class CoursePage extends Component {
         return (
             // put this into a separate css file?
             <div className={styles.Wrapper}>
-                <HeaderBar hasRightAlignedItems={true}/>
-
                 <CourseWrapper>
                     {/* childern render first, because its part of property */}
                 </CourseWrapper>
