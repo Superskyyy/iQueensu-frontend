@@ -6,16 +6,11 @@ import styles from './CourseWrapper.module.css';
 
 class CourseWrapper extends React.Component{
 
-    constructor(props){
-        super(props);  
-    }
-
     componentDidMount(){
         this.props.getCourseTest("noUse");
     }
 
     render(){    
-        // console.log(this.props.currentCourse[0])
         return(
             <div  className={styles.coursePageDashBoard}>
                 {/* <Fragment> */}
