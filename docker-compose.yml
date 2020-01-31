@@ -5,7 +5,5 @@ services:
     build: .
     image: iqueensu_frontend:latest_dev
     command: yarn run start
-    volumes:
-      - .:/iqueensu
     ports:
       - "3000:3000"
