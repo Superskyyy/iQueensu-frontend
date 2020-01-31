@@ -9,5 +9,3 @@ RUN yarn install
 COPY . /iqueensu/
 
 EXPOSE 3000
-
-CMD ["yarn", "run", "start"]
