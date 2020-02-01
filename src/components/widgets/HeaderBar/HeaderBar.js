@@ -6,7 +6,7 @@ import qucumberIcon          from "../../../assets/images/logos/qucumber.svg";
 import Text                  from "../../../components/accessories/Text";
 // Styles
 import styles                from './HeaderBar.module.css';
-
+import scssStyles            from './HeaderBar.module.scss';
 // props:
 // hasRightAlignedItems (Optional): if containing any navlink that aligns to right
 
@@ -24,7 +24,7 @@ class HeaderBar extends React.Component {
                             </NavLink>
 
                             {/* or refactor into a separate component */}
-                            <NavLink to={"/qucumber"} className={styles.Qcumber} activeClassName="chosen" >Qcumber</NavLink>
+                            <NavLink to={"/qucumber"} className={scssStyles.Qcumber} activeClassName="chosen" >Qcumber</NavLink>
 
                             <NavLink to={"/"} activeClassName="chosen"><Text id={"home"}/></NavLink>
                             <NavLink to={"/database"} activeClassName="chosen">Database</NavLink>
