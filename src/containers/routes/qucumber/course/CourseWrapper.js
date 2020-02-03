@@ -61,7 +61,6 @@ class CourseWrapper extends React.Component{
                         {/* 有另外的api calls 来接收页面上的courseObj的前提条件们 */}
                         <div className={styles.mytable} style={{marginTop:"1.5rem"}}>
                             <div className={styles.column1}></div>
-                            <div className={styles.column5}></div>
                             <div className={styles.myrow}>
                                 <div className={styles.mycellHeader}>Prerequisite</div>
                             </div>
@@ -107,15 +106,16 @@ class CourseWrapper extends React.Component{
                                 {/* designed Component */}
                                 <div className={styles.mycellWholeRight}>{this.props.currentCourse.length < 1 ? null : this.props.currentCourse[0]["course_description"]}</div>
                             </div>
+
+                            <div className={styles.myrow}>
+                                <StatusBar
+                                    prerequisiteItem={"C- in CISC124"}
+                                    userGrade={"Not Taken Yet"}
+                                    valid={"nonValid"} />
+                            </div>
                         </div>
 
                     </div>
-
-
-
-
-
-
 
                     <div className={styles.coursePageRightPart}>
                         {/* temp */}
