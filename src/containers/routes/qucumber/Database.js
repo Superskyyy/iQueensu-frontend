@@ -11,6 +11,7 @@ import {CONTAINER_TYPES, MESSAGE_KEYS} from "../../../utilities/constants/consta
 import {getMessageByTypes}             from "../../../utilities/TypeHelper";
 // Styles
 import styles                          from './Database.module.css';
+import scssStyles                      from './Database.module.scss';
 
 class Database extends React.Component {
     // an example for customized onClick prop for 'CustomButton' component
@@ -29,7 +30,7 @@ class Database extends React.Component {
             <React.Fragment>
                 <section className={styles.Wrapper}>
                     <img className={styles.Logo} src={DatabaseLogo} alt={"DatabaseLogo"}/>
-                    <div className={styles.TitleBar}>
+                    <div className={scssStyles.TitleBar}>
                         {/* need to intl-format */}
                         <h1>Qcumber Database</h1>
                         <h2>Everything about a Queen's course</h2>

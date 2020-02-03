@@ -1,0 +1,22 @@
+@import "../../global_vars";
+
+.TitleBar {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.TitleBar > h1 {
+    font-family: $title-font;
+    font-size: 52px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.TitleBar > h2 {
+    font-family: $nav-link-font;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+}
