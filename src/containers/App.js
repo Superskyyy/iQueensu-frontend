@@ -3,17 +3,18 @@ import React, {Component}                    from 'react';
 import {connect}                             from "react-redux";
 import {Redirect, Route, Switch, withRouter} from "react-router-dom";
 //
-import Navigation, {NavItem}                 from "../components/layouts/Navigation";
-import actions                               from "../store/actions/root";
-import history                               from "../utils/history";
-import Footer                                from "../components/layouts/Footer";
+import Navigation, {NavItem} from "../components/layouts/Navigation";
+import actions               from "../store/actions/root";
+import history               from "../utils/history";
+import Footer                from "../components/layouts/Footer";
 // Styles
-import styles                                from './App.module.css';
+import styles                from './App.module.css';
 // Pages
-import Home                                  from "./routes/Home";
-import NotFound                              from "./routes/NotFound";
-import Qhousing                              from "./routes/qhousing/Qhousing";
-import QcumberLayout from './routes/qucumber/QcumberLayout';
+import Home                  from "./routes/Home";
+import NotFound              from "./routes/NotFound";
+import Qhousing              from "./routes/qhousing/Qhousing";
+import QcumberLayout         from './routes/qucumber/QcumberLayout';
+import LoginPage             from "./routes/login/LoginPage";
 
 class App extends Component {
     constructor(props) {
@@ -42,6 +43,7 @@ class App extends Component {
                             <Route path="/qucumber" exact component={QcumberLayout}/>
                             <Route path={"/database"} exact component={QcumberLayout}/>
                             <Route path={"/database/course"} exact component={QcumberLayout}/>
+                            <Route path={"/login_test"} exact component={LoginPage}/>
                             <Redirect from="*" to="/404"/>
                         </Switch>
                     {/* </QcumberWrapper> */}
