@@ -17,7 +17,7 @@ class HeaderBar extends React.Component {
                 <div className={styles.QHeader}>
                     {/* change h1 to nav items */}
                     <div className={styles.QNavBar}>
-                        <div className={styles.QNavBarList}>
+                        <div className={scssStyles.QNavBarList}>
                             {/* change css to design in left card.css */}
                             <NavLink to={"/qucumber"} className={styles.QLogo}>
                                 <img width={28.2} height={28.2} src={qucumberIcon} alt={"qcumberIcon"}/>
@@ -32,8 +32,8 @@ class HeaderBar extends React.Component {
                         </div>
                     </div>
                     {this.props.hasRightAlignedItems ?
-                        <div className={styles.QNavBarRight}>
-                            <div className={styles.SignUp}>
+                        <div className={scssStyles.QNavBarRight}>
+                            <div className={scssStyles.SignUp}>
                                 <NavLink to={"/about"}>Sign Up</NavLink>
                             </div>
                             <NavLink to={"/about"}>Sign In</NavLink>
