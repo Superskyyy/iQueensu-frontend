@@ -7,7 +7,6 @@ import {DatabaseLogo}                  from "../../../assets/exportImages";
 import messages                        from "../../../assets/languages/defaultMessage";
 import Card                            from "../../../components/widgets/Card/Card";
 import CustomNavButton                 from "../../../components/widgets/CustomNavButton/CustomNavButton";
-import HeaderBar                       from "../../../components/widgets/HeaderBar/HeaderBar";
 import {CONTAINER_TYPES, MESSAGE_KEYS} from "../../../utilities/constants/constants";
 import {getMessageByTypes}             from "../../../utilities/TypeHelper";
 // Styles
@@ -29,8 +28,6 @@ class Database extends React.Component {
         return (
             <React.Fragment>
                 <section className={styles.Wrapper}>
-                    <HeaderBar hasRightAlignedItems={true}/>
-
                     <img className={styles.Logo} src={DatabaseLogo} alt={"DatabaseLogo"}/>
                     <div className={styles.TitleBar}>
                         {/* need to intl-format */}

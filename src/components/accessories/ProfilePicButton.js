@@ -1,7 +1,7 @@
 // Packages
 import React, {Fragment, PureComponent} from 'react';
 //
-import Sanbai                           from '../../assets/images/logos/BEASTSanBei.png';
+import Sanbai from '../../assets/images/logos/BEASTSanBei.png';
 // Styles
 import styles from './ProfilePicButton.module.css';
 
@@ -17,7 +17,7 @@ class ProfilePicButton extends PureComponent {
             // getUserIcon();
         } else {
             const generatedIcon =
-                <img className={styles.Icon} src={Sanbai}/>;
+                <img className={styles.Icon} src={Sanbai} alt="userProfilePicture"/>;
 
             this.setState({icon: generatedIcon});
         }
