@@ -1,6 +1,46 @@
 @import "../../../containers/global_vars";
 
 .Qcumber{
-    // color: global_vars.$tx-selected-color !important;
-    color: $tx-selected-color !important
+    font-size: 24px !important;
+    margin: 0 8px 0 3px !important;
+    // use flex and align-content: center is prob better
+    padding: 22px 15px 28px 0 !important;
+    color: $tx-selected-color !important;
+}
+
+.SignUp {
+    border-radius: 4px;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.16);
+    background-color: #C8DFCB;
+}
+
+.QNavBarRight a,
+.QNavBarList a {
+    float: left;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0px 8px 0px 8px;
+    padding: 28px 15px;
+
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-family: $nav-link-font;
+}
+
+.QNavBarRight {
+    z-index: 10;
+    background-color: white;
+    text-align: center;
+    float: right;
+    margin-right: 200px;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.QNavBarRight a:hover,
+.QNavBarList a:hover {
+    color: #2D8E34;
+    font-weight: 600;
 }

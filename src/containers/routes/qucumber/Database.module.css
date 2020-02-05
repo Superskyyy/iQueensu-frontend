@@ -36,20 +36,4 @@
     margin-top: 80px;
 }
 
-.TitleBar {
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-}
 
-.TitleBar > h1 {
-    font-family: Raleway, sans-serif;
-    font-size: 36px;
-    margin-bottom: 0;
-}
-
-.TitleBar > h2 {
-    font-family: Raleway, sans-serif;
-    font-size: 16px;
-}
