@@ -12,13 +12,14 @@ import {getMessageByTypes}             from "../../../utilities/TypeHelper";
 // Styles
 import styles                          from './Database.module.css';
 import scssStyles                      from './Database.module.scss';
+import CustomSearch from "../../../components/widgets/CustomSearch/CustomSearch";
 
 class Database extends React.Component {
     // an example for customized onClick prop for 'CustomButton' component
-    onToggle = () => {
-        window.location.href = "/database/course";
+    // onToggle = () => {
+    //     window.location.href = "/database/course";
         // window.alert("this is a test");
-    };
+    // };
 
     render() {
 
@@ -34,6 +35,10 @@ class Database extends React.Component {
                         {/* need to intl-format */}
                         <h1>Qcumber Database</h1>
                         <h2>Everything about a Queen's course</h2>
+                    </div>
+
+                    <div className={scssStyles.search}>
+                        <CustomSearch />
                     </div>
 
                     <div className={styles.QcumberCardsWrapper}>

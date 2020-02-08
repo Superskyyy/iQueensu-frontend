@@ -1,0 +1,37 @@
+@import "../../../containers/global_vars";
+
+.Icon{
+    width: 17px;
+    height: 17px;
+    padding: 19px;
+}
+
+.Form{
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    height: 3.5rem;
+    border-radius: 4px;
+    display: flex;
+    padding: 2px;
+    align-items: center;
+}
+
+.Search{
+    font-family: $nav-link-font;
+    border: none;
+    height: 100%;
+    width: 100%;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.Search:focus{
+    outline: none;
+}
+
+.resultPanel{
+    width: 50rem;
+    display: flex;
+    flex-direction: column;
+}

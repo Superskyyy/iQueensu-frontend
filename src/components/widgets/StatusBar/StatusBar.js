@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import styles from './StatusBar.module.css';
-import checkMark from "../../../assets/images/Qucumber/checkMark.svg";
-import banMark from "../../../assets/images/Qucumber/banMark.svg";
+import checkMark from "../../../assets/images/Qcumber/checkMark.svg";
+import banMark from "../../../assets/images/Qcumber/banMark.svg";
 
 
 const StatusBar = props => {

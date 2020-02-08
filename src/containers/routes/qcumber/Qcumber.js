@@ -2,23 +2,24 @@
 import React                 from "react";
 import {NavLink, withRouter} from "react-router-dom";
 //
-import {qucumber}            from "../../../assets/exportImages";
+import {qcumber}            from "../../../assets/exportImages";
 import XHelmet               from "../../../components/accessories/XHelmet";
+import { URL_PATHS } from "../../../utilities/constants/constants";
 
-class Qucumber extends React.Component {
+class Qcumber extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <XHelmet title={"Qucumber"} favicon={qucumber}/>
+                <XHelmet title={"Qcumber"} favicon={qcumber}/>
                 <header>
-                    Qucumber
+                    Qcumber
                 </header>
                 <section>
-                    <NavLink to={"/database"}>Go to DataBase</NavLink><br/>
+                    <NavLink to={URL_PATHS.DATABASEPATH}>Go to DataBase</NavLink><br/>
                 </section>
             </React.Fragment>
         );
     }
 }
 
-export default withRouter(Qucumber);
+export default withRouter(Qcumber);
