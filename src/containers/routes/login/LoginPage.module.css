@@ -1,5 +1,6 @@
 .login{
-  width: 360px;
+  width: 424px;
+  height: 1000px;
   padding: 8% 0 0;
   margin: auto;
 }
@@ -7,14 +8,29 @@
   position: relative;
   z-index: 1;
   background: #FFFFFF;
-  max-width: 360px;
-  margin: 0 auto 100px;
-  padding: 45px;
+  max-width: 424px;
+  /*margin: 0 auto 100px;*/
+  padding: 25px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 .form.loginform{
   display: none;
+}
+.headtop{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+.img{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 30%;
 }
 .form input {
   font-family: "Roboto", sans-serif;
@@ -27,26 +43,26 @@
   box-sizing: border-box;
   font-size: 14px;
 }
-.form.func{
-  float: left;
+.func{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 100px;
 }
-.form button {
+.but1 {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
+  font-size: 14px;
   outline: 0;
   background: #4CAF50;
-  width: 100%;
+  width: 38%;
   border: 0;
-  padding: 15px;
+  padding: 10px;
   color: #FFFFFF;
-  font-size: 14px;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
   cursor: pointer;
+  border-radius: 6px;
 }
-.form button:hover,.form button:active,.form button:focus {
-  background: #43A047;
-}
+
 
 .form .change {
   margin: 15px 0 0;
@@ -59,12 +75,5 @@
 }
 
 body {
-  background: #76b852; /* fallback for old browsers */
-  background: -webkit-linear-gradient(right, #76b852, #8DC26F);
-  background: -moz-linear-gradient(right, #76b852, #8DC26F);
-  background: -o-linear-gradient(right, #76b852, #8DC26F);
   background: linear-gradient(to left, #76b852, #8DC26F);
-  font-family: "Roboto", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }

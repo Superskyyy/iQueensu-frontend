@@ -14,6 +14,7 @@ import Home                                  from "./routes/Home";
 import NotFound                              from "./routes/NotFound";
 import Qhousing                              from "./routes/qhousing/Qhousing";
 import QcumberLayout from './routes/qucumber/QcumberLayout';
+import LoginPage                             from "./routes/login/LoginPage";
 
 class App extends Component {
     constructor(props) {
@@ -42,6 +43,7 @@ class App extends Component {
                             <Route path="/qucumber" exact component={QcumberLayout}/>
                             <Route path={"/database"} exact component={QcumberLayout}/>
                             <Route path={"/database/course"} exact component={QcumberLayout}/>
+                            <Route path={"/login"} exact component={LoginPage}/>
                             <Redirect from="*" to="/404"/>
                         </Switch>
                     {/* </QcumberWrapper> */}
