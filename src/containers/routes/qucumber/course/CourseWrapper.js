@@ -2,7 +2,9 @@ import React from "react";
 import { connect } from "react-redux";
 import { getCourse } from "../../../../store/actions/courseActions";
 import StatusBar from "../../../../components/widgets/StatusBar/StatusBar";
+import CourseLoadBar from "../../../../components/widgets/CourseLoadBar/CourseLoadBar";
 import styles from './CourseWrapper.module.css';
+
 
 class CourseWrapper extends React.Component{
 
@@ -105,7 +107,25 @@ class CourseWrapper extends React.Component{
                             </div>
                             <div className={styles.myrow}>
                                 {/* designed Component */}
-                                <div className={styles.mycellWholeRight}>{this.props.currentCourse.length < 1 ? null : this.props.currentCourse[0]["course_description"]}</div>
+                                <div className={styles.mycellWholeRight}>
+                                    {/* a must have: the level bar */}
+                                    <CourseLoadBar
+                                        title1={"Lecture"}
+                                        title2={"Tutorial"}
+                                        title3={"Lab"}
+                                        title4={"Practice"}
+                                        title5={"Total"}
+                                        title6={"Load"}
+                                        
+                                        lecture={"3 h/week"}
+                                        tutorial={"-"}
+                                        lab={"1 h/week"}
+                                        practice={"6 h/week"}
+                                        total={"10 h/week"}
+                                        totalPerTerm={"12 h/term"}
+                                        load={"Regular"} />
+
+                                </div>
                             </div>
                         </div>
 

@@ -1,0 +1,71 @@
+
+
+
+/*Non-Header tag*/
+.levelContent{
+    background-color: white;
+    width: 120px;
+    height: 39px;
+    object-fit: contain;
+    font-family: OpenSans;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-align: left;
+    color: #4d4f5c;
+}
+
+.termTotal{
+    background-color: white;
+    width: 120px;
+    height: 17px;
+    opacity: 0.7;
+    object-fit: contain;
+    font-size: 12px;
+    font-family: OpenSans;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: normal;
+    text-align: left;
+    color: #4d4f5c;
+}
+
+.headS{
+    height: 45px;
+    width: 812px;
+
+    display: flex;
+    justify-content: space-around;
+
+    opacity: 0.02;
+    background-color:#3e3e3e;
+}
+
+.levelCourseLoadBar{
+    height: 45px;
+    width: 812px;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.headTitle{
+    width: 57px;
+    height: 19px;
+    object-fit: contain;
+    font-family: OpenSans;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.36;
+    letter-spacing: normal;
+    text-align: left;
+    color: #3e3e3e;
+    justify-content: space-around;
+}
