@@ -110,19 +110,20 @@ class CourseWrapper extends React.Component{
                                 <div className={styles.mycellWholeRight}>
                                     {/* a must have: the level bar */}
                                     <CourseLoadBar
-                                        title1={"Lecture"}
-                                        title2={"Tutorial"}
-                                        title3={"Lab"}
-                                        title4={"Practice"}
-                                        title5={"Total"}
-                                        title6={"Load"}
+                                        tableHeaders = {["Lecture", "Tutorial", "Lab", "Practice", "Total", "Load"]}
+                                        // title1={"Lecture"}
+                                        // title2={"Tutorial"}
+                                        // title3={"Lab"}
+                                        // title4={"Practice"}
+                                        // title5={"Total"}
+                                        // title6={"Load"}
                                         
                                         lecture={"3 h/week"}
                                         tutorial={"-"}
                                         lab={"1 h/week"}
                                         practice={"6 h/week"}
                                         total={"10 h/week"}
-                                        totalPerTerm={"12 h/term"}
+                                        totalPerTerm={"120 h/term"}
                                         load={"Regular"} />
 
                                 </div>

@@ -3,59 +3,73 @@ import styles from './CourseLoadBar.module.css';
 
 
 const CourseLoadBar = props => {
+
+    let tableHeaders = props.tableHeaders;
+
+
     return(
         <Fragment>
-            {/*title row*/}
-            <div className={`${styles.levelCourseLoadBar} ${styles.headS}`}>
+            <div className={styles.headS}>
+                <div className={styles.tableHeadWrapper}>
+                {tableHeaders.map(header => {
+                    return(
+                        <div className={styles.tableHead}>
+                            <span className={styles.headTitle} >{header}</span>
+                        </div>)})
+                }
+                </div>
                 {/* Lecture */}
-                <div style={{display:"flex"}}>
+                {/* <div className={styles.tableHead} style={{marginLeft: '32px'}}>
                     <span className={styles.headTitle} >{props.title1}</span>
-                </div>
+                </div> */}
                 {/* Tutorial */}
-                <div style={{display:"flex"}}>
+                {/* <div className={styles.tableHead}>
                     <span className={styles.headTitle} >{props.title2}</span>
-                </div>
+                </div> */}
                 {/* Lab */}
-                <div style={{display:"flex"}}>
+                {/* <div className={styles.tableHead}>
                     <span className={styles.headTitle} >{props.title3}</span>
-                </div>
+                </div> */}
                 {/* Practice */}
-                <div style={{display:"flex"}}>
+                {/* <div className={styles.tableHead}>
                     <span className={styles.headTitle} >{props.title4}</span>
-                </div>
+                </div> */}
                 {/* Total */}
-                <div style={{display:"flex"}}>
+                {/* <div className={styles.tableHead}>
                     <span className={styles.headTitle} >{props.title5}</span>
-                </div>
+                </div> */}
                 {/* Load */}
-                <div style={{display:"flex"}}>
+                {/* <div className={styles.tableHead}>
                     <span className={styles.headTitle} >{props.title6}</span>
-                </div>
+                </div> */}
             </div>
             {/* content row */}
-            <div className={`${styles.levelCourseLoadBar}`}>
+            {/* the className needs change */}
+            <div className={styles.tableContentWrapper}>
                 {/* Lecture */}
-                <div style={{display:"flex"}}>
+                <div className={styles.tableCell}>
                     <span className={styles.levelContent} >{props.lecture}</span>
                 </div>
                 {/* Tutorial */}
-                <div style={{display:"flex"}}>
+                <div className={styles.tableCell}>
                     <span className={styles.levelContent} >{props.tutorial}</span>
                 </div>
                 {/* Lab */}
-                <div style={{display:"flex"}}>
+                <div className={styles.tableCell}>
                     <span className={styles.levelContent} >{props.lab}</span>
                 </div>
                 {/* Practice */}
-                <div style={{display:"flex"}}>
+                <div className={styles.tableCell}>
                     <span className={styles.levelContent} >{props.practice}</span>
                 </div>
                 {/* Total */}
-                <div style={{display:"flex"}}>
+                <div className={styles.tableCell}>
                     <span className={styles.levelContent} >{props.total}</span>
+                    <br />
+                    <span className={styles.termTotal} >{props.totalPerTerm}</span>
                 </div>
                 {/* Load */}
-                <div style={{display:"flex"}}>
+                <div className={styles.tableCell}>
                     <span className={styles.levelContent} >{props.load}</span>
                 </div>
             </div>

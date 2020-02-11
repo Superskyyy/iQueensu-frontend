@@ -7,7 +7,7 @@
     width: 120px;
     height: 39px;
     object-fit: contain;
-    font-family: OpenSans;
+    /* font-family: OpenSans; */
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -37,20 +37,7 @@
 .headS{
     height: 45px;
     width: 812px;
-
-    display: flex;
-    justify-content: space-around;
-
-    opacity: 0.02;
-    background-color:#3e3e3e;
-}
-
-.levelCourseLoadBar{
-    height: 45px;
-    width: 812px;
-
-    display: flex;
-    justify-content: space-around;
+    background-color:#efefef;
 }
 
 
@@ -58,7 +45,7 @@
     width: 57px;
     height: 19px;
     object-fit: contain;
-    font-family: OpenSans;
+    /* font-family: OpenSans; */
     font-size: 14px;
     font-weight: bold;
     font-stretch: normal;
@@ -66,6 +53,39 @@
     line-height: 1.36;
     letter-spacing: normal;
     text-align: left;
-    color: #3e3e3e;
+    color: #4d4f5c;
     justify-content: space-around;
+}
+
+
+.tableHead{
+    width: 120px;
+    /* text-align: center; */
+}
+
+.tableCell{
+    width: 120px;
+}
+
+.tableHeadWrapper{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    margin-left: 32px;
+}
+
+.tableContentWrapper{
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    margin-left: 32px;
 }
