@@ -4,6 +4,7 @@ import classes from './CustomSearch.module.scss';
 import iconSearch from '../../../assets/images/Qcumber/icons-search.svg';
 import { withRouter } from 'react-router-dom';
 import { URL_PATHS } from '../../../utilities/constants/constants';
+import { fetchSearchResult } from '../../../utilities/SearchActions/fetchSearchResult';
 
 class CustomSearch extends Component{
     constructor(props) {
@@ -64,7 +65,14 @@ class CustomSearch extends Component{
             this.makeApiCall(this.state.inputValue);
         }
     }
-
+    handleSearchResult = (res) => {
+        res.json().then(result => {
+            this.setState({
+                results: result
+            });
+        })
+    }
+    
     makeApiCall = (searchInput, additionalFilter="") => {
         // let mockFilter= {
         //     [COURSEFILTER.NUMBER]: 888,
@@ -73,19 +81,22 @@ class CustomSearch extends Component{
 
         // let mockFilter = "&number=...&subjectname="
 
-        fetch(`${window.api_root['iqueensu']}/api/v1/qcumber/courses/?search=${searchInput}${additionalFilter}`, {
-            mode: 'cors',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            method: 'GET',
-        })
-            .then(response => {
-                return response.json();
-            })
-            .then(jsonData => {
-                this.setState({ results: jsonData});
-            });
+        // fetch(`${window.api_root['iqueensu']}/api/v1/qcumber/courses/?search=${searchInput}${additionalFilter}`, {
+        //     mode: 'cors',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     method: 'GET',
+        // })
+        //     .then(response => {
+        //         return response.json();
+        //     })
+        //     .then(jsonData => {
+        //         this.setState({ results: jsonData});
+        //     });
+
+        fetchSearchResult(searchInput, additionalFilter, this.handleSearchResult);
+        
     };
 
 
