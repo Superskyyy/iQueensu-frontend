@@ -26,7 +26,7 @@ class CustomSearch extends Component{
     }
 
     mockFilter = (input) =>{
-        console.log("mock: " + input);
+        // console.log("mock: " + input);
         //return colourOptions;
 
         return colourOptions.filter(i =>
@@ -34,9 +34,9 @@ class CustomSearch extends Component{
           );
     }
 
-    componentDidMount(){
-        console.log(this.props.history);
-    }
+    // componentDidMount(){
+    //     console.log(this.props.history);
+    // }
 
     mockLoad = (input, callback) =>{
         setTimeout(()=>{
@@ -66,14 +66,19 @@ class CustomSearch extends Component{
     }
 
     makeApiCall = searchInput => {
-        var searchUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`;
-        fetch(searchUrl)
+        console.log(window.api_root['iqueensu']);
+        //var searchUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`;
+        fetch(`${window.api_root['iqueensu']}/api/v1/qcumber/courses?search=${searchInput}`, {
+            method: 'GET',
+            credentials: 'same-origin'
+        })
             .then(response => {
+                console.log(response)
                 return response.json();
             })
             .then(jsonData => {
-                console.log(jsonData.meals);
-                this.setState({ results: jsonData.meals });
+                console.log(jsonData[0]);
+                this.setState({ results: jsonData[0] });
             });
     };
 
@@ -96,8 +101,8 @@ class CustomSearch extends Component{
                         <div className={classes.resultPanel}>
                         {this.state.results.map((meal, index) => (
                         <div key={index}>
-                        <h1>{meal.strMeal}</h1>
-                        <img src={meal.strMealThumb} style={{width:'100px'}} alt="meal-thumbnail" />
+                        <h1>{meal.subject_name}</h1>
+                        {/* <img src={meal.strMealThumb} style={{width:'100px'}} alt="meal-thumbnail" /> */}
                         </div>
                         ))}
                         </div>
