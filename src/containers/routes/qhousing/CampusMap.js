@@ -1,10 +1,10 @@
 // Packages
 import React, {Component, Fragment}   from 'react';
 //
-import GoogleMap                      from "../../../components/widgets/GoogleMap";
-import SearchBar                      from "../../../components/widgets/SearchBar";
+import GoogleMap                      from "../../../components/widgetsDeprecated/GoogleMap";
+import SearchBar                      from "../../../components/widgetsDeprecated/SearchBar";
 import {MockPlaces, QueensUniversity} from "../../../assets/exportLocations";
-import Marker                         from "../../../components/accessories/Marker";
+import Marker                         from "../../../components/accessoriesDeprecated/Marker";
 // Styles
 import styles                         from "./CampusMap.module.css";
 

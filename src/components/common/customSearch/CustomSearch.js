@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {colourOptions} from './Options/CourseOptions';
 import classes from './CustomSearch.module.scss';
 import iconSearch from '../../../assets/images/Qcumber/icons-search.svg';
 import { withRouter } from 'react-router-dom';
@@ -26,29 +25,6 @@ class CustomSearch extends Component{
         return inputChange;
     }
 
-    mockFilter = (input) =>{
-        // console.log("mock: " + input);
-        //return colourOptions;
-
-        return colourOptions.filter(i =>
-            i.label.includes(input)
-          );
-    }
-
-    // componentDidMount(){
-    //     console.log(this.props.history);
-    // }
-
-    mockLoad = (input, callback) =>{
-        setTimeout(()=>{
-            callback(this.mockFilter(input));
-        }, 1000);
-    }
-
-    // handleKey = (event) => {
-    //     console.log(event)
-    // }
-
     onSubmit = (event) => {
 
         if(event){
@@ -74,26 +50,11 @@ class CustomSearch extends Component{
     }
     
     makeApiCall = (searchInput, additionalFilter="") => {
+        // additionalFilter format: "&number=...&subjectname=..."
         // let mockFilter= {
         //     [COURSEFILTER.NUMBER]: 888,
             
         // }
-
-        // let mockFilter = "&number=...&subjectname="
-
-        // fetch(`${window.api_root['iqueensu']}/api/v1/qcumber/courses/?search=${searchInput}${additionalFilter}`, {
-        //     mode: 'cors',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     method: 'GET',
-        // })
-        //     .then(response => {
-        //         return response.json();
-        //     })
-        //     .then(jsonData => {
-        //         this.setState({ results: jsonData});
-        //     });
 
         fetchSearchResult(searchInput, additionalFilter, this.handleSearchResult);
         

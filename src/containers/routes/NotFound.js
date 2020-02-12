@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import {NavLink, withRouter}        from "react-router-dom";
 //
-import Text                         from "../../components/accessories/Text";
+import Text                         from "../../components/accessoriesDeprecated/Text";
 
 class NotFound extends Component {
     render() {

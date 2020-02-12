@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import QcumberWrapper from './QcumberWrapper';
-import Database from './Database';
+import Database from './databasePage/Database';
 import Qcumber from './Qcumber';
-import CoursePage from './course/CoursePage';
-import SearchPage from './SearchPage/SearchPage';
+import CoursePage from './coursePage/CoursePage';
+import SearchPage from './searchPage/SearchPage';
 import { URL_PATHS } from '../../../utilities/constants/constants';
 
 

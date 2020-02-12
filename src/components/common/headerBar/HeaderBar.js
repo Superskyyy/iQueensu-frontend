@@ -3,7 +3,7 @@ import React, {Fragment}     from "react";
 import {NavLink, withRouter} from "react-router-dom";
 //
 import qcumberIcon          from "../../../assets/images/logos/qcumber.svg";
-import Text                  from "../../../components/accessories/Text";
+import Text                  from "../../accessoriesDeprecated/Text";
 // Styles
 import styles                from './HeaderBar.module.css';
 import scssStyles            from './HeaderBar.module.scss';

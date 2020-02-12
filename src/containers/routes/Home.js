@@ -3,9 +3,9 @@ import React, {Component, Fragment} from 'react';
 import {NavLink, withRouter}        from "react-router-dom";
 //
 import {logo}                       from "../../assets/exportImages";
-import ProfilePicButton             from '../../components/accessories/ProfilePicButton';
-import Text                         from "../../components/accessories/Text";
-import XHelmet                      from "../../components/accessories/XHelmet";
+import ProfilePicButton             from '../../components/accessoriesDeprecated/ProfilePicButton';
+import Text                         from "../../components/accessoriesDeprecated/Text";
+import XHelmet                      from "../../components/accessoriesDeprecated/XHelmet";
 // Styles
 import styles                       from './Home.module.css';
 import { URL_PATHS } from '../../utilities/constants/constants';

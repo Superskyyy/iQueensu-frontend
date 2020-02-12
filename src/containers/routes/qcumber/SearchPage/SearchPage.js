@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import CustomSearch from '../../../../components/widgets/CustomSearch/CustomSearch';
+import CustomSearch from '../../../../components/common/customSearch/CustomSearch';
 import classes from './SearchPage.module.scss';
 
 class SearchPage extends Component {

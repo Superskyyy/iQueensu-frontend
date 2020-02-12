@@ -3,16 +3,16 @@ import React                           from "react";
 import {injectIntl}                    from "react-intl";
 import {withRouter}                    from "react-router-dom";
 //
-import {DatabaseLogo}                  from "../../../assets/exportImages";
-import messages                        from "../../../assets/languages/defaultMessage";
-import Card                            from "../../../components/widgets/Card/Card";
-import CustomNavButton                 from "../../../components/widgets/CustomNavButton/CustomNavButton";
-import {CONTAINER_TYPES, MESSAGE_KEYS} from "../../../utilities/constants/constants";
-import {getMessageByTypes}             from "../../../utilities/TypeHelper";
+import {DatabaseLogo}                  from "../../../../assets/exportImages";
+import messages                        from "../../../../assets/languages/defaultMessage";
+import Card                            from "./Card/Card";
+import CustomNavButton                 from "../../../../components/common/customNavButton/CustomNavButton";
+import {CONTAINER_TYPES, MESSAGE_KEYS} from "../../../../utilities/constants/constants";
+import {getMessageByTypes}             from "../../../../utilities/TypeHelper";
 // Styles
 import styles                          from './Database.module.css';
 import scssStyles                      from './Database.module.scss';
-import CustomSearch from "../../../components/widgets/CustomSearch/CustomSearch";
+import CustomSearch from "../../../../components/common/customSearch/CustomSearch";
 
 class Database extends React.Component {
     // an example for customized onClick prop for 'CustomButton' component

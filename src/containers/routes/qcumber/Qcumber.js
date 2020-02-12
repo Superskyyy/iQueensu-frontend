@@ -3,7 +3,7 @@ import React                 from "react";
 import {NavLink, withRouter} from "react-router-dom";
 //
 import {qcumber}            from "../../../assets/exportImages";
-import XHelmet               from "../../../components/accessories/XHelmet";
+import XHelmet               from "../../../components/accessoriesDeprecated/XHelmet";
 import { URL_PATHS } from "../../../utilities/constants/constants";
 
 class Qcumber extends React.Component {
