@@ -65,11 +65,11 @@ class CustomSearch extends Component{
         }
     }
 
-    makeApiCall = (searchInput, additionalFilter=none) => {
-        let mockFilter= {
-            [COURSEFILTER.NUMBER]: 888,
+    makeApiCall = (searchInput, additionalFilter="") => {
+        // let mockFilter= {
+        //     [COURSEFILTER.NUMBER]: 888,
             
-        }
+        // }
 
         // let mockFilter = "&number=...&subjectname="
 
