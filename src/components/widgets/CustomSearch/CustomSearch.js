@@ -65,20 +65,26 @@ class CustomSearch extends Component{
         }
     }
 
-    makeApiCall = searchInput => {
-        console.log(window.api_root['iqueensu']);
-        //var searchUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`;
-        fetch(`${window.api_root['iqueensu']}/api/v1/qcumber/courses?search=${searchInput}`, {
+    makeApiCall = (searchInput, additionalFilter=none) => {
+        let mockFilter= {
+            [COURSEFILTER.NUMBER]: 888,
+            
+        }
+
+        // let mockFilter = "&number=...&subjectname="
+
+        fetch(`${window.api_root['iqueensu']}/api/v1/qcumber/courses/?search=${searchInput}${additionalFilter}`, {
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json'
+            },
             method: 'GET',
-            credentials: 'same-origin'
         })
             .then(response => {
-                console.log(response)
                 return response.json();
             })
             .then(jsonData => {
-                console.log(jsonData[0]);
-                this.setState({ results: jsonData[0] });
+                this.setState({ results: jsonData});
             });
     };
 
