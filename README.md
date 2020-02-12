@@ -18,6 +18,12 @@ iQueensu Web Front End Project
     </tr>
 </table>
 
+## Simple Rules
+### Please READ the doc below to be familiar with common rules for our project:
+[DOC](https://docs.google.com/document/d/19SATk4z9062YO6xHbVg4HXVHWMZjmaxvemcgO10-FTU/edit?ts=5e2cf94d)
+if you don't have access, please contact Superskyyy
+
+
 ## Project Information
 Dependencies:
 react, react-dom, react-router-dom, redux, react-redux,
