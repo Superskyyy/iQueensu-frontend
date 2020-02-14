@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import HeaderBar from '../../../components/widgets/HeaderBar/HeaderBar';
+import HeaderBar from '../../../components/common/headerBar/HeaderBar';
 
 const QcumberWrapper = (props) => {
     return(<div>

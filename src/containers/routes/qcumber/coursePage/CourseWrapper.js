@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { getCourse } from "../../../../store/actions/courseActions";
-import StatusBar from "../../../../components/widgets/StatusBar/StatusBar";
+import StatusBar from "../../../../components/common/statusBar/StatusBar";
 import styles from './CourseWrapper.module.css';
 
 class CourseWrapper extends React.Component{

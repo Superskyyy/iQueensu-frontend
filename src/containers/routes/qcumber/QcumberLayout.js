@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
 import QcumberWrapper from './QcumberWrapper';
-import Database from './Database';
-import Qucumber from './Qucumber';
-import CoursePage from './course/CoursePage';
+import Database from './databasePage/Database';
+import Qcumber from './Qcumber';
+import CoursePage from './coursePage/CoursePage';
+import SearchPage from './searchPage/SearchPage';
+import { URL_PATHS } from '../../../utilities/constants/constants';
 
 
 class QcumberLayout extends Component{
     PageContent = () => {
         switch(this.props.match.url){
-            case "/database":
+            case URL_PATHS.DATABASEPATH:
                 return <Database />
-            case "/database/course":
+            case URL_PATHS.DATABASECOURSEPATH:
                 return <CoursePage />
+            case URL_PATHS.DATABASESEARCHPATH:
+                return <SearchPage />
             default:
-                return <Qucumber />
+                return <Qcumber />
         }
     }
     render(){

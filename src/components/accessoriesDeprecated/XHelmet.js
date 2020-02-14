@@ -8,8 +8,8 @@ const XHelmet = (props) => (
     <Fragment>
         <Helmet>
             <meta charSet="utf-8"/>
-            <link rel="icon" href={"../../assets/logos/qucumber.svg"} type="image/x-icon"/>
-            <link rel="shortcut icon" href={"../../assets/logos/qucumber.svg"} type="image/x-icon"/>
+            <link rel="icon" href={"../../assets/logos/qcumber.svg"} type="image/x-icon"/>
+            <link rel="shortcut icon" href={"../../assets/logos/qcumber.svg"} type="image/x-icon"/>
             <meta
                 name="viewport"
                 content="width=device-width, initial-scale=1, shrink-to-fit=no"

@@ -3,22 +3,23 @@ import React                           from "react";
 import {injectIntl}                    from "react-intl";
 import {withRouter}                    from "react-router-dom";
 //
-import {DatabaseLogo}                  from "../../../assets/exportImages";
-import messages                        from "../../../assets/languages/defaultMessage";
-import Card                            from "../../../components/widgets/Card/Card";
-import CustomNavButton                 from "../../../components/widgets/CustomNavButton/CustomNavButton";
-import {CONTAINER_TYPES, MESSAGE_KEYS} from "../../../utilities/constants/constants";
-import {getMessageByTypes}             from "../../../utilities/TypeHelper";
+import {DatabaseLogo}                  from "../../../../assets/exportImages";
+import messages                        from "../../../../assets/languages/defaultMessage";
+import Card                            from "./Card/Card";
+import CustomNavButton                 from "../../../../components/common/customNavButton/CustomNavButton";
+import {CONTAINER_TYPES, MESSAGE_KEYS} from "../../../../utilities/constants/constants";
+import {getMessageByTypes}             from "../../../../utilities/TypeHelper";
 // Styles
 import styles                          from './Database.module.css';
 import scssStyles                      from './Database.module.scss';
+import CustomSearch from "../../../../components/common/customSearch/CustomSearch";
 
 class Database extends React.Component {
     // an example for customized onClick prop for 'CustomButton' component
-    onToggle = () => {
-        window.location.href = "/database/course";
+    // onToggle = () => {
+    //     window.location.href = "/database/course";
         // window.alert("this is a test");
-    };
+    // };
 
     render() {
 
@@ -34,6 +35,10 @@ class Database extends React.Component {
                         {/* need to intl-format */}
                         <h1>Qcumber Database</h1>
                         <h2>Everything about a Queen's course</h2>
+                    </div>
+
+                    <div className={scssStyles.search}>
+                        <CustomSearch />
                     </div>
 
                     <div className={styles.QcumberCardsWrapper}>
