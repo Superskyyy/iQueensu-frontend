@@ -77,8 +77,6 @@ class CustomSearch extends Component{
                     <div className={ this.state.isDropdownOpen ? `${classes.searchDropdown} ${classes.open}` : `${classes.searchDropdown}` }>
                         <button className={`${classes.button} ${classes.dropdownToggle}`} onClick={this.toggleDropdown} type="button">
                         <span className={classes.toggleActive}>Everything</span>
-                        {/* use another svg */}
-                        {/* <span className={"ion-arrow-down-b"}></span> */}
                         <img style={{marginLeft: '4px'}} src={this.state.isDropdownOpen ? iconArrowUp : iconArrowDown } alt={"dropdown"} />
                         </button>
                         {/* optimize dropdown */}
