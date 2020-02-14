@@ -3,7 +3,7 @@ import QcumberWrapper from './QcumberWrapper';
 import Database from './databasePage/Database';
 import Qcumber from './Qcumber';
 import CoursePage from './coursePage/CoursePage';
-import SearchPage from './searchPage/SearchPage';
+import SearchPage from './searchResultPage/SearchPage';
 import { URL_PATHS } from '../../../utilities/constants/constants';
 
 
