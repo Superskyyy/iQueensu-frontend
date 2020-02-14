@@ -1,7 +1,13 @@
 @import "../../../containers/global_vars";
 
+$brand-color: #2299ff;
+$input-height: 34px;
+$border-radius: 3px;
+$border-color: #999;
+$transition: 250ms all ease-in-out;
+
 .Icon{
-    width: 17px;
+    // width: 17px;
     height: 17px;
     padding: 19px;
 }
@@ -11,14 +17,13 @@
     height: 3.5rem;
     border-radius: 4px;
     display: flex;
-    padding: 2px;
+    //padding: 2px;
     align-items: center;
 }
 
 .Search{
     font-family: $nav-link-font;
     border: none;
-    height: 100%;
     width: 100%;
 
     font-weight: 600;
@@ -35,3 +40,83 @@
     display: flex;
     flex-direction: column;
 }
+
+.button {
+    cursor: pointer;
+    font-weight: 600;
+    font-family: $nav-link-font;
+    position: relative;
+    top: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    // float: left;
+    padding: 0 10px;
+    color: black;
+    //background-color: $brand-color;
+    border:none;
+    text-align: center;
+    transition: $transition;
+    background-color: white;
+    &:hover {
+      background-color: darken(rgba(0, 0, 0, 0.12), 10%);
+    }
+  }
+
+.searchDropdown {
+    position: relative;
+    top: 0;
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+    display: inline-block;
+    // float: left;
+    height: 100%;
+    // padding: 3px;
+
+    &.open .dropdownMenu {
+      display: block;
+    }
+  }
+
+  .dropdownToggle {
+    // height: $input-height - 6px;
+    font-size: 16px;
+    line-height: $input-height - 6px;
+    border-radius: $border-radius - 1px;
+    z-index: 3;
+  }
+
+  .dropdownMenu {
+    // width: 100%;
+    position: absolute;
+    top: calc(100% - 1px);
+    display: none;
+    margin: 0;
+    padding: 5px;
+    list-style: none;
+    background-color: #fff;
+    border: 1px solid $border-color;
+    border-bottom-right-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+    z-index: 3;
+    transition: $transition;
+
+    > li > a {
+      display: block;
+      padding: 4px 12px;
+      color: $brand-color;
+      font-size: 14px;
+      line-height: 20px;
+      text-decoration: none;
+      border-radius: $border-radius - 1;
+      transition: $transition;
+
+      &:hover {
+        color: #fff;
+        background-color: $brand-color;
+      }
+    }
+
+    > .menu-active {
+      display: none;
+    }
+  }
