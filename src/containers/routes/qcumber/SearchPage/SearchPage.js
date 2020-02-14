@@ -15,6 +15,8 @@ class SearchPage extends Component {
 
                 <div className={classes.coursePageCenterPart}>
                     <CustomSearch /> 
+
+                    {/* <ResultPanel /> */}
                 </div>
 
                 <div className={classes.coursePageRightPart}>
