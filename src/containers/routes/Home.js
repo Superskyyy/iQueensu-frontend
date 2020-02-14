@@ -3,11 +3,12 @@ import React, {Component, Fragment} from 'react';
 import {NavLink, withRouter}        from "react-router-dom";
 //
 import {logo}                       from "../../assets/exportImages";
-import ProfilePicButton             from '../../components/accessories/ProfilePicButton';
-import Text                         from "../../components/accessories/Text";
-import XHelmet                      from "../../components/accessories/XHelmet";
+import ProfilePicButton             from '../../components/accessoriesDeprecated/ProfilePicButton';
+import Text                         from "../../components/accessoriesDeprecated/Text";
+import XHelmet                      from "../../components/accessoriesDeprecated/XHelmet";
 // Styles
 import styles                       from './Home.module.css';
+import { URL_PATHS } from '../../utilities/constants/constants';
 
 class Home extends Component {
     render() {
@@ -20,13 +21,13 @@ class Home extends Component {
                             {/* <XHelmet title={"iQueensU"} favicon={logo}/>
                         <h3><Text id={"home"}/></h3>
                         <NavLink to={"/qhousing"}>Go Qhousing</NavLink><br/>
-                        <NavLink to={"/qucumber"}>Go Qucumber</NavLink><br/>
+                        <NavLink to={"/qcumber"}>Go Qcumber</NavLink><br/>
                         chosen can be for later use */}
                             <XHelmet title={"iQueensU"} favicon={logo}/>
                             <NavLink to={"/"} activeClassName="chosen"><Text id={"home"}/></NavLink>
                             <NavLink to={"/test1"} activeClassName="chosen"><Text id={"forum"}/></NavLink>
-                            <NavLink to={"/qhousing"} activeClassName="chosen">Qhousing</NavLink>
-                            <NavLink to={"/qucumber"} activeClassName="chosen">Qucumber</NavLink>
+                            <NavLink to={URL_PATHS.QHOUSINGPATH} activeClassName="chosen">Qhousing</NavLink>
+                            <NavLink to={URL_PATHS.QCUMBERPATH} activeClassName="chosen">Qcumber</NavLink>
                             <NavLink to={"/test3"} activeClassName="chosen"
                                      style={{"margin": "0px 59px 0px 8px"}}>Qwiki</NavLink>
                             <NavLink to={"/test4"} activeClassName="chosen"><Text id={"contact"}/></NavLink>

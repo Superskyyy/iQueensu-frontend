@@ -13,7 +13,8 @@ import styles                                from './App.module.css';
 import Home                                  from "./routes/Home";
 import NotFound                              from "./routes/NotFound";
 import Qhousing                              from "./routes/qhousing/Qhousing";
-import QcumberLayout from './routes/qucumber/QcumberLayout';
+import QcumberLayout from './routes/qcumber/QcumberLayout';
+import { URL_PATHS } from '../utilities/constants/constants';
 
 class App extends Component {
     constructor(props) {
@@ -37,11 +38,12 @@ class App extends Component {
                         <Switch>
                             <Route path="/" exact component={Home}/>
                             <Route path="/404" exact component={NotFound}/>
-                            <Route path="/qhousing" exact component={Qhousing}/>
-                            {/* <Route path="/qucumber" exact component={Qucumber}/> */}
-                            <Route path="/qucumber" exact component={QcumberLayout}/>
-                            <Route path={"/database"} exact component={QcumberLayout}/>
-                            <Route path={"/database/course"} exact component={QcumberLayout}/>
+                            <Route path={URL_PATHS.QHOUSINGPATH} exact component={Qhousing}/>
+                            {/* <Route path="/qcumber" exact component={Qcumber}/> */}
+                            <Route path={URL_PATHS.QCUMBERPATH} exact component={QcumberLayout}/>
+                            <Route path={URL_PATHS.DATABASEPATH} exact component={QcumberLayout}/>
+                            <Route path={URL_PATHS.DATABASECOURSEPATH} exact component={QcumberLayout}/>
+                            <Route path={URL_PATHS.DATABASESEARCHPATH} exact component={QcumberLayout}/>
                             <Redirect from="*" to="/404"/>
                         </Switch>
                     {/* </QcumberWrapper> */}
