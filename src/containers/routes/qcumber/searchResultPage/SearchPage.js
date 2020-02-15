@@ -125,7 +125,7 @@ class SearchPage extends Component {
         for(var property in logics){
 
             if(filteredResults.length === 0){
-                // AND properties, OR element in the same property
+                // Intersection properties, Union element in the same property, using lodash lib
                 if(logics[property].length > 0){
                     logics[property].map(logic => 
                         {
