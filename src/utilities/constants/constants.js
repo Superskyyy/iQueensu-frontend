@@ -24,3 +24,11 @@ export const URL_PATHS = {
     DATABASECOURSEPATH: '/database/course',
 
 }
+
+// Filters related
+export const FILTERS_COMMON = {
+    FIELD: 'field',
+    CHOICES: 'choices',
+    CHECKBOX: 'checkBox',
+    RANGESLIDER: 'rangeSlider'
+}

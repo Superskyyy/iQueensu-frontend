@@ -58,8 +58,8 @@ class CustomSearch extends Component{
         //     [COURSEFILTER.NUMBER]: 888,
             
         // }
-
-        fetchSearchResult(searchInput, additionalFilter, this.handleSearchResult);
+        console.log("call api");
+        fetchSearchResult(searchInput, additionalFilter, this.props.successHandler);
         
     };
 
@@ -98,19 +98,7 @@ class CustomSearch extends Component{
                             aria-label={"Search"} />
                     </form>
 
-                    {/* 想着怎么把这个result panel给抽出来 */}
-                    {this.state.results ? (
-                        <div className={classes.resultPanel}>
-                        {this.state.results.map((meal, index) => (
-                        <div key={index}>
-                        <h1>{meal.subject_name}</h1>
-                        {/* <img src={meal.strMealThumb} style={{width:'100px'}} alt="meal-thumbnail" /> */}
-                        </div>
-                        ))}
-                        </div>
-                        ) : (
-                        <p>Try searching for sth that has results</p>
-                        )}
+                    
 
                 </div>
         )
