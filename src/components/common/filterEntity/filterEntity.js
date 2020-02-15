@@ -8,9 +8,9 @@ const FilterEntity = (props) => {
     const getOptions = (choicesType) => {
         if (choicesType[FILTERS_COMMON.CHOICES].hasOwnProperty([FILTERS_COMMON.CHECKBOX])){
             return(
-                choicesType[FILTERS_COMMON.CHOICES][FILTERS_COMMON.CHECKBOX].map(choice =>{
+                choicesType[FILTERS_COMMON.CHOICES][FILTERS_COMMON.CHECKBOX].map((choice,id) =>{
                     return(
-                        <CheckBox onClick={props.checkboxFilterMethod} 
+                        <CheckBox key={id} onClick={props.checkboxFilterMethod} 
                             field={choicesType[FILTERS_COMMON.FIELD]} 
                             choice={choice}/>
                     );
@@ -19,7 +19,7 @@ const FilterEntity = (props) => {
         }
         else if (choicesType[FILTERS_COMMON.CHOICES].hasOwnProperty([FILTERS_COMMON.RANGE_SLIDER])){
             console.log('this is a range slider');
-            let choices = choicesType[FILTERS_COMMON.CHOICES][FILTERS_COMMON.RANGE_SLIDER];
+            //let choices = choicesType[FILTERS_COMMON.CHOICES][FILTERS_COMMON.RANGE_SLIDER];
             // return(
             //     <RangeSlider 
             //         // using index is okay but not the best way 

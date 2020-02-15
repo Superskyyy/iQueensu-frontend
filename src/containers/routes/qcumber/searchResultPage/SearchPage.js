@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import CustomSearch from '../../../../components/common/customSearch/CustomSearch';
 import classes from './SearchPage.module.scss';
 import FilterPanel from '../../../../components/common/filterPanel/FilterPanel';
 import {filterOptions} from './filterData';
 import SearchResultPanel from './searchResultPanel/SearchResultPanel';
 import { FILTERS_COMMON } from '../../../../utilities/constants/constants';
-import { element } from 'prop-types';
+import _ from 'lodash';
 
 class SearchPage extends Component {
     constructor(props) {
@@ -38,7 +38,18 @@ class SearchPage extends Component {
 
                 // tmp 
                 "diffculty_level": "Easy",
-            }],
+            },
+            {
+                "url": "/test4/",
+                "id": 90,
+                "number": "345",
+                "subject_code": "COMP",
+                "short_description": "This is a mock description4",
+
+                // tmp 
+                "diffculty_level": "Medium",
+            },
+        ],
 
             filteredSearchResults: [],
             filterLogics: {},
@@ -103,11 +114,7 @@ class SearchPage extends Component {
         return ;
     } 
     componentDidUpdate = (previousProps, previousState) =>{
-        // console.log(this.state.filterLogics)
-        // console.log(previousState.filterLogics)
-        // console.log(this.state.filterLogics)
         if(previousState.filterLogics !== this.state.filterLogics){
-            console.log('imhre')
             this.handleFilterResult(this.state.filterLogics);
         }
     } 
@@ -116,15 +123,37 @@ class SearchPage extends Component {
         let filteredResults = [];
 
         for(var property in logics){
-            console.log(property)
-            console.log(logics[property].length)
-            // AND properties, OR element in the same property
-            if(logics[property].length > 0){ //diffculty_level.length = 2
-                // A BETTER ALGORITHM TO FIGURE HOW TO DO OR / AND
-            }
 
+            if(filteredResults.length === 0){
+                // AND properties, OR element in the same property
+                if(logics[property].length > 0){
+                    logics[property].map(logic => 
+                        {
+                            let tmp = this.state.searchResults.filter(entity =>
+                                entity[property] === logic
+                            )
+                            
+                            filteredResults = filteredResults.concat(tmp);
+
+                            return "";
+                        }
+                        
+                    )
+            }}
+            else{
+                if(logics[property].length > 0){
+                    let tmp = [];
+                    logics[property].map(logic => 
+                        {
+                            let tmpp = filteredResults.filter(entity =>
+                                entity[property] === logic    
+                            )
+                            tmp = tmp.concat(tmpp);
+                            return "";
+                        })
+                    filteredResults = _.intersectionBy(tmp, filteredResults, 'id');
+            }}
         }
-        // console.log( filteredResults );
 
         this.setState({
             filteredSearchResults: filteredResults
@@ -136,7 +165,7 @@ class SearchPage extends Component {
     render(){
         return(
             <div  className={classes.coursePageDashBoard}>
-            {/* <Fragment> */}
+            <Fragment>
                 <div className={classes.coursePageLeftPart}>
 
                 </div>      
@@ -151,8 +180,11 @@ class SearchPage extends Component {
                         filterOptions={filterOptions}/>
 
                     <SearchResultPanel  
-                        results={ this.state.filteredSearchResults.length > 0 ?
-                             this.state.filteredSearchResults : this.state.searchResults}
+                    // optimize into a function, 如果logic里有，就显示filtered results; 没有就全部显示
+                        results={ ((this.state.filterLogics['diffculty_level'] && this.state.filterLogics['diffculty_level'].length > 0)
+                         || 
+                        (this.state.filterLogics['subject_code'] && this.state.filterLogics['subject_code'].length > 0))
+                        ? this.state.filteredSearchResults : this.state.searchResults}
                         // results={this.handleFilterResult([{[FILTERS_COMMON.FIELD]: 'diffculty_level', value: ['medium', 'hard']}])}
                     />
                 </div>
@@ -160,7 +192,7 @@ class SearchPage extends Component {
                 <div className={classes.coursePageRightPart}>
                     
                 </div> 
-            {/* </Fragment> */}
+            </Fragment>
         </div>
         )   
     }
