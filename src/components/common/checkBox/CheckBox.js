@@ -5,7 +5,7 @@ const CheckBox = (props) =>{
     return(
         <label className={classes.container}>
             {props.choice}
-            <input style={{marginLeft: '0px'}} id={props.choice} type={"checkBox"} />
+            <input onClick={e => props.onClick(e)} style={{marginLeft: '0px'}} id={props.field  + " " + props.choice} type={"checkBox"} />
             <span className={classes.checkMark}> </span>
             {/* </span><label for={props.choice}>{props.choice}</label> */}
         </label>

@@ -6,19 +6,20 @@ import CheckBox from '../checkBox/CheckBox';
 const FilterEntity = (props) => {
 
     const getOptions = (choicesType) => {
-        if (choicesType.hasOwnProperty([FILTERS_COMMON.CHECKBOX])){
-            console.log('these are check box options');
+        if (choicesType[FILTERS_COMMON.CHOICES].hasOwnProperty([FILTERS_COMMON.CHECKBOX])){
             return(
-                choicesType[FILTERS_COMMON.CHECKBOX].map(choice =>{
+                choicesType[FILTERS_COMMON.CHOICES][FILTERS_COMMON.CHECKBOX].map(choice =>{
                     return(
-                        <CheckBox choice={choice}/>
+                        <CheckBox onClick={props.checkboxFilterMethod} 
+                            field={choicesType[FILTERS_COMMON.FIELD]} 
+                            choice={choice}/>
                     );
                 })
             );
         }
-        else if (choicesType.hasOwnProperty([FILTERS_COMMON.RANGESLIDER])){
+        else if (choicesType[FILTERS_COMMON.CHOICES].hasOwnProperty([FILTERS_COMMON.RANGE_SLIDER])){
             console.log('this is a range slider');
-            let choices = choicesType[FILTERS_COMMON.RANGESLIDER];
+            let choices = choicesType[FILTERS_COMMON.CHOICES][FILTERS_COMMON.RANGE_SLIDER];
             // return(
             //     <RangeSlider 
             //         // using index is okay but not the best way 
@@ -35,9 +36,9 @@ const FilterEntity = (props) => {
     return(
         <Fragment>
             <div className={classes.wrapperClassName}>
-                <span className={classes.fieldName}>{props.entity[FILTERS_COMMON.FIELD]}</span>
+                <span className={classes.fieldName}>{props.entity[FILTERS_COMMON.DISPLAY_NAME]}</span>
                 <div className={classes.optionsPart}> 
-                    {getOptions(props.entity[FILTERS_COMMON.CHOICES])}
+                    {getOptions(props.entity)}
                 </div>  
             </div>
         </Fragment>

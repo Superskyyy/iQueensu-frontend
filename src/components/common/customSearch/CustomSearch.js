@@ -20,7 +20,6 @@ class CustomSearch extends Component{
 
     handleInputChange = (event) => {
         let inputChange = event.target.value;
-        // console.log(inputChange === '');
         this.setState({
             inputValue: inputChange
         })
@@ -37,21 +36,14 @@ class CustomSearch extends Component{
         //     searchTerm: this.state.inputValue
         // })
         
-        if(this.props.history.location.pathname !== URL_PATHS.DATABASESEARCHPATH){
+        if(this.props.history.location.pathname !== URL_PATHS.DATABASE_SEARCH_PATH){
             // using querySet to store the search keyword
-            this.props.history.push(URL_PATHS.DATABASESEARCHPATH);
+            this.props.history.push(URL_PATHS.DATABASE_SEARCH_PATH);
         }else{
             this.makeApiCall(this.state.inputValue);
         }
     }
-    handleSearchResult = (res) => {
-        res.json().then(result => {
-            this.setState({
-                results: result
-            });
-        })
-    }
-    
+
     makeApiCall = (searchInput, additionalFilter="") => {
         // additionalFilter format: "&number=...&subjectname=..."
         // let mockFilter= {
