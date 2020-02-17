@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import classes from './SearchResultPanel.module.scss';
 import { SEARCH_RESULTS_COMMON } from '../../../../../utilities/constants/constants';
 
 const SearchResultPanel = (props) =>{
 
     return(
-        // a section
+        // a section, wrapper it into a component later
+        <Fragment>
         <div className={classes.resultSection}>
             {/*  the category header of the section */}
             <h3 className={classes.sectionHorizontalLine}>
@@ -19,11 +20,13 @@ const SearchResultPanel = (props) =>{
                             {result[SEARCH_RESULTS_COMMON.SUBJECT_CODE] + " " + result[SEARCH_RESULTS_COMMON.NUMBER]}
                         </h4>
                         <p className={classes.sectionContent}>
-                                {result[SEARCH_RESULTS_COMMON.SHORT_DESCRIPTION]}
+                                {/* TODO: adding its constant and to right interface places */}
+                                {result["course_details"]["course_description_short"]}
                         </p>
                     </div>
             )})}
         </div>
+        </Fragment>
     )
 }
 

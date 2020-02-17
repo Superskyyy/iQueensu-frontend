@@ -37,9 +37,11 @@ class CustomSearch extends Component{
         // })
         
         if(this.props.history.location.pathname !== URL_PATHS.DATABASE_SEARCH_PATH){
+            // push querm 
+            console.log('here')
             // using querySet to store the search keyword
             this.props.history.push(URL_PATHS.DATABASE_SEARCH_PATH);
-        }else{
+        }else{ 
             this.makeApiCall(this.state.inputValue);
         }
     }
@@ -52,7 +54,6 @@ class CustomSearch extends Component{
         // }
         console.log("call api");
         fetchSearchResult(searchInput, additionalFilter, this.props.successHandler);
-        
     };
 
     toggleDropdown = () =>{
