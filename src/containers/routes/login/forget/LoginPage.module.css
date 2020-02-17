@@ -1,0 +1,79 @@
+.login{
+  width: 100%;
+  height: 1000px;
+  padding: 8% 43% 0;
+  margin: auto;
+}
+.form{
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 424px;
+  /*margin: 0 auto 100px;*/
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form.loginform{
+  display: none;
+}
+.headtop{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+.img{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 30%;
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.func{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+.but1 {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  outline: 0;
+  background: #4CAF50;
+  width: 38%;
+  border: 0;
+  padding: 10px;
+  color: #FFFFFF;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+
+.form .change {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .change a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+body {
+  background: linear-gradient(to left, #76b852, #8DC26F);
+}

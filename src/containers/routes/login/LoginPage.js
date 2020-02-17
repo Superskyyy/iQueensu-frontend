@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {NavLink, withRouter} from "react-router-dom";
 import styles             from './LoginPage.module.css';
 import Logo               from './qucumber.svg';
 //import './App.css';
@@ -11,6 +12,7 @@ class LoginPage extends Component {
             password: '',
             error: '',
             regist: false,
+
         };
     }
 
@@ -27,6 +29,22 @@ class LoginPage extends Component {
 
         if (!this.state.password) {
             return this.setState({error: 'Password is required'});
+        }
+
+        if (this.state.password.length > 27) {
+            return this.setState({error: 'The max length of password is 27'});
+        }
+
+        if (this.state.password.length < 8) {
+            return this.setState({error: 'The min length of password is 8'});
+        }
+
+        if (!(this.state.password.match(/[a-z]/g) && this.state.password.match( /[A-Z]/g) && this.state.password.match( /[0-9]/g))) {
+            return this.setState({error: 'Password should contain at least 1 of each (a-z),(A-Z),(0-9)'});
+        }
+
+        if (this.state.password.match( /[^a-zA-Z\d]/g)) {
+          return this.setState({error: 'Password can not contain special character'});
         }
 
         return this.setState({error: ''});
@@ -93,6 +111,7 @@ class LoginPage extends Component {
                      onChange={this.handleUserChange}/>
               <input id={"password"} type="password"  placeholder="Password" value={this.state.password}
                      onChange={this.handlePassChange}/>
+              <NavLink to={"/forget"}>Forget password?</NavLink>
               <div className={styles.func}>
                   <a className={styles.change} href="#" onClick={() => {this.setState((state, prop) => ({regist: !state.regist}));}}>Register</a>
                   <button className={styles.but1} type="submit" data-test="submit">Login</button>
