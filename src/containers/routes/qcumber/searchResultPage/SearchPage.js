@@ -21,7 +21,7 @@ class SearchPage extends Component {
                 // tmp 
                 "diffculty_level": "Medium",
             },{
-                "url": "/test1/",
+                "url": "/test/",
                 "id": 88,
                 "number": "926",
                 "subject_code": "ELEC",
@@ -30,7 +30,7 @@ class SearchPage extends Component {
                 // tmp 
                 "diffculty_level": "Hard",
             },{
-                "url": "/test2/",
+                "url": "/mock/",
                 "id": 89,
                 "number": "326",
                 "subject_code": "COMP",
@@ -40,7 +40,7 @@ class SearchPage extends Component {
                 "diffculty_level": "Easy",
             },
             {
-                "url": "/test4/",
+                "url": "/mock/",
                 "id": 90,
                 "number": "345",
                 "subject_code": "COMP",
@@ -92,14 +92,13 @@ class SearchPage extends Component {
             }else {
                 const index = this.state.filterLogics[field].indexOf(res[1]);
                 if (index > -1) {
-                    this.setState(prevState =>(prevState.filterLogics[field].splice(index, 1),{
+                    this.setState(prevState =>((prevState.filterLogics[field].splice(index, 1),{
                         ...prevState,
                         filterLogics: {
                             ...prevState.filterLogics,
                             [field]: prevState.filterLogics[field]
                         }
-                }))
-                }
+                })))}
                 return ;
             }
             this.setState(prevState =>({
@@ -109,7 +108,6 @@ class SearchPage extends Component {
                     [field]: [...prevState.filterLogics[field], value]
                 } 
             }))
-            return ;
         }
         return ;
     } 
@@ -120,45 +118,47 @@ class SearchPage extends Component {
     } 
 
     handleFilterResult = (logics) => {
-        let filteredResults = [];
+        var filteredResults = [];
 
-        for(var property in logics){
-
+        for(let property in logics){
             if(filteredResults.length === 0){
                 // Intersection properties, Union element in the same property, using lodash lib
                 if(logics[property].length > 0){
-                    logics[property].map(logic => 
-                        {
-                            let tmp = this.state.searchResults.filter(entity =>
-                                entity[property] === logic
-                            )
-                            
-                            filteredResults = filteredResults.concat(tmp);
-
-                            return "";
-                        }
-                        
-                    )
+                    for(let logicIndex in logics[property]){
+                        let tmp = this.state.searchResults.filter(entity =>
+                            entity[property] === logics[property][logicIndex]
+                        )
+                        filteredResults = filteredResults.concat(tmp);
+                    }
             }}
             else{
                 if(logics[property].length > 0){
                     let tmp = [];
-                    logics[property].map(logic => 
-                        {
-                            let tmpp = filteredResults.filter(entity =>
-                                entity[property] === logic    
-                            )
-                            tmp = tmp.concat(tmpp);
-                            return "";
-                        })
+                    for(let logicIndex in logics[property]){
+                        let tmpArr = filteredResults.filter(entity =>
+                            entity[property] === logics[property][logicIndex]    
+                        )
+                        tmp = tmp.concat(tmpArr);
+                    }
                     filteredResults = _.intersectionBy(tmp, filteredResults, 'id');
             }}
         }
-
         this.setState({
             filteredSearchResults: filteredResults
         })
-        return ;
+    }
+
+    refreshDisplayedResults = (logics) =>{
+        let displayed = false; 
+
+        for (let logicIndex in logics){
+            if (logics[logicIndex] && logics[logicIndex].length > 0){
+                displayed=true;
+                break;
+            }
+        }
+
+        return displayed ? this.state.filteredSearchResults : this.state.searchResults;
     }
 
     // TODO: the layout of this page is basically the same as courseWrapper's, optimize it.
@@ -180,12 +180,7 @@ class SearchPage extends Component {
                         filterOptions={filterOptions}/>
 
                     <SearchResultPanel  
-                    // optimize into a function, 如果logic里有，就显示filtered results; 没有就全部显示
-                        results={ ((this.state.filterLogics['diffculty_level'] && this.state.filterLogics['diffculty_level'].length > 0)
-                         || 
-                        (this.state.filterLogics['subject_code'] && this.state.filterLogics['subject_code'].length > 0))
-                        ? this.state.filteredSearchResults : this.state.searchResults}
-                        // results={this.handleFilterResult([{[FILTERS_COMMON.FIELD]: 'diffculty_level', value: ['medium', 'hard']}])}
+                        results= {this.refreshDisplayedResults(this.state.filterLogics)}
                     />
                 </div>
 
