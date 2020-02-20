@@ -94,6 +94,8 @@ class SearchPage extends Component {
             if (checked){
                 value = res[1];
             }else {
+
+                // TODO: use the helper method in course reducers remove the unchecked one 
                 const index = this.state.filterLogics[field].indexOf(res[1]);
                 if (index > -1) {
                     this.setState(prevState =>((prevState.filterLogics[field].splice(index, 1),{
