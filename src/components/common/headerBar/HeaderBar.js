@@ -24,7 +24,7 @@ class HeaderBar extends React.Component {
     }
 
     resize() {
-        this.setState({ useBurger: window.innerWidth <= 1020 });
+        this.setState({ useBurger: window.innerWidth <= 1100 });
     }
 
     Header(props) {

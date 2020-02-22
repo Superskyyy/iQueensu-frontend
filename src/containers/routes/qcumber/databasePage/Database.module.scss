@@ -25,7 +25,9 @@
 .search{
     text-align: left;
     display: inline-block;
-    width: 30rem;
+    max-width: 30rem;
+    width: 90vw;
+    min-width: 20rem;
     margin-top: 2.25rem;
 }
 
@@ -36,8 +38,12 @@
 
 .QcumberCardsWrapper {
     height: 100%;
-    margin-top: 10rem;
+    width: 100%;
+    max-width: 1105px;
+    margin: 15vmin auto 0;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     align-content: center;
