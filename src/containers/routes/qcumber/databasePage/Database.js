@@ -13,13 +13,34 @@ import {getMessageByTypes}             from "../../../../utilities/TypeHelper";
 import styles                          from './Database.module.css';
 import scssStyles                      from './Database.module.scss';
 import CustomSearch from "../../../../components/common/customSearch/CustomSearch";
+import {courseObj} from '../../../../utilities/mockData/MockCourse'; //引入js文件
 
 class Database extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        listHtml:""
+      };
+    }
+    componentWillMount () {
+        this.getList();
+    }
     // an example for customized onClick prop for 'CustomButton' component
     // onToggle = () => {
     //     window.location.href = "/database/course";
         // window.alert("this is a test");
     // };
+    async getList() {
+        let listsItem = courseObj.map((item, key) =>
+        <div className={styles.Labelstyle}>
+            <div className={styles.Label}> <li key={key}> <text className={styles.fonts}>Units</text> {item.units} </li></div>
+            <div className={styles.Label}> <li key={key}> <text className={styles.fonts}>Career</text> {item.career} </li></div>
+            <div className={styles.Label}> <li key={key}> <text className={styles.fonts}>Grade</text> {item.grading} </li></div>
+        </div>
+        );
+
+        this.setState({listHtml: (<ul>{listsItem}</ul>)});
+    }
 
     render() {
 
@@ -58,6 +79,7 @@ class Database extends React.Component {
                         <CustomNavButton toWhere="/database/course"
                                          btnText={this.props.intl.formatMessage(messages.checkOurPostings)}/>
                     </div>
+                    <div className={styles.labelpo}>{this.state.listHtml}</div>
                 </section>
             </React.Fragment>
         );

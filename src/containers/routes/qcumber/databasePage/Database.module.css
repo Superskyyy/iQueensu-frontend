@@ -35,5 +35,23 @@
     height: 15%;
     margin-top: 80px;
 }
-
-
+.labelpo{
+  width:100%;
+}
+.Labelstyle{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+.Label {
+  background-color: rgba(0, 101, 242, 0.19);
+  margin-right: 20px;
+  margin-bottom: 20px;
+  padding: 15px 15px 15px 15px;
+  height:25px;
+  border-radius: 50px;
+}
+.fonts{
+  font-weight: 600;
+  margin-right: 10px;
+}
