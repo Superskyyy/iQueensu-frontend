@@ -26,8 +26,8 @@ class Home extends Component {
                             <XHelmet title={"iQueensU"} favicon={logo}/>
                             <NavLink to={"/"} activeClassName="chosen"><Text id={"home"}/></NavLink>
                             <NavLink to={"/test1"} activeClassName="chosen"><Text id={"forum"}/></NavLink>
-                            <NavLink to={URL_PATHS.QHOUSINGPATH} activeClassName="chosen">Qhousing</NavLink>
-                            <NavLink to={URL_PATHS.QCUMBERPATH} activeClassName="chosen">Qcumber</NavLink>
+                            <NavLink to={URL_PATHS.QHOUSING_PATH} activeClassName="chosen">Qhousing</NavLink>
+                            <NavLink to={URL_PATHS.QCUMBER_PATH} activeClassName="chosen">Qcumber</NavLink>
                             <NavLink to={"/test3"} activeClassName="chosen"
                                      style={{"margin": "0px 59px 0px 8px"}}>Qwiki</NavLink>
                             <NavLink to={"/test4"} activeClassName="chosen"><Text id={"contact"}/></NavLink>

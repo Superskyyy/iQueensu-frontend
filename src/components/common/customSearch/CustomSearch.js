@@ -20,7 +20,6 @@ class CustomSearch extends Component{
 
     handleInputChange = (event) => {
         let inputChange = event.target.value;
-        // console.log(inputChange === '');
         this.setState({
             inputValue: inputChange
         })
@@ -37,30 +36,24 @@ class CustomSearch extends Component{
         //     searchTerm: this.state.inputValue
         // })
         
-        if(this.props.history.location.pathname !== URL_PATHS.DATABASESEARCHPATH){
+        if(this.props.history.location.pathname !== URL_PATHS.DATABASE_SEARCH_PATH){
+            // push querm 
+            console.log('here')
             // using querySet to store the search keyword
-            this.props.history.push(URL_PATHS.DATABASESEARCHPATH);
-        }else{
+            this.props.history.push(URL_PATHS.DATABASE_SEARCH_PATH);
+        }else{ 
             this.makeApiCall(this.state.inputValue);
         }
     }
-    handleSearchResult = (res) => {
-        res.json().then(result => {
-            this.setState({
-                results: result
-            });
-        })
-    }
-    
+
     makeApiCall = (searchInput, additionalFilter="") => {
         // additionalFilter format: "&number=...&subjectname=..."
         // let mockFilter= {
         //     [COURSEFILTER.NUMBER]: 888,
             
         // }
-
-        fetchSearchResult(searchInput, additionalFilter, this.handleSearchResult);
-        
+        console.log("call api");
+        fetchSearchResult(searchInput, additionalFilter, this.props.successHandler);
     };
 
     toggleDropdown = () =>{
@@ -98,19 +91,7 @@ class CustomSearch extends Component{
                             aria-label={"Search"} />
                     </form>
 
-                    {/* 想着怎么把这个result panel给抽出来 */}
-                    {this.state.results ? (
-                        <div className={classes.resultPanel}>
-                        {this.state.results.map((meal, index) => (
-                        <div key={index}>
-                        <h1>{meal.subject_name}</h1>
-                        {/* <img src={meal.strMealThumb} style={{width:'100px'}} alt="meal-thumbnail" /> */}
-                        </div>
-                        ))}
-                        </div>
-                        ) : (
-                        <p>Try searching for sth that has results</p>
-                        )}
+                    
 
                 </div>
         )
