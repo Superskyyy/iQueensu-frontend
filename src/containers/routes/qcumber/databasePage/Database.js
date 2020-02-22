@@ -10,7 +10,6 @@ import CustomNavButton                 from "../../../../components/common/custo
 import {CONTAINER_TYPES, MESSAGE_KEYS} from "../../../../utilities/constants/constants";
 import {getMessageByTypes}             from "../../../../utilities/TypeHelper";
 // Styles
-import styles                          from './Database.module.css';
 import scssStyles                      from './Database.module.scss';
 import CustomSearch from "../../../../components/common/customSearch/CustomSearch";
 
@@ -29,8 +28,8 @@ class Database extends React.Component {
         //const gradeDistributionDescp = this.props.intl.formatMessage(getMessageByTypes(MESSAGE_KEYS.DESCRIPTION, CONTAINER_TYPES.GRADE_DISTRIBUTION))
         return (
             <React.Fragment>
-                <section className={styles.Wrapper}>
-                    <img className={styles.Logo} src={DatabaseLogo} alt={"DatabaseLogo"}/>
+                <section className={scssStyles.Wrapper}>
+                    <img className={scssStyles.Logo} src={DatabaseLogo} alt={"DatabaseLogo"}/>
                     <div className={scssStyles.TitleBar}>
                         {/* need to intl-format */}
                         <h1>Qcumber Database</h1>
@@ -41,7 +40,7 @@ class Database extends React.Component {
                         <CustomSearch />
                     </div>
 
-                    <div className={styles.QcumberCardsWrapper}>
+                    <div className={scssStyles.QcumberCardsWrapper}>
                         {supportedContainerTypeArray.map((typeObject, index) => (
                             <Card
                                 key={index}
@@ -51,7 +50,7 @@ class Database extends React.Component {
                             />))}
                     </div>
 
-                    <div className={styles.ContributionText}>
+                    <div className={scssStyles.ContributionText}>
                         {/* need to intl-format */}
                         <p>Would you like to contribute to Qcumber's data?<br/>You may have what we're looking for.</p>
 
