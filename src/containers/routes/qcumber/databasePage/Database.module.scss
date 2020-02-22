@@ -71,7 +71,7 @@ $calculated_min_width_for_Logo: $designed_min_width_of_Wrapper * p_to_d($Logo_wi
     position: relative;
     align-items: center;
     justify-content: center;
-    width: 15%;
+    width: $Logo_width_percentage;
     min-width: $calculated_min_width_for_Logo;
     margin-top: 80px;
 }
