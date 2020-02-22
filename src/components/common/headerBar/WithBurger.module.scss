@@ -1,0 +1,24 @@
+@import "../../../containers/global_vars";
+
+.QNavBarLink {
+    float: left;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0px 9px 0px 8px;
+    padding: 28px 15px;
+
+    color: whitesmoke;
+    text-align: center;
+    text-decoration: none;
+    font-family: $nav-link-font;
+}
+
+.QNavBarLink:hover {
+    color: #2D8E34;
+    font-weight: 600;
+}
+
+.QSeprator {
+    width: 100%;
+    margin-bottom: 28px;
+}
