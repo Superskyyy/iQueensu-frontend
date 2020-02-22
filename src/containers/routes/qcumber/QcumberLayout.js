@@ -10,11 +10,11 @@ import { URL_PATHS } from '../../../utilities/constants/constants';
 class QcumberLayout extends Component{
     PageContent = () => {
         switch(this.props.match.url){
-            case URL_PATHS.DATABASEPATH:
+            case URL_PATHS.DATABASE_PATH:
                 return <Database />
-            case URL_PATHS.DATABASECOURSEPATH:
+            case URL_PATHS.DATABASE_COURSE_PATH:
                 return <CoursePage />
-            case URL_PATHS.DATABASESEARCHPATH:
+            case URL_PATHS.DATABASE_SEARCH_PATH:
                 return <SearchPage />
             default:
                 return <Qcumber />
