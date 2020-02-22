@@ -1,7 +1,7 @@
 // Packages
 import React, { Fragment } from "react";
 import { NavLink, withRouter } from "react-router-dom";
-import { slide as Menu } from "react-burger-menu";
+import { push as Menu } from "react-burger-menu";
 //
 import qcumberIcon from "../../../assets/images/logos/qcumber.svg";
 import Text from "../../accessoriesDeprecated/Text";
@@ -27,18 +27,16 @@ class HeaderBar extends React.Component {
         this.setState({ useBurger: window.innerWidth <= 1100 });
     }
 
-    Header(props) {
-        return <div className={Styles.QHeader}>{props.children}</div>;
-    }
-
-    Hamburger(props) {
-        return <Menu>{props.children}</Menu>;
-    }
-
     WithBurger(props) {
-        const Burger = this.Hamburger;
+        const size = 0.4 * window.innerWidth; //Notice, 0.4 here should be sync with
+        //_burger.scss -> line 43 -> width of .bm-menu-wrap
+        const max = 300; // similar, max and min should be the same with css
+        const min = 180;
+
+        const widthDecision = size > max ? max : size < min ? min : size;
+
         return (
-            <Burger>
+            <Menu width={widthDecision} pageWrapId={"QCumberDatabaseMain"} outerContainerId={"QMainContent"}>
                 <div className={BurerItemStyles.QNavBarLink}>
                     {/* change css to design in left card.css */}
                     <NavLink to={"/qcumber"} className={BurerItemStyles.QLogo}>
@@ -72,7 +70,7 @@ class HeaderBar extends React.Component {
                         </NavLink>
                     </Fragment>
                 ) : null}
-            </Burger>
+            </Menu>
         );
     }
 

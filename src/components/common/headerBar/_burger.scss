@@ -1,3 +1,7 @@
+$bgColor: whitesmoke;
+$btnColor: #2c2e33;
+
+
 /* Position and sizing of burger button */
 .bm-burger-button {
     position: fixed;
@@ -9,12 +13,12 @@
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-    background: #373a47;
+    background: $btnColor;
 }
 
 /* Color/shape of burger icon bars on hover*/
 .bm-burger-bars-hover {
-    background: #a90000;
+    background: #393d6a;
 }
 
 /* Position and sizing of clickable cross button */
@@ -25,7 +29,7 @@
 
 /* Color/shape of close button cross */
 .bm-cross {
-    background: #bdc3c7;
+    background: $btnColor;
 }
 
 /*
@@ -42,19 +46,18 @@
 
 /* General sidebar styles */
 .bm-menu {
-    background: #373a47;
+    background: $bgColor;
     padding: 2.5em 1.5em 0;
     font-size: 1.15em;
 }
 
 /* Morph shape necessary with bubble or elastic */
 .bm-morph-shape {
-    fill: #373a47;
+    fill: $bgColor;
 }
 
 /* Wrapper for item list */
 .bm-item-list {
-    color: #b8b7ad;
     padding: 0.8em;
     display: flex;
     flex-direction: column;
