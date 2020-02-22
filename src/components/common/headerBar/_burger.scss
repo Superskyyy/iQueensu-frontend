@@ -35,6 +35,9 @@
 .bm-menu-wrap {
     position: fixed;
     height: 100%;
+    max-width: 300px !important;
+    width: 40vw !important;
+    min-width: 180px !important;
 }
 
 /* General sidebar styles */
@@ -55,6 +58,7 @@
     padding: 0.8em;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 /* Individual item */

@@ -41,12 +41,12 @@ class HeaderBar extends React.Component {
             <Burger>
                 <div className={BurerItemStyles.QNavBarLink}>
                     {/* change css to design in left card.css */}
-                    <NavLink to={"/qcumber"} className={Styles.QLogo}>
+                    <NavLink to={"/qcumber"} className={BurerItemStyles.QLogo}>
                         <img width={28.2} height={28.2} src={qcumberIcon} alt={"qcumberIcon"} />
                     </NavLink>
 
                     {/* or refactor into a separate component */}
-                    <NavLink to={"/qcumber"} className={Styles.Qcumber} activeClassName="chosen">
+                    <NavLink to={"/qcumber"} className={BurerItemStyles.Qcumber} activeClassName="chosen">
                         Qcumber
                     </NavLink>
                 </div>
