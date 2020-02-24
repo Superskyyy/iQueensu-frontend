@@ -1,6 +1,6 @@
 //
 import {getCourseAPI}       from "../../utilities/mockData/getCourseAPI";
-import {GET_COURSE_SUCCESS} from "./types";
+import {GET_COURSE_SUCCESS, ADD_TIME_BLOCK, REMOVE_TIME_BLOCK} from "./types";
 
 // action creators
 export const getCourseSuccess = (course) => {
@@ -16,3 +16,20 @@ export const getCourse = (possibleFilters) => {
         dispatch(getCourseSuccess(res));
     };
 };
+
+export const addTimeBlock = (timeBlock) => {
+    // check 
+
+    return {
+        type: ADD_TIME_BLOCK,
+        currentTimeBlock: timeBlock
+    };
+};
+
+export const removeTimeBlock = (timeBlock) => {
+    return {
+        type: REMOVE_TIME_BLOCK,
+        selectedTimeBlock: timeBlock
+    }
+}
+
