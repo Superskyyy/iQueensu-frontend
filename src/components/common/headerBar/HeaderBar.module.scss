@@ -1,6 +1,19 @@
 @import "../../../containers/global_vars";
 
-.Qcumber{
+.QHeader {
+    display: flex;
+    height: 80px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.QLogo {
+    margin: 0 !important;
+    padding: 22px 0 !important;
+}
+
+
+.Qcumber {
     font-size: 24px !important;
     margin: 0 8px 0 3px !important;
     // use flex and align-content: center is prob better
@@ -19,13 +32,23 @@
     float: left;
     font-size: 16px;
     font-weight: 600;
-    margin: 0px 8px 0px 8px;
+    margin: 0px 9px 0px 8px;
     padding: 28px 15px;
 
     color: black;
     text-align: center;
     text-decoration: none;
     font-family: $nav-link-font;
+}
+
+.QNavBar {
+    z-index: 10;
+    background-color: white;
+    text-align: center;
+    float: left;
+    display: inline-flex;
+    margin-left: 140px;
+    padding: 0;
 }
 
 .QNavBarRight {
@@ -35,7 +58,7 @@
     float: right;
     margin-right: 200px;
     padding: 0;
-    display: flex;
+    display: inline-flex;
     justify-content: flex-end;
 }
 

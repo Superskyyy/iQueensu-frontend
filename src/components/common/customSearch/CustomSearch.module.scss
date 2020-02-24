@@ -7,9 +7,14 @@ $border-color: #999;
 $transition: 250ms all ease-in-out;
 
 .Icon{
-    // width: 17px;
+    width: auto;
     height: 17px;
     padding: 19px;
+    box-sizing: content-box;
+    @media only screen and (max-width: 500px) {
+      padding-left: 8px;
+      padding-right: 5px;
+    }
 }
 
 .Form{
@@ -25,7 +30,7 @@ $transition: 250ms all ease-in-out;
     font-family: $nav-link-font;
     border: none;
     width: 100%;
-
+    min-width: 0 !important; //this is used to cover default "auto". used to fix overflow.
     font-weight: 600;
     font-size: 16px;
     line-height: 24px;

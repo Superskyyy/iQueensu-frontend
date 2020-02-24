@@ -17,7 +17,7 @@ class CoursePage extends Component {
     render() {
         return (
             // put this into a separate css file?
-            <div className={styles.Wrapper}>
+            <div id={this.props.id} className={styles.Wrapper}>
                 <CourseWrapper>
                     {/* childern render first, because its part of property */}
                 </CourseWrapper>
