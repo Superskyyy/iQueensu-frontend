@@ -5,6 +5,7 @@ import StatusBar from "../../../../components/common/statusBar/StatusBar";
 import CourseLoadBar from "../../../../components/common/courseLoadBar/CourseLoadBar";
 import styles from './CourseWrapper.module.css';
 
+
 class CourseWrapper extends React.Component{
 
     componentDidMount(){
@@ -107,14 +108,7 @@ class CourseWrapper extends React.Component{
                                 {/* designed Component */}
                                 <div className={styles.mycellWholeRight}>
                                 <CourseLoadBar
-                                        tableHeaders = {["Lecture", "Tutorial", "Lab", "Practice", "Total", "Load"]}
-                                        // title1={"Lecture"}
-                                        // title2={"Tutorial"}
-                                        // title3={"Lab"}
-                                        // title4={"Practice"}
-                                        // title5={"Total"}
-                                        // title6={"Load"}
-                                        
+                                        tableHeaders = {["Lecture", "Tutorial", "Lab", "Practice", "Total", "Load"]}                                      
                                         lecture={"3 h/week"}
                                         tutorial={"-"}
                                         lab={"1 h/week"}
@@ -123,13 +117,6 @@ class CourseWrapper extends React.Component{
                                         totalPerTerm={"120 h/term"}
                                         load={"Regular"} />
                                 </div>
-                            </div>
-
-                            <div className={styles.myrow}>
-                                <StatusBar
-                                    prerequisiteItem={"C- in CISC124"}
-                                    userGrade={"Not Taken Yet"}
-                                    valid={"nonValid"} />
                             </div>
                         </div>
 
