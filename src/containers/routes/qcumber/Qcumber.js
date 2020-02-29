@@ -15,7 +15,7 @@ class Qcumber extends React.Component {
                     Qcumber
                 </header>
                 <section>
-                    <NavLink to={URL_PATHS.DATABASEPATH}>Go to DataBase</NavLink><br/>
+                    <NavLink to={URL_PATHS.DATABASE_PATH}>Go to DataBase</NavLink><br/>
                 </section>
             </React.Fragment>
         );

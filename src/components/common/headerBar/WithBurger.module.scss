@@ -1,0 +1,43 @@
+@import "../../../containers/global_vars";
+
+.QNavBarLink {
+    float: left;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 28px 0px;
+    display: flex !important;
+    flex-direction: column;
+    color: black;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    font-family: $nav-link-font;
+    border-style: none;
+    outline: none;
+}
+
+.QNavBarLink:hover {
+    color: #2D8E34;
+    font-weight: 600;
+}
+
+.QSeprator {
+    width: 100%;
+    margin-bottom: 28px;
+}
+
+.QLogo img {
+    height: 50px;
+    width: auto;
+}
+
+.QLogo {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.Qcumber {
+    font-size: 24px !important;
+    color: $tx-selected-color !important;
+}

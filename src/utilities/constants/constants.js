@@ -15,12 +15,34 @@ export const MESSAGE_KEYS = {
 // URLs
 export const URL_PATHS = {
     // Qhousing related
-    QHOUSINGPATH: '/qhousing',
+    QHOUSING_PATH: '/qhousing',
 
     // Qcumber related
-    QCUMBERPATH: '/qcumber',
-    DATABASESEARCHPATH: '/database/search',
-    DATABASEPATH: '/database',
-    DATABASECOURSEPATH: '/database/course',
+    QCUMBER_PATH: '/qcumber',
+    DATABASE_SEARCH_PATH: '/database/search',
+    DATABASE_PATH: '/database',
+    DATABASE_COURSE_PATH: '/database/course',
 
 }
+//<<<<<<< HEAD
+//=======
+
+// Filters related
+export const FILTERS_COMMON = {
+    DISPLAY_NAME: 'display_name',
+    FIELD: 'field',
+    CHOICES: 'choices',
+    CHECKBOX: 'checkbox',
+    RANGE_SLIDER: 'range_slider'
+}
+
+// SearchResult Page
+export const SEARCH_RESULTS_COMMON = {
+    // ...XXX_COMMON,
+    URL: 'url',
+    ID: 'id',
+    SUBJECT_CODE: 'subject_code',
+    NUMBER: 'number',
+    SHORT_DESCRIPTION: 'short_description',
+}
+//>>>>>>> dev

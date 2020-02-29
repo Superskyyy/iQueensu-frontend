@@ -8,23 +8,28 @@ import { URL_PATHS } from '../../../utilities/constants/constants';
 
 
 class QcumberLayout extends Component{
-    PageContent = () => {
+    PageContent = (props) => {
         switch(this.props.match.url){
-            case URL_PATHS.DATABASEPATH:
-                return <Database />
-            case URL_PATHS.DATABASECOURSEPATH:
-                return <CoursePage />
-            case URL_PATHS.DATABASESEARCHPATH:
-                return <SearchPage />
+            case URL_PATHS.DATABASE_PATH:
+                return (<Database id={props.id}/>)
+            case URL_PATHS.DATABASE_COURSE_PATH:
+                return <CoursePage id={props.id}/>
+            case URL_PATHS.DATABASE_SEARCH_PATH:
+                return <SearchPage id={props.id}/>
             default:
-                return <Qcumber />
+                return <Qcumber id={props.id}/>
         }
     }
     render(){
+        const pageProps = {
+            id: "QCumberDatabaseMain"
+        }
+
         return(
             // all HeaderBar actions can be handled in QcumberWrapper, and it can be applied to any qcumber related page
             <QcumberWrapper>
-                 {this.PageContent()}
+                {this.PageContent(pageProps)}
+                 {/* <Pge id={"QCumberDatabaseMain"}/> */}
             </QcumberWrapper>
         )
     }

@@ -32,18 +32,18 @@ class App extends Component {
         const {locale} = this.props;
         return (
             <div className={styles.App}>
-                <main className={styles.MainContent}>
+                <main id={"QMainContent"} className={styles.MainContent}>
                     {/* remove later */}
                     {/* <QcumberWrapper > */}
                         <Switch>
                             <Route path="/" exact component={Home}/>
                             <Route path="/404" exact component={NotFound}/>
-                            <Route path={URL_PATHS.QHOUSINGPATH} exact component={Qhousing}/>
+                            <Route path={URL_PATHS.QHOUSING_PATH} exact component={Qhousing}/>
                             {/* <Route path="/qcumber" exact component={Qcumber}/> */}
-                            <Route path={URL_PATHS.QCUMBERPATH} exact component={QcumberLayout}/>
-                            <Route path={URL_PATHS.DATABASEPATH} exact component={QcumberLayout}/>
-                            <Route path={URL_PATHS.DATABASECOURSEPATH} exact component={QcumberLayout}/>
-                            <Route path={URL_PATHS.DATABASESEARCHPATH} exact component={QcumberLayout}/>
+                            <Route path={URL_PATHS.QCUMBER_PATH} exact component={QcumberLayout}/>
+                            <Route path={URL_PATHS.DATABASE_PATH} exact component={QcumberLayout}/>
+                            <Route path={URL_PATHS.DATABASE_COURSE_PATH} exact component={QcumberLayout}/>
+                            <Route path={URL_PATHS.DATABASE_SEARCH_PATH} exact component={QcumberLayout}/>
                             <Redirect from="*" to="/404"/>
                         </Switch>
                     {/* </QcumberWrapper> */}
