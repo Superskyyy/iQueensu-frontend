@@ -34,9 +34,9 @@ class HeaderBar extends React.Component {
                     {this.props.hasRightAlignedItems ?
                         <div className={styles.QNavBarRight}>
                             <div className={styles.SignUp}>
-                                <NavLink to={"/login"}>Sign Up</NavLink>
+                                <NavLink to={"/signup"}>Sign Up</NavLink>
                             </div>
-                            <NavLink to={"/login"}>Sign In</NavLink>
+                            <NavLink to={"/login"}>Log In</NavLink>
                         </div> : null}
                 </div>
             </Fragment>

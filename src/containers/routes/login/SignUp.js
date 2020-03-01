@@ -27,6 +27,14 @@ class LoginPage extends Component {
             return this.setState({error: 'Username is required'});
         }
 
+        if (this.state.password.length > 20) {
+            return this.setState({error: 'The max length of password is 20'});
+        }
+
+        if (!(this.state.username.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/))) {
+            return this.setState({error: 'Username must be an email.'});
+        }
+
         if (!this.state.password) {
             return this.setState({error: 'Password is required'});
         }
@@ -40,7 +48,7 @@ class LoginPage extends Component {
         }
 
         if (!(this.state.password.match(/[a-z]/g) && this.state.password.match( /[A-Z]/g) && this.state.password.match( /[0-9]/g))) {
-            return this.setState({error: 'Password should contain at least 1 of each (a-z),(A-Z),(0-9)'});
+            return this.setState({error: 'Password should contain (a-z),(A-Z),(0-9)'});
         }
 
         if (this.state.password.match( /[^a-zA-Z\d]/g)) {
@@ -81,7 +89,7 @@ class LoginPage extends Component {
       );
   };
 
-   /*Reg = (prop) => {
+   Reg = (prop) => {
       return (
           <>
               <div className={styles.headtop}>
@@ -93,14 +101,14 @@ class LoginPage extends Component {
               <input type="password" data-test="password" placeholder="Password" value={this.state.password}
                      onChange={this.handlePassChange}/>
               <div className={styles.func}>
-                  <a className={styles.change} href="#" onClick={() => {this.setState((state, prop) => ({regist: !state.regist}));}}>Sign in</a>
+                  <NavLink to={"/login"} className={styles.change}>Log In</NavLink>
                   <button className={styles.but1} type="submit" data-test="submit">Next</button>
               </div>
           </>
       );
-  };*/
+  };
 
-   Login = (prop) => {
+   /*Login = (prop) => {
       return (
           <>
               <div className={styles.headtop}>
@@ -113,19 +121,19 @@ class LoginPage extends Component {
                      onChange={this.handlePassChange}/>
               <NavLink to={"/forget"}>Forget password?</NavLink>
               <div className={styles.func}>
-                  <NavLink to={"/signup"} className={styles.change}>Register</NavLink>
+                  <a className={styles.change} href="#" onClick={() => {this.setState((state, prop) => ({regist: !state.regist}));}}>Register</a>
                   <button className={styles.but1} type="submit" data-test="submit">Login</button>
               </div>
           </>
       );
-  };
+  };*/
 
    //layoutType = this.state.regist ? styles.submit : styles.loginform;
 
     render() {
         return (
             <this.LoginLayout type={this.layoutType}>
-                {<this.Login/>}
+                {<this.Reg/>}
             </this.LoginLayout>
         );
     }

@@ -15,7 +15,8 @@ import NotFound                              from "./routes/NotFound";
 import Qhousing                              from "./routes/qhousing/Qhousing";
 import QcumberLayout from './routes/qucumber/QcumberLayout';
 import LoginPage                             from "./routes/login/LoginPage";
-import ForgetPage                             from "./routes/login/forget/forget";
+import SignUp                                from "./routes/login/SignUp";
+import ForgetPage                            from "./routes/login/forget/forget";
 
 class App extends Component {
     constructor(props) {
@@ -45,6 +46,7 @@ class App extends Component {
                             <Route path={"/database"} exact component={QcumberLayout}/>
                             <Route path={"/database/course"} exact component={QcumberLayout}/>
                             <Route path={"/login"} exact component={LoginPage}/>
+                            <Route path={"/signup"} exact component={SignUp}/>
                             <Route path={"/forget"} exact component={ForgetPage}/>
                             <Redirect from="*" to="/404"/>
                         </Switch>
