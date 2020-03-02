@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { getCourse } from "../../../../store/actions/courseActions";
 import StatusBar from "../../../../components/common/statusBar/StatusBar";
 import styles from './CourseWrapper.module.css';
+import { PieCharts } from "../../../../components/common/charts/PieCharts";
 
 class CourseWrapper extends React.Component{
 
@@ -97,14 +98,14 @@ class CourseWrapper extends React.Component{
                         {/* getCourse也有另外的api(), 所以也可能isolate*/}
                         {/* Course Load Part */}
                         <div className={styles.mytable} style={{marginTop:"2rem"}}>
-                            <div className="column6"></div>
-                            <div className={styles.column5}></div>
+                            {/* <div className="column6"></div> */}
+                            {/* <div className={styles.column5}></div> */}
                             <div className={styles.myrow}>
                                 <div className={styles.mycellHeader}>Course Load</div>
                             </div>
                             <div className={styles.myrow}>
                                 {/* designed Component */}
-                                <div className={styles.mycellWholeRight}>{this.props.currentCourse.length < 1 ? null : this.props.currentCourse[0]["course_description"]}</div>
+                                <div>{this.props.currentCourse.length < 1 ? null : this.props.currentCourse[0]["course_description"]}</div>
                             </div>
 
                             <div className={styles.myrow}>
@@ -119,7 +120,17 @@ class CourseWrapper extends React.Component{
 
                     <div className={styles.coursePageRightPart}>
                         {/* temp */}
-                        {this.props.currentCourse.length < 1 ? null : this.props.currentCourse[0]["units"]}
+                        <div className={styles.mytable} style={{marginTop:"2rem"}}>
+                            {/* <div className="column6"></div>
+                            <div className={styles.column5}></div> */}
+                            <div className={styles.myrow}>
+                                <div className={styles.mycellHeader}>Grade Distribution</div>
+                            </div>
+                            <div className={styles.myrow}>
+                                {/* <div id="mainChart" style="width:300px; height:200px;"></div> */}
+                                <PieCharts />
+                            </div>
+                        </div>
                     </div> 
                 {/* </Fragment> */}
             </div>

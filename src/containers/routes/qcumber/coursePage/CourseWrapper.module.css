@@ -10,13 +10,14 @@
     /* background-color: #f5f5f5; */
     margin-left: 2.5rem;
     margin-right: 2.5rem;
-    width:100%;
+    /* TODO: figure out a better way to layout this */
+    width:810px;
     display: flex;
     flex-direction: column;
 }
 
 .coursePageRightPart{
-    background-color: #f5f5f5;
+    /* background-color: #f5f5f5; */
     width:260px;
     /* temp */
     height: 100%;
