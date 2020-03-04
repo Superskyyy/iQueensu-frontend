@@ -6,7 +6,6 @@ import {filterOptions} from './filterData';
 import SearchResultPanel from './searchResultPanel/SearchResultPanel';
 import { FILTERS_COMMON } from '../../../../utilities/constants/constants';
 import _ from 'lodash';
-import { fetchSearchResult } from '../../../../utilities/SearchActions/fetchSearchResult';
 
 class SearchPage extends Component {
     constructor(props) {
