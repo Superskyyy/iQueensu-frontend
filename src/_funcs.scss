@@ -1,0 +1,8 @@
+// percentage to decimal.
+// example: p_to_d(15%) ~> 0.15
+@function p_to_d($percentage) {
+    @if (type-of($percentage) != number OR unit($percentage) != "%") {
+        @error "decimal: `#{$percentage}` is not a percent";
+    }
+    @return $percentage / 100%
+}

@@ -1,0 +1,15 @@
+/*
+    I think it's better to put global css snippets here.
+    Simply not making this file modularize
+*/
+
+@import "reboot";
+
+html, body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.j-Center {
+    justify-content: center !important;
+}

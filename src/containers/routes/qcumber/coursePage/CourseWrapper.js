@@ -104,6 +104,7 @@ class CourseWrapper extends React.Component{
                             <div className={styles.myrow}>
                                 <div className={styles.mycellHeader}>Course Load</div>
                             </div>
+                            
                             <div className={styles.myrow}>
                                 {/* designed Component */}
                                 <div className={styles.mycellWholeRight}>

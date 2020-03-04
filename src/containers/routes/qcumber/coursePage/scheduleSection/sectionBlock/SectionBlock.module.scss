@@ -1,0 +1,21 @@
+@import "../../../../../global_vars";
+
+.section{
+    display: flex;
+    flex-direction: column;
+    background-color: #fbfbfb;
+    margin-bottom: 12px;
+    border-radius: 6px;
+}
+
+.sectionTitle{
+    padding-top: 28px;
+    margin-bottom: 25px;
+
+    font-family: $nav-link-font;
+    font-size: 14px;
+    font-weight: 400;
+    // line-height: 1;
+    text-align: center;
+    color: $tx-selected-color;
+}

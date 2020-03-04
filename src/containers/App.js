@@ -32,7 +32,7 @@ class App extends Component {
         const {locale} = this.props;
         return (
             <div className={styles.App}>
-                <main className={styles.MainContent}>
+                <main id={"QMainContent"} className={styles.MainContent}>
                     {/* remove later */}
                     {/* <QcumberWrapper > */}
                         <Switch>
