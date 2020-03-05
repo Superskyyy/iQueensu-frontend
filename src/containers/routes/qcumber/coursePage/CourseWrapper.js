@@ -4,7 +4,7 @@ import { getCourse } from "../../../../store/actions/courseActions";
 import StatusBar from "../../../../components/common/statusBar/StatusBar";
 import CourseLoadBar from "../../../../components/common/courseLoadBar/CourseLoadBar";
 import styles from './CourseWrapper.module.css';
-import dataCourseLoad from "../coursePage/CourseLoad/dataCourseLoad";
+import DataCourseLoad from "./CourseLoad/DataCourseLoad";
 
 
 class CourseWrapper extends React.Component{
@@ -110,7 +110,7 @@ class CourseWrapper extends React.Component{
 
                             <div className={styles.myrow}>
                                 {/* designed Component */}
-                                <dataCourseLoad />
+                                <DataCourseLoad />
                                 <CourseLoadBar
                                         tableHeaders = {["Lecture", "Tutorial", "Lab", "Practice", "Total", "Load"]}                                      
                                         lecture={"3 h/week"}
