@@ -4,18 +4,21 @@ import { getCourse } from "../../../../store/actions/courseActions";
 import StatusBar from "../../../../components/common/statusBar/StatusBar";
 import CourseLoadBar from "../../../../components/common/courseLoadBar/CourseLoadBar";
 import styles from './CourseWrapper.module.css';
+import dataCourseLoad from "../coursePage/CourseLoad/dataCourseLoad";
 
 
 class CourseWrapper extends React.Component{
-
     componentDidMount(){
-        this.props.getCourseTest("noUse");
+        this.props.getCourseTest("noUse"); 
+
     }
 
     render(){    
         return(
-            <div  className={styles.coursePageDashBoard}>
+            
+            <div  className={styles.coursePageDashBoard}> 
                 {/* <Fragment> */}
+                
                     <div className={styles.coursePageLeftPart}>
                         {/* temp */}
                         {this.props.currentCourse.length < 1 ? null : this.props.currentCourse[0]["units"]}
@@ -104,10 +107,10 @@ class CourseWrapper extends React.Component{
                             <div className={styles.myrow}>
                                 <div className={styles.mycellHeader}>Course Load</div>
                             </div>
-                            
+
                             <div className={styles.myrow}>
                                 {/* designed Component */}
-                                <div className={styles.mycellWholeRight}>
+                                <dataCourseLoad />
                                 <CourseLoadBar
                                         tableHeaders = {["Lecture", "Tutorial", "Lab", "Practice", "Total", "Load"]}                                      
                                         lecture={"3 h/week"}
@@ -117,7 +120,8 @@ class CourseWrapper extends React.Component{
                                         total={"10 h/week"}
                                         totalPerTerm={"120 h/term"}
                                         load={"Regular"} />
-                                </div>
+                               
+                                
                             </div>
                         </div>
 
