@@ -23,6 +23,10 @@ export const URL_PATHS = {
     DATABASE_PATH: '/database',
     DATABASE_COURSE_PATH: '/database/course',
 
+    //login
+    LOGIN_PATH: '/login',
+    SIGNUP_PATH: '/signup',
+    FORGET_PATH: '/forget',
 }
 
 // Filters related
