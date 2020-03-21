@@ -13,10 +13,13 @@ import styles                                from './App.module.css';
 import Home                                  from "./routes/Home";
 import NotFound                              from "./routes/NotFound";
 import Qhousing                              from "./routes/qhousing/Qhousing";
-import QcumberLayout from './routes/qucumber/QcumberLayout';
+
+//import QcumberLayout                         from './routes/qucumber/QcumberLayout';
 import LoginPage                             from "./routes/login/LoginPage";
 import SignUp                                from "./routes/login/SignUp";
 import ForgetPage                            from "./routes/login/forget/forget";
+import QcumberLayout                        from './routes/qcumber/QcumberLayout';
+import { URL_PATHS }                        from '../utilities/constants/constants';
 
 class App extends Component {
     constructor(props) {
@@ -34,20 +37,22 @@ class App extends Component {
         const {locale} = this.props;
         return (
             <div className={styles.App}>
-                <main className={styles.MainContent}>
+                <main id={"QMainContent"} className={styles.MainContent}>
                     {/* remove later */}
                     {/* <QcumberWrapper > */}
                         <Switch>
                             <Route path="/" exact component={Home}/>
                             <Route path="/404" exact component={NotFound}/>
-                            <Route path="/qhousing" exact component={Qhousing}/>
-                            {/* <Route path="/qucumber" exact component={Qucumber}/> */}
-                            <Route path="/qucumber" exact component={QcumberLayout}/>
-                            <Route path={"/database"} exact component={QcumberLayout}/>
-                            <Route path={"/database/course"} exact component={QcumberLayout}/>
-                            <Route path={"/login"} exact component={LoginPage}/>
-                            <Route path={"/signup"} exact component={SignUp}/>
-                            <Route path={"/forget"} exact component={ForgetPage}/>
+
+                            <Route path={URL_PATHS.QHOUSING_PATH} exact component={Qhousing}/>
+                            {/* <Route path="/qcumber" exact component={Qcumber}/> */}
+                            <Route path={URL_PATHS.QCUMBER_PATH} exact component={QcumberLayout}/>
+                            <Route path={URL_PATHS.DATABASE_PATH} exact component={QcumberLayout}/>
+                            <Route path={URL_PATHS.DATABASE_COURSE_PATH} exact component={QcumberLayout}/>
+                            <Route path={URL_PATHS.DATABASE_SEARCH_PATH} exact component={QcumberLayout}/>
+                            <Route path={URL_PATHS.LOGIN_PATH} exact component={LoginPage}>
+                            <Route path={URL_PATHS.SIGNUP_PATH} exact component={SignUp}/>
+                            <Route path={URL_PATHS.FORGET_PATH} exact component={ForgetPage}/>-
                             <Redirect from="*" to="/404"/>
                         </Switch>
                     {/* </QcumberWrapper> */}

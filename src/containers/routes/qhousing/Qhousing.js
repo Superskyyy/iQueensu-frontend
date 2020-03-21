@@ -4,7 +4,7 @@ import {withRouter}                 from "react-router-dom";
 //
 import CampusMap                    from "./CampusMap";
 import {qhousing}                   from "../../../assets/exportImages";
-import XHelmet                      from "../../../components/accessories/XHelmet";
+import XHelmet                      from "../../../components/accessoriesDeprecated/XHelmet";
 // Styles
 import styles                       from "./Qhousing.module.css";
 

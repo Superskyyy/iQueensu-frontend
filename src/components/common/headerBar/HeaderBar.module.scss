@@ -1,0 +1,69 @@
+@import "../../../containers/global_vars";
+
+.QHeader {
+    display: flex;
+    height: 80px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.QLogo {
+    margin: 0 !important;
+    padding: 22px 0 !important;
+}
+
+
+.Qcumber {
+    font-size: 24px !important;
+    margin: 0 8px 0 3px !important;
+    // use flex and align-content: center is prob better
+    padding: 22px 15px 28px 0 !important;
+    color: $tx-selected-color !important;
+}
+
+.SignUp {
+    border-radius: 4px;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.16);
+    background-color: #C8DFCB;
+}
+
+.QNavBarRight a,
+.QNavBarList a {
+    float: left;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0px 9px 0px 8px;
+    padding: 28px 15px;
+
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-family: $nav-link-font;
+}
+
+.QNavBar {
+    z-index: 10;
+    background-color: white;
+    text-align: center;
+    float: left;
+    display: inline-flex;
+    margin-left: 140px;
+    padding: 0;
+}
+
+.QNavBarRight {
+    z-index: 10;
+    background-color: white;
+    text-align: center;
+    float: right;
+    margin-right: 200px;
+    padding: 0;
+    display: inline-flex;
+    justify-content: flex-end;
+}
+
+.QNavBarRight a:hover,
+.QNavBarList a:hover {
+    color: #2D8E34;
+    font-weight: 600;
+}

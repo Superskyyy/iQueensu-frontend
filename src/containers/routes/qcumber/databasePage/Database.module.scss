@@ -1,0 +1,78 @@
+@import "../../../global_vars";
+@import "../../../../funcs";
+
+.TitleBar {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.TitleBar > h1 {
+    font-family: $title-font;
+    font-size: 52px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.TitleBar > h2 {
+    font-family: $nav-link-font;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+}
+
+.search{
+    text-align: left;
+    display: inline-block;
+    max-width: 30rem;
+    width: 90vw;
+    min-width: 20rem;
+    margin-top: 2.25rem;
+}
+
+.ContributionText {
+    margin-top: 112px;
+    margin-bottom: 56px;
+}
+
+.QcumberCardsWrapper {
+    height: 100%;
+    width: 100%;
+    max-width: 1105px;
+    margin: 15vmin auto 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+@media screen and (max-width: 700px) {
+    .Wrapper > .column {
+        width: 100%;
+        display: block;
+    }
+}
+
+.Wrapper {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+$Logo_width_percentage: 15%;
+$designed_min_width_of_Wrapper: 1099px;
+$calculated_min_width_for_Logo: $designed_min_width_of_Wrapper * p_to_d($Logo_width_percentage);
+
+.Logo {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: $Logo_width_percentage;
+    min-width: $calculated_min_width_for_Logo;
+    margin-top: 80px;
+}
+

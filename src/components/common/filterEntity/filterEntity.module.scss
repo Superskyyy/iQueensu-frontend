@@ -1,0 +1,23 @@
+@import "../../../containers/global_vars";
+
+.wrapperClassName{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    color: #3e3e3e;
+    font-family: $nav-link-font;
+
+    float: left;
+    padding: 24px;
+}
+
+.fieldName{
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.optionsPart{
+    display: flex;
+    flex-direction: column;
+    margin-right: 6rem;
+}
