@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {NavLink, withRouter} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import styles             from './LoginPage.module.css';
 import Logo               from './qucumber.svg';
 //import './App.css';
@@ -35,7 +35,7 @@ class LoginPage extends Component {
             return this.setState({error: 'Confirm password is required'});
         }
 
-        if (this.state.confirmp != this.state.password) {
+        if (this.state.confirmp !== this.state.password) {
           return this.setState({error: 'Confirm password should be equal to passwaord'});
         }
 
