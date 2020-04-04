@@ -5,13 +5,14 @@ import Qcumber from './Qcumber';
 import CoursePage from './coursePage/CoursePage';
 import SearchPage from './searchResultPage/SearchPage';
 import { URL_PATHS } from '../../../utilities/constants/constants';
+import DatabaseTS from './databasePage/DatabaseTS';
 
 
 class QcumberLayout extends Component{
     PageContent = (props) => {
         switch(this.props.match.url){
             case URL_PATHS.DATABASE_PATH:
-                return (<Database id={props.id}/>)
+                return (<DatabaseTS id={props.id}/>)
             case URL_PATHS.DATABASE_COURSE_PATH:
                 return <CoursePage id={props.id}/>
             case URL_PATHS.DATABASE_SEARCH_PATH:
