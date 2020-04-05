@@ -1,28 +1,31 @@
 // Packages
-import {routerMiddleware}                      from "connected-react-router";
-import {applyMiddleware, compose, createStore} from "redux";
-import {persistReducer, persistStore}          from 'redux-persist';
-import storage                                 from 'redux-persist/lib/storage';
-import thunk                                   from "redux-thunk";
+import { routerMiddleware } from "connected-react-router";
+import { applyMiddleware, compose, createStore } from "redux";
+import { persistReducer, persistStore } from "redux-persist";
+import storage from "redux-persist/lib/storage";
+import thunk from "redux-thunk";
 //
-import history                                 from "../utils/history";
-import rootReducer                             from "./reducers";
-import transforms                              from "./transform";
+import history from "../utils/history";
+import rootReducer from "./reducers";
+import transforms from "./transform";
 
 const initialState = {};
 const middleware = [thunk];
 
 const persistConfig = {
-    key: 'root',
+    key: "root",
     storage: storage,
     //stateReconciler: hardSet,
     transforms: [transforms],
-    whitelist: ['root']
+    whitelist: ["root"],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer(history));
 
-const composeEnhancers = typeof window === "object" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : compose;
+const composeEnhancers =
+    typeof window === "object" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+        ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
+        : compose;
 
 //** Deprecated **//
 // export const store = createStore(
@@ -41,10 +44,7 @@ const composeEnhancers = typeof window === "object" && window.__REDUX_DEVTOOLS_E
 export const store = createStore(
     persistedReducer,
     initialState,
-    composeEnhancers(
-        applyMiddleware(
-            routerMiddleware(history),
-            ...middleware))
+    composeEnhancers(applyMiddleware(routerMiddleware(history), ...middleware))
 );
 
 export const persistor = persistStore(store);

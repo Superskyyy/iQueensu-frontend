@@ -3,9 +3,9 @@ const en_US = {
     name: "my name is {name}",
     home: "Home",
     notfound: "Page Not Found",
-    forum: 'Forum',
-    contact: 'Contact',
-    about: 'About',
+    forum: "Forum",
+    contact: "Contact",
+    about: "About",
 
     // Title
     gradeDistributionTitle: "Grade Distribution",
@@ -14,14 +14,13 @@ const en_US = {
     secretLibraryTitle: "Secret Library",
 
     // Description
-    gradeDistributionDescription: 'Looking for a bird course?',
-    courseCatalogDescription: 'Everything SOLUS has',
-    degreePlanningDescription: 'What course to choose?',
-    secretLibraryDescription: 'Place for good and free stuff',
+    gradeDistributionDescription: "Looking for a bird course?",
+    courseCatalogDescription: "Everything SOLUS has",
+    degreePlanningDescription: "What course to choose?",
+    secretLibraryDescription: "Place for good and free stuff",
 
     // Button text
-    checkOurPostings: 'Check Our Postings',
-
+    checkOurPostings: "Check Our Postings",
 };
 
 export default en_US;

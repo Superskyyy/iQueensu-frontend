@@ -61,7 +61,7 @@ class HeaderBar extends React.Component {
 
                 {this.props.hasRightAlignedItems ? (
                     <Fragment>
-                        <hr className={BurerItemStyles.QSeprator}/>
+                        <hr className={BurerItemStyles.QSeprator} />
                         <div className={`${BurerItemStyles.QNavBarLink} ${Styles.SignUp}`}>
                             <NavLink to={"/about"}>Sign Up</NavLink>
                         </div>

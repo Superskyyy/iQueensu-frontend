@@ -1,8 +1,8 @@
 // Packages
-import PropTypes from 'prop-types';
-import React     from 'react';
+import PropTypes from "prop-types";
+import React from "react";
 // Styles
-import styles from "./Marker.module.css"
+import styles from "./Marker.module.css";
 
 // const Wrapper = styled.div`
 //   position: absolute;
@@ -25,11 +25,8 @@ import styles from "./Marker.module.css"
 //   }
 // `;
 
-const Marker = props => (
-    <div className={styles.Wrapper}
-        alt={props.text}
-        {...props.onClick ? {onClick: props.onClick} : {}}
-    />
+const Marker = (props) => (
+    <div className={styles.Wrapper} alt={props.text} {...(props.onClick ? { onClick: props.onClick } : {})} />
 );
 
 Marker.defaultProps = {

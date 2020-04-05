@@ -1,14 +1,11 @@
+export const convertObjInString = (obj) => {
+    let str = "";
 
-
-export const convertObjInString = (obj) =>{
-    let str = '';
-
-    for (var o in obj) {
-        if(obj.hasOwnProperty(o)){
+    for (const o in obj) {
+        if (obj.hasOwnProperty(o)) {
             str = str + "&" + o + "=" + obj[o];
         }
     }
 
     return str;
-}
-    
+};

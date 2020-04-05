@@ -1,9 +1,9 @@
 // Packages
-import React, {FC} from "react";
+import React, { FC } from "react";
 import { injectIntl, WrappedComponentProps } from "react-intl";
 import { withRouter, RouteComponentProps } from "react-router-dom";
 // import { DatabaseLogo } from "../../../../assets/exportImages";
-import DatabaseLogo from '../../../../assets/images/Qcumber/pluto-searching.svg';
+import { ReactComponent as DatabaseLogo } from "../../../../assets/images/Qcumber/pluto-searching.svg";
 import messages from "../../../../assets/languages/defaultMessage";
 import CardTS from "./Card/CardTS";
 import CustomNavButton from "../../../../components/common/customNavButton/CustomNavButton";
@@ -17,14 +17,14 @@ export interface DatabaseProps extends RouteComponentProps<any> {
     id: string;
 }
 
-interface LogoProps{
+interface LogoProps {
     className?: string;
-    style?:
+    style?: {};
 }
 
-export const TestLogo: FC<LogoProps> = (props) =>{
+export const TestLogo: FC<LogoProps> = (props) => {
     return <DatabaseLogo {...props} />;
-} 
+};
 
 class DatabaseTS extends React.Component<DatabaseProps & WrappedComponentProps, {}> {
     render() {
@@ -33,7 +33,7 @@ class DatabaseTS extends React.Component<DatabaseProps & WrappedComponentProps, 
             CONTAINER_TYPES.GRADE_DISTRIBUTION,
             CONTAINER_TYPES.COURSE_CATALOG,
             CONTAINER_TYPES.DEGREE_PLANNING,
-            CONTAINER_TYPES.SECRET_LIBRARY
+            CONTAINER_TYPES.SECRET_LIBRARY,
         ];
 
         //const gradeDistributionDescp = this.props.intl.formatMessage(getMessageByTypes(MESSAGE_KEYS.DESCRIPTION, CONTAINER_TYPES.GRADE_DISTRIBUTION))
@@ -42,7 +42,7 @@ class DatabaseTS extends React.Component<DatabaseProps & WrappedComponentProps, 
                 {/* error */}
                 {/* <DatabaseLogo /> */}
                 {/* <img className={scssStyles.Logo} src={} alt={"DatabaseLogo"} /> */}
-                
+
                 <div className={scssStyles.TitleBar}>
                     {/* need to intl-format */}
                     <h1>Qcumber Database</h1>
@@ -60,7 +60,7 @@ class DatabaseTS extends React.Component<DatabaseProps & WrappedComponentProps, 
                             backgroundImageName={typeObject}
                             title={this.props.intl.formatMessage(messages.courseCatalogTitle)}
                             // description={ getMessageByTypes(MESSAGE_KEYS.DESCRIPTION, typeObject)}
-                            description ={this.props.intl.formatMessage(messages.degreePlanningDescription)}
+                            description={this.props.intl.formatMessage(messages.degreePlanningDescription)}
                         />
                     ))}
                 </div>
@@ -83,4 +83,4 @@ class DatabaseTS extends React.Component<DatabaseProps & WrappedComponentProps, 
     }
 }
 
-export default injectIntl(withRouter((DatabaseTS)));
+export default injectIntl(withRouter(DatabaseTS));

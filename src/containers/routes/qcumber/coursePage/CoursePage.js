@@ -1,10 +1,10 @@
 // Packages
-import React, {Component} from "react";
-import {withRouter}       from "react-router-dom";
+import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 //
-import CourseWrapper      from "./CourseWrapper";
+import CourseWrapper from "./CourseWrapper";
 // Styles
-import styles             from "./CoursePage.module.css";
+import styles from "./CoursePage.module.css";
 
 class CoursePage extends Component {
     constructor(props) {
@@ -18,13 +18,10 @@ class CoursePage extends Component {
         return (
             // put this into a separate css file?
             <div id={this.props.id} className={styles.Wrapper}>
-                <CourseWrapper>
-                    {/* childern render first, because its part of property */}
-                </CourseWrapper>
+                <CourseWrapper>{/* childern render first, because its part of property */}</CourseWrapper>
             </div>
         );
     }
 }
-
 
 export default withRouter(CoursePage);

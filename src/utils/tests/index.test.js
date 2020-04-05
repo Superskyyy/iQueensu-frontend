@@ -1,5 +1,5 @@
-import {iQueensU} from "../../index";
+import { iQueensU } from "../../index";
 
-test('iQueensU', () => {
+test("iQueensU", () => {
     expect(iQueensU()).toBe("iQueensU Web");
 });

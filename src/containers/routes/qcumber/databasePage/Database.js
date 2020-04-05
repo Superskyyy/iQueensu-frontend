@@ -25,7 +25,7 @@ class Database extends React.Component {
             CONTAINER_TYPES.GRADE_DISTRIBUTION,
             CONTAINER_TYPES.COURSE_CATALOG,
             CONTAINER_TYPES.DEGREE_PLANNING,
-            CONTAINER_TYPES.SECRET_LIBRARY
+            CONTAINER_TYPES.SECRET_LIBRARY,
         ];
 
         //const gradeDistributionDescp = this.props.intl.formatMessage(getMessageByTypes(MESSAGE_KEYS.DESCRIPTION, CONTAINER_TYPES.GRADE_DISTRIBUTION))

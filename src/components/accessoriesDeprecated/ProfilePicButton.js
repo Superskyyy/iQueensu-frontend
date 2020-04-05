@@ -1,9 +1,9 @@
 // Packages
-import React, {Fragment, PureComponent} from 'react';
+import React, { Fragment, PureComponent } from "react";
 //
-import Sanbai from '../../assets/images/logos/BEASTSanBei.png';
+import Sanbai from "../../assets/images/logos/BEASTSanBei.png";
 // Styles
-import styles from './ProfilePicButton.module.css';
+import styles from "./ProfilePicButton.module.css";
 
 class ProfilePicButton extends PureComponent {
     state = {
@@ -16,10 +16,9 @@ class ProfilePicButton extends PureComponent {
             // API handling
             // getUserIcon();
         } else {
-            const generatedIcon =
-                <img className={styles.Icon} src={Sanbai} alt="userProfilePicture"/>;
+            const generatedIcon = <img className={styles.Icon} src={Sanbai} alt="userProfilePicture" />;
 
-            this.setState({icon: generatedIcon});
+            this.setState({ icon: generatedIcon });
         }
     };
 
@@ -31,15 +30,9 @@ class ProfilePicButton extends PureComponent {
         // this.updateIcon(false);
 
         return (
-            <Fragment>
-                {this.state.icon != null &&
-                <div className={styles.CardImg}>
-                    {this.state.icon}
-                </div>}
-            </Fragment>
+            <Fragment>{this.state.icon != null && <div className={styles.CardImg}>{this.state.icon}</div>}</Fragment>
         );
     }
-
 }
 
 export default ProfilePicButton;

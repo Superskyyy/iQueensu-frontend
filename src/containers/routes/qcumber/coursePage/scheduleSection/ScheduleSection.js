@@ -1,9 +1,9 @@
-import React, { Component, Fragment } from 'react';
-import SectionBlock from './sectionBlock/SectionBlock';
+import React, { Component, Fragment } from "react";
+import SectionBlock from "./sectionBlock/SectionBlock";
 
 // ```
 // This is where Schedule section interact with planner
-// timetable by usingredux store 
+// timetable by usingredux store
 //
 // 'registeredTimeTable' is not the list of fetched results
 // but the shared ones between planner and itself
@@ -12,31 +12,29 @@ import SectionBlock from './sectionBlock/SectionBlock';
 //
 // ```
 
-class ScheduleSection extends Component{
-    constructor(props){
+class ScheduleSection extends Component {
+    constructor(props) {
         super(props);
 
         this.state = {
-            lectures:[],
-            labs:[],
-            tutorials:[],
-        }
-    }    
+            lectures: [],
+            labs: [],
+            tutorials: [],
+        };
+    }
 
-    componentDidMount = () =>{
-        let lecTmp = [];
-        let labTmp = [];
-        let tutTmp = [];
+    componentDidMount = () => {
+        const lecTmp = [];
+        const labTmp = [];
+        const tutTmp = [];
 
-        for (let index in this.props.schedule){
+        for (const index in this.props.schedule) {
             // TODO modify this to the right accessing path
-            if(this.props.schedule[index]['type'] === 'lecture'){
+            if (this.props.schedule[index]["type"] === "lecture") {
                 lecTmp.push(this.props.schedule[index]);
-            }
-            else if(this.props.schedule[index]['type'] === 'lab'){
+            } else if (this.props.schedule[index]["type"] === "lab") {
                 labTmp.push(this.props.schedule[index]);
-            }
-            else{
+            } else {
                 tutTmp.push(this.props.schedule[index]);
             }
         }
@@ -45,22 +43,27 @@ class ScheduleSection extends Component{
             lectures: lecTmp,
             labs: labTmp,
             tutorials: tutTmp,
-        })
-    }
+        });
+    };
 
-    render(){
-        return(
+    render() {
+        return (
             <Fragment>
                 {/* TODO: intl format languages */}
-                {this.state.lectures.length > 0 ? <SectionBlock title={'Mandatory Lecture'} section={this.state.lectures} /> : undefined }
+                {this.state.lectures.length > 0 ? (
+                    <SectionBlock title={"Mandatory Lecture"} section={this.state.lectures} />
+                ) : undefined}
 
-                {this.state.labs.length > 0 ? <SectionBlock title={'Mandatory Lab'} section={this.state.labs} /> : undefined }
+                {this.state.labs.length > 0 ? (
+                    <SectionBlock title={"Mandatory Lab"} section={this.state.labs} />
+                ) : undefined}
 
-                {this.state.tutorials.length > 0 ? <SectionBlock title={'Mandatory Tutorial'} section={this.state.tutorials} /> : undefined }
+                {this.state.tutorials.length > 0 ? (
+                    <SectionBlock title={"Mandatory Tutorial"} section={this.state.tutorials} />
+                ) : undefined}
             </Fragment>
-        )
+        );
     }
 }
-
 
 export default ScheduleSection;

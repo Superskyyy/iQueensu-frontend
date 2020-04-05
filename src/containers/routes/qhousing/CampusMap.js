@@ -1,17 +1,17 @@
 // Packages
-import React, {Component, Fragment}   from 'react';
+import React, { Component, Fragment } from "react";
 //
-import GoogleMap                      from "../../../components/widgetsDeprecated/GoogleMap";
-import SearchBar                      from "../../../components/widgetsDeprecated/SearchBar";
-import {MockPlaces, QueensUniversity} from "../../../assets/exportLocations";
-import Marker                         from "../../../components/accessoriesDeprecated/Marker";
+import GoogleMap from "../../../components/widgetsDeprecated/GoogleMap";
+import SearchBar from "../../../components/widgetsDeprecated/SearchBar";
+import { MockPlaces, QueensUniversity } from "../../../assets/exportLocations";
+import Marker from "../../../components/accessoriesDeprecated/Marker";
 // Styles
-import styles                         from "./CampusMap.module.css";
+import styles from "./CampusMap.module.css";
 
 class CampusMap extends Component {
     static defaultProps = {
         center: QueensUniversity,
-        zoom: 16
+        zoom: 16,
     };
 
     constructor(props) {
@@ -29,13 +29,17 @@ class CampusMap extends Component {
             streetViewControl: true,
             scaleControl: true,
             fullscreenControl: true,
-            styles: [{
-                featureType: "poi.business",
-                elementType: "labels",
-                stylers: [{
-                    visibility: "off"
-                }]
-            }],
+            styles: [
+                {
+                    featureType: "poi.business",
+                    elementType: "labels",
+                    stylers: [
+                        {
+                            visibility: "off",
+                        },
+                    ],
+                },
+            ],
             gestureHandling: "greedy",
             disableDoubleClickZoom: true,
             minZoom: 11,
@@ -46,14 +50,10 @@ class CampusMap extends Component {
             mapTypeControlOptions: {
                 style: maps.MapTypeControlStyle.VERTICAL_BAR,
                 position: maps.ControlPosition.TOP_LEFT,
-                mapTypeIds: [
-                    maps.MapTypeId.ROADMAP,
-                    maps.MapTypeId.SATELLITE,
-                    maps.MapTypeId.HYBRID
-                ]
+                mapTypeIds: [maps.MapTypeId.ROADMAP, maps.MapTypeId.SATELLITE, maps.MapTypeId.HYBRID],
             },
             zoomControl: true,
-            clickableIcons: true
+            clickableIcons: true,
         };
     };
 
@@ -66,13 +66,11 @@ class CampusMap extends Component {
     };
 
     addPlace = (place) => {
-        this.setState({places: place});
+        this.setState({ places: place });
     };
 
     render() {
-        const {
-            places, mapApiLoaded, mapInstance, mapApi,
-        } = this.state;
+        const { places, mapApiLoaded, mapInstance, mapApi } = this.state;
         return (
             <Fragment>
                 <div className={styles.Wrapper}>
@@ -81,9 +79,9 @@ class CampusMap extends Component {
                             defaultCenter={this.props.center}
                             defaultZoom={this.props.zoom}
                             options={this.getMapOptions}
-                            onGoogleApiLoaded={({map, maps}) => this.apiHasLoaded(map, maps)}
+                            onGoogleApiLoaded={({ map, maps }) => this.apiHasLoaded(map, maps)}
                         >
-                            {places.map(place => (
+                            {places.map((place) => (
                                 <Marker
                                     key={place.id}
                                     text={place.name}
@@ -91,17 +89,15 @@ class CampusMap extends Component {
                                     lng={place.geometry.location.lng}
                                 />
                             ))}
-
                         </GoogleMap>
                     </div>
                     <div className={styles.SelectBoxWrapper}>
-                        {mapApiLoaded && <SearchBar map={mapInstance} mapApi={mapApi} addplace={this.addPlace}/>}
+                        {mapApiLoaded && <SearchBar map={mapInstance} mapApi={mapApi} addplace={this.addPlace} />}
                     </div>
                 </div>
             </Fragment>
         );
     }
-
 }
 
 export default CampusMap;

@@ -1,7 +1,7 @@
 // Packages
-import {defineMessages} from "react-intl";
+import { defineMessages } from "react-intl";
 //
-import en_US            from "./en_US";
+import en_US from "./en_US";
 
 export const messages = defineMessages({
     // Title
@@ -25,25 +25,25 @@ export const messages = defineMessages({
     // Description
     gradeDistributionDescription: {
         id: "gradeDistributionDescription",
-        defaultMessage: en_US.gradeDistributionDescription
+        defaultMessage: en_US.gradeDistributionDescription,
     },
     courseCatalogDescription: {
         id: "courseCatalogDescription",
-        defaultMessage: en_US.courseCatalogDescription
+        defaultMessage: en_US.courseCatalogDescription,
     },
     degreePlanningDescription: {
         id: "degreePlanningDescription",
-        defaultMessage: en_US.degreePlanningDescription
+        defaultMessage: en_US.degreePlanningDescription,
     },
     secretLibraryDescription: {
         id: "secretLibraryDescription",
-        defaultMessage: en_US.secretLibraryDescription
+        defaultMessage: en_US.secretLibraryDescription,
     },
 
     // Button text
     checkOurPostings: {
         id: "checkOurPostings",
-        defaultMessage: en_US.checkOurPostings
+        defaultMessage: en_US.checkOurPostings,
     },
 });
 

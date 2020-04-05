@@ -1,18 +1,18 @@
 // Packages
-import GoogleMapReact    from 'google-map-react';
-import PropTypes         from "prop-types";
-import React, {Fragment} from "react";
+import GoogleMapReact from "google-map-react";
+import PropTypes from "prop-types";
+import React, { Fragment } from "react";
 //
-import {GoogleMapApi}    from "../../utils/api";
+import { GoogleMapApi } from "../../utils/api";
 
-const GoogleMap = ({children, ...props}) => (
+const GoogleMap = ({ children, ...props }) => (
     <Fragment>
         <GoogleMapReact
             bootstrapURLKeys={{
                 key: GoogleMapApi,
-                language: 'en',
-                region: 'ca',
-                libraries: ['places', 'geometry']
+                language: "en",
+                region: "ca",
+                libraries: ["places", "geometry"],
             }}
             yesIWantToUseGoogleMapApiInternals={true}
             {...props}
@@ -23,10 +23,7 @@ const GoogleMap = ({children, ...props}) => (
 );
 
 GoogleMap.propTypes = {
-    children: PropTypes.oneOfType([
-        PropTypes.node,
-        PropTypes.arrayOf(PropTypes.node),
-    ]),
+    children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
 };
 
 GoogleMap.defaultProps = {

@@ -1,32 +1,32 @@
 //
-import messages                        from "../assets/languages/defaultMessage";
-import {CONTAINER_TYPES, MESSAGE_KEYS} from "./constants/constants";
+import messages from "../assets/languages/defaultMessage";
+import { CONTAINER_TYPES, MESSAGE_KEYS } from "./constants/constants";
 
 const specificProjectTypeMessages = {
     [CONTAINER_TYPES.GRADE_DISTRIBUTION]: {
         [MESSAGE_KEYS.TITLE]: messages.gradeDistributionTitle,
-        [MESSAGE_KEYS.DESCRIPTION]: messages.gradeDistributionDescription
+        [MESSAGE_KEYS.DESCRIPTION]: messages.gradeDistributionDescription,
     },
 
     [CONTAINER_TYPES.COURSE_CATALOG]: {
         [MESSAGE_KEYS.TITLE]: messages.courseCatalogTitle,
-        [MESSAGE_KEYS.DESCRIPTION]: messages.courseCatalogDescription
+        [MESSAGE_KEYS.DESCRIPTION]: messages.courseCatalogDescription,
     },
 
     [CONTAINER_TYPES.DEGREE_PLANNING]: {
         [MESSAGE_KEYS.TITLE]: messages.degreePlanningTitle,
-        [MESSAGE_KEYS.DESCRIPTION]: messages.degreePlanningDescription
+        [MESSAGE_KEYS.DESCRIPTION]: messages.degreePlanningDescription,
     },
 
     [CONTAINER_TYPES.SECRET_LIBRARY]: {
         [MESSAGE_KEYS.TITLE]: messages.secretLibraryTitle,
-        [MESSAGE_KEYS.DESCRIPTION]: messages.secretLibraryDescription
+        [MESSAGE_KEYS.DESCRIPTION]: messages.secretLibraryDescription,
     },
 
     [CONTAINER_TYPES.DEFAULT]: {
         [MESSAGE_KEYS.TITLE]: messages.gradeDistributionTitle,
-        [MESSAGE_KEYS.DESCRIPTION]: messages.gradeDistributionDescription
-    }
+        [MESSAGE_KEYS.DESCRIPTION]: messages.gradeDistributionDescription,
+    },
 };
 
 export const getMessageByTypes = (msgType, projectType) => {

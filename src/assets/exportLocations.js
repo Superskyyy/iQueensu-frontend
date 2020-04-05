@@ -1,7 +1,7 @@
 // Locations
 
 // Mock Place
-import {places} from "./mock-places";
+import { places } from "./mock-places";
 
 export const MockPlaces = places;
 
@@ -11,7 +11,7 @@ export const MockPlaces = places;
  */
 export const QueensUniversity = {
     lat: 44.2252795,
-    lng: -76.4973299
+    lng: -76.4973299,
 };
 
 /**
@@ -20,5 +20,5 @@ export const QueensUniversity = {
  */
 export const StaufferLibrary = {
     lat: 44.2282727,
-    lng: -76.4965522
+    lng: -76.4965522,
 };

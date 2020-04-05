@@ -1,12 +1,17 @@
 // Packages
-import React, {Fragment} from "react";
+import React, { Fragment } from "react";
 // Styles
-import styles from "./Spinner.module.css"
+import styles from "./Spinner.module.css";
 
 // Default Loading
 const Spinner = (props) => (
     <Fragment>
-        <img className={styles.Wrapper} src={props.img} alt={props.text} style={{"animation": "spin infinite 3s linear"}}/>
+        <img
+            className={styles.Wrapper}
+            src={props.img}
+            alt={props.text}
+            style={{ animation: "spin infinite 3s linear" }}
+        />
     </Fragment>
 );
 

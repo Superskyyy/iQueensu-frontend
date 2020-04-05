@@ -1,5 +1,5 @@
 //
-import * as types from './types';
+import * as types from "./types";
 
 const actions = {
     changeLanguage(val) {
@@ -7,11 +7,10 @@ const actions = {
         return (dispatch, state) => {
             dispatch({
                 type: types.CHANGE_LANGUAGE,
-                val
+                val,
             });
         };
-    }
+    },
 };
 
 export default actions;
-
