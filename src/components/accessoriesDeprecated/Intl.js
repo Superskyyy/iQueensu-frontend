@@ -1,14 +1,11 @@
 // Packages
 import React, {Component}            from 'react';
-import {addLocaleData, IntlProvider} from 'react-intl';
-import en                            from 'react-intl/locale-data/en';
-import zh                            from 'react-intl/locale-data/zh';
+import { IntlProvider} from 'react-intl';
 import {connect}                     from 'react-redux';
 //
 import en_US                         from "../../assets/languages/en_US";
 import zh_CN                         from "../../assets/languages/zh_CN";
 
-addLocaleData([...zh, ...en]);
 
 class Inter extends Component {
     render() {
