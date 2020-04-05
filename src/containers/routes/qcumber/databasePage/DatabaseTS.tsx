@@ -39,9 +39,7 @@ class DatabaseTS extends React.Component<DatabaseProps & WrappedComponentProps, 
         //const gradeDistributionDescp = this.props.intl.formatMessage(getMessageByTypes(MESSAGE_KEYS.DESCRIPTION, CONTAINER_TYPES.GRADE_DISTRIBUTION))
         return (
             <section id={this.props.id} className={scssStyles.Wrapper}>
-                {/* error */}
-                {/* <DatabaseLogo /> */}
-                {/* <img className={scssStyles.Logo} src={} alt={"DatabaseLogo"} /> */}
+                <DatabaseLogo className={scssStyles.Logo} />
 
                 <div className={scssStyles.TitleBar}>
                     {/* need to intl-format */}
