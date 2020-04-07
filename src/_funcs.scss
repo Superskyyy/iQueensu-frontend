@@ -1,8 +1,27 @@
 // percentage to decimal.
 // example: p_to_d(15%) ~> 0.15
 @function p_to_d($percentage) {
-    @if (type-of($percentage) != number OR unit($percentage) != "%") {
+    @if (type-of($percentage) !=number OR unit($percentage) !="%") {
         @error "decimal: `#{$percentage}` is not a percent";
     }
-    @return $percentage / 100%
+
+    @return $percentage / 100%;
 }
+
+@function tint-color($color, $level) {
+    @return mix(white, $color, $level * $color-interval);
+}
+
+@function shade-color($color, $level) {
+    @return mix(black, $color, $level * $color-interval);
+}
+
+
+@function color-level($color: $primary, $level: 0) {
+    $level-abs: abs($level);
+
+    @return if($level > 0, 
+        shade-color($color, $level-abs)
+    , tint-color($color, $level-abs));
+}
+

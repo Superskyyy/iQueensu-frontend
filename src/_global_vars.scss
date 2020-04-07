@@ -1,0 +1,144 @@
+@use "sass:map";
+@import "./funcs";
+
+$color-interval: 12;
+$header-font: "Playfair Display";
+$content-font: "Inter";
+
+$white: #fff !default;
+$grey-100: #f8f9fa !default;
+$grey-200: #e9ecef !default;
+$grey-300: #dee2e6 !default;
+$grey-400: #ced4da !default;
+$grey-500: #adb5bd !default;
+$grey-600: #6c757d !default;
+$grey-700: #495057 !default;
+$grey-800: #343a40 !default;
+$grey-900: #212529 !default;
+$black: #000 !default;
+
+$greys: ("100": $grey-100,
+    "200": $grey-200,
+    "300": $grey-300,
+    "400": $grey-400,
+    "500": $grey-500,
+    "600": $grey-600,
+    "700": $grey-700,
+    "800": $grey-800,
+    "900": $grey-900) !default;
+
+$blue: #0065f2 !default;
+$indigo: indigo !default;
+$purple: purple !default;
+$pink: pink !default;
+$red: #ad2121 !default;
+$orange: #eb9345 !default;
+$yellow: yellow !default;
+$green: #2d8e34 !default;
+$teal: teal !default;
+$cyan: cyan !default;
+$grey: $grey-200 !default;
+
+$colors: ("blue": $blue,
+    "indigo": $indigo,
+    "purple": $purple,
+    "pink": $pink,
+    "red": $red,
+    "orange": $orange,
+    "yellow": $yellow,
+    "green": $green,
+    "teal": $teal,
+    "cyan": $cyan,
+    "white": $white,
+    "grey": $grey-200,
+    "grey-dark": $grey-600) !default;
+
+$green-050: color-level($green, -5) !default;
+$green-100: color-level($green, -4) !default;
+$green-200: color-level($green, -3) !default;
+$green-300: color-level($green, -2) !default;
+$green-400: color-level($green, -1) !default;
+$green-500: color-level($green, 0) !default;
+$green-600: color-level($green, 1) !default;
+$green-700: color-level($green, 2) !default;
+$green-800: color-level($green, 3) !default;
+$green-900: color-level($green, 4) !default;
+
+$blue-050: color-level($blue, -5) !default;
+$blue-100: color-level($blue, -4) !default;
+$blue-200: color-level($blue, -3) !default;
+$blue-300: color-level($blue, -2) !default;
+$blue-400: color-level($blue, -1) !default;
+$blue-500: color-level($blue, 0) !default;
+$blue-600: color-level($blue, 1) !default;
+$blue-700: color-level($blue, 2) !default;
+$blue-800: color-level($blue, 3) !default;
+$blue-900: color-level($blue, 4) !default;
+
+$red-050: color-level($red, -5) !default;
+$red-100: color-level($red, -4) !default;
+$red-200: color-level($red, -3) !default;
+$red-300: color-level($red, -2) !default;
+$red-400: color-level($red, -1) !default;
+$red-500: color-level($red, 0) !default;
+$red-600: color-level($red, 1) !default;
+$red-700: color-level($red, 2) !default;
+$red-800: color-level($red, 3) !default;
+$red-900: color-level($red, 4) !default;
+
+$orange-050: color-level($orange, -5) !default;
+$orange-100: color-level($orange, -4) !default;
+$orange-200: color-level($orange, -3) !default;
+$orange-300: color-level($orange, -2) !default;
+$orange-400: color-level($orange, -1) !default;
+$orange-500: color-level($orange, 0) !default;
+$orange-600: color-level($orange, 1) !default;
+$orange-700: color-level($orange, 2) !default;
+$orange-800: color-level($orange, 3) !default;
+$orange-900: color-level($orange, 4) !default;
+
+$primary: $green !default;
+$primary-lite: $green-050 !default;
+$link: $blue !default;
+$link-lite: $blue-050 !default;
+$error: $red !default;
+$error-lite: $red-050 !default;
+$warning: $orange !default;
+$warning-lite: $orange-050 !default;
+$ok: $green !default;
+$ok-lite: $green-050 !default;
+
+$light: $grey-200 !default;
+$dark: $grey-600 !default;
+
+$theme-colors: ("primary": $primary,
+    "primary-lite": $primary-lite,
+    "link": $link,
+    "link-lite": $link-lite,
+    "error": $error,
+    "error-lite": $error-lite,
+    "warning": $warning,
+    "warning-lite": $warning-lite,
+    "ok": $ok,
+    "ok-lite": $ok-lite,
+    "light": $light,
+    "dark": $dark) !default;
+
+$primaries: ("primary-050": $green-050,
+    "primary-100": $green-100,
+    "primary-200": $green-200,
+    "primary-300": $green-300,
+    "primary-400": $green-400,
+    "primary-500": $green-500,
+    "primary-600": $green-600,
+    "primary-700": $green-700,
+    "primary-800": $green-800,
+    "primary-900": $green-900) !default;
+
+$on-primary-emphasis-high: rgba(256, 256, 256, 100);
+$on-primary-emphasis-medium: rgba(256, 256, 256, 0.74);
+$on-primary-emphasis-disabled: rgba(256, 256, 256, 0.24);
+
+$on-surface-emphasis-high: rgba(0, 0, 0, 0.87);
+$on-surface-emphasis-medium: rgba(0, 0, 0, 0.60);
+$on-surface-emphasis-disabled: rgba(0, 0, 0, 0.38);
