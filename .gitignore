@@ -1,6 +1,7 @@
 ### ignore file
 # ignore ide files
 .idea/
+.vscode/
 
 # dependencies
 /node_modules
