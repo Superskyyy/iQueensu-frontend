@@ -110,7 +110,7 @@ class CourseWrapper extends React.Component{
 
                             <div className={styles.myrow}>
                                 {/* designed Component */}
-                                <DataCourseLoad />
+                                var learning_hours = <DataCourseLoad />
                                 <CourseLoadBar
                                         tableHeaders = {["Lecture", "Tutorial", "Lab", "Practice", "Total", "Load"]}                                      
                                         lecture={"3 h/week"}
