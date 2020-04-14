@@ -4,11 +4,71 @@ import { getCourse } from "../../../../store/actions/courseActions";
 import StatusBar from "../../../../components/common/statusBar/StatusBar";
 import styles from './CourseWrapper.module.css';
 import { PieCharts } from "../../../../components/common/charts/PieCharts";
+import ScheduleSection from "./scheduleSection/ScheduleSection";
+import { fetchCourseTimeTable } from "../../../../utilities/courseDetailActions/fetchCourseTimeTable";
 
 class CourseWrapper extends React.Component{
+    constructor(props){
+        super(props);
+        // its not in store, bc the registered one in store is the one shared by the section & course planner
+        // initial state of this component
+        this.state = {
+            courseSchedule: [{
+                'name': '001',
+                'id': '4467',
+                'type': 'lecture',
+                'professor': 'Tian Yuan',
+                'location': 'Chernoff Aud',
+                'schedule': [{'time':'8:30am - 9:30am',
+                                'weekday': 'Tue'},
+                            {'time': '10:30am - 11:30am',
+                                'weekday': 'Wed'}],
+                'status': 'valid',
+                'duration': '2019/01/07 - 2019/04/05' // can use intl.DateFormat later on if needed 
+            }, 
+            {
+                'name': '003',
+                'id': '4469',
+                'type': 'lecture',
+                'professor': 'Tian Yuan',
+                'location': 'Chernoff Aud',
+                'schedule': [{'time':'8:30am - 9:30am',
+                                'weekday': 'Tue'},
+                            {'time': '10:30am - 11:30am',
+                                'weekday': 'Wed'}],
+                'status': 'valid',
+                'duration': '2019/01/07 - 2019/04/05' // can use intl.DateFormat later on if needed 
+            },
+            {
+                'name': '002',
+                'id': '4468',
+                'type': 'lab',
+                'professor': 'Tian Yuan',
+                'location': 'Chernoff Aud',
+                'schedule': [{'time':'8:30am - 9:30am',
+                                'weekday': 'Tue'},
+                            {'time': '10:30am - 11:30am',
+                                'weekday': 'Wed'}],
+                'status': 'valid',
+                'duration': '2019/01/07 - 2019/04/05' // can use intl.DateFormat later on if needed 
+            }],
+        };
+    };
+
+    handleCourseTimeTable = (res) =>{
+        // TODO: add an intermediate interface
+        res.json().then(result => {
+            this.setState({
+                courseSchedule: result 
+            });
+        })
+    }
 
     componentDidMount(){
         this.props.getCourseTest("noUse");
+
+        // uncoment this later on when demo
+        // fetchCourseTimeTable(this.props.currentCourse[0]['uuid'], this.handleCourseTimeTable);
     }
 
     render(){    
@@ -103,16 +163,25 @@ class CourseWrapper extends React.Component{
                             <div className={styles.myrow}>
                                 <div className={styles.mycellHeader}>Course Load</div>
                             </div>
-                            <div className={styles.myrow}>
-                                {/* designed Component */}
-                                <div>{this.props.currentCourse.length < 1 ? null : this.props.currentCourse[0]["course_description"]}</div>
-                            </div>
-
-                            <div className={styles.myrow}>
+                            {/* <div className={styles.myrow}>
                                 <StatusBar
                                     prerequisiteItem={"C- in CISC124"}
                                     userGrade={"Not Taken Yet"}
                                     valid={"nonValid"} />
+                            </div> */}
+                        </div>
+
+                        <div className={styles.mytable} style={{marginTop:"2rem"}}>
+                            <div className="column6"></div>
+                            <div className={styles.column5}></div>
+                            <div className={styles.myrow}>
+                                <div className={styles.mycellHeader}>Sections</div>
+                            </div>
+
+                            <div className={styles.myrow}>
+                                <ScheduleSection 
+                                    schedule={this.state.courseSchedule}                                   
+                                />
                             </div>
                         </div>
 

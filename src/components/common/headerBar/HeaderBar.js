@@ -1,14 +1,14 @@
 // Packages
-import React, { Fragment } from "react";
-import { NavLink, withRouter } from "react-router-dom";
-import { push as Menu } from "react-burger-menu";
+import React, {Fragment}     from "react";
+import {NavLink, withRouter} from "react-router-dom";
+import {push as Menu}        from "react-burger-menu";
 //
-import qcumberIcon from "../../../assets/images/logos/qcumber.svg";
-import Text from "../../accessoriesDeprecated/Text";
+import qcumberIcon           from "../../../assets/images/logos/qcumber.svg";
+import Text                  from "../../accessoriesDeprecated/Text";
 // Styles
-import Styles from "./HeaderBar.module.scss";
+import Styles                from "./HeaderBar.module.scss";
 import "./_burger.scss";
-import BurerItemStyles from "./WithBurger.module.scss";
+import BurgerItemStyles      from "./WithBurger.module.scss";
 // props:
 // hasRightAlignedItems (Optional): if containing any navlink that aligns to right
 
@@ -37,35 +37,35 @@ class HeaderBar extends React.Component {
 
         return (
             <Menu width={widthDecision} pageWrapId={"QCumberDatabaseMain"} outerContainerId={"QMainContent"}>
-                <div className={BurerItemStyles.QNavBarLink}>
+                <div className={BurgerItemStyles.QNavBarLink}>
                     {/* change css to design in left card.css */}
-                    <NavLink to={"/qcumber"} className={BurerItemStyles.QLogo}>
-                        <img width={28.2} height={28.2} src={qcumberIcon} alt={"qcumberIcon"} />
+                    <NavLink to={"/qcumber"} className={BurgerItemStyles.QLogo}>
+                        <img width={28.2} height={28.2} src={qcumberIcon} alt={"qcumberIcon"}/>
                     </NavLink>
 
                     {/* or refactor into a separate component */}
-                    <NavLink to={"/qcumber"} className={BurerItemStyles.Qcumber} activeClassName="chosen">
+                    <NavLink to={"/qcumber"} className={BurgerItemStyles.Qcumber} activeClassName="chosen">
                         Qcumber
                     </NavLink>
                 </div>
 
-                <NavLink to={"/"} className={BurerItemStyles.QNavBarLink} activeClassName="chosen">
-                    <Text id={"home"} />
+                <NavLink to={"/"} className={BurgerItemStyles.QNavBarLink} activeClassName="chosen">
+                    <Text id={"home"}/>
                 </NavLink>
-                <NavLink to={"/database"} className={BurerItemStyles.QNavBarLink} activeClassName="chosen">
+                <NavLink to={"/database"} className={BurgerItemStyles.QNavBarLink} activeClassName="chosen">
                     Database
                 </NavLink>
-                <NavLink to={"/about"} className={BurerItemStyles.QNavBarLink} activeClassName="chosen">
-                    <Text id={"about"} />
+                <NavLink to={"/about"} className={BurgerItemStyles.QNavBarLink} activeClassName="chosen">
+                    <Text id={"about"}/>
                 </NavLink>
 
                 {this.props.hasRightAlignedItems ? (
                     <Fragment>
-                        <hr className={BurerItemStyles.QSeprator}/>
-                        <div className={`${BurerItemStyles.QNavBarLink} ${Styles.SignUp}`}>
-                            <NavLink to={"/about"}>Sign Up</NavLink>
+                        <hr className={BurgerItemStyles.QSeprator}/>
+                        <div className={`${BurgerItemStyles.QNavBarLink} ${Styles.SignUp}`}>
+                            <NavLink to={"/signup"}>Sign Up</NavLink>
                         </div>
-                        <NavLink className={BurerItemStyles.QNavBarLink} to={"/about"}>
+                        <NavLink className={BurgerItemStyles.QNavBarLink} to={"/login"}>
                             Sign In
                         </NavLink>
                     </Fragment>
@@ -104,9 +104,9 @@ class HeaderBar extends React.Component {
                 {this.props.hasRightAlignedItems ? (
                     <div className={Styles.QNavBarRight}>
                         <div className={Styles.SignUp}>
-                            <NavLink to={"/about"}>Sign Up</NavLink>
+                            <NavLink to={"/signup"}>Sign Up</NavLink>
                         </div>
-                        <NavLink to={"/about"}>Sign In</NavLink>
+                        <NavLink to={"/login"}>Sign In</NavLink>
                     </div>
                 ) : null}
             </div>

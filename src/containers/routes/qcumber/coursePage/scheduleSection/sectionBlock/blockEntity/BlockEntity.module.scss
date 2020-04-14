@@ -1,0 +1,103 @@
+@import "../../../../../../global_vars";
+
+.sectionName{
+    font-family: $nav-link-font;
+    font-size: 16px;
+    color: #4d4f5c;
+    font-weight: bold;
+    color: $tx-common-color;
+}
+
+.sectionSubName{
+    font-family: $nav-link-font;
+    font-size: 12px;
+    font-weight: normal;
+    color: $tx-common-color;
+}
+
+.status{
+    width: 24px;
+    height: 24px;
+    border-radius: 24px;
+    border: solid 3px #ce6c0b;
+    background-image: linear-gradient(to bottom, #ff964a, #ff6c00, #945242);
+}
+
+.busy{
+    border: solid 3px #ce6c0b;
+    background-image: linear-gradient(to bottom, #ff964a, #ff6c00, #945242);
+}
+
+.valid{
+    border: solid 3px #2d8e34;
+    background-image: linear-gradient(to bottom, #459e4c, #429449);
+}
+
+.nonvalid{
+    border-radius: 4px !important;
+    border: solid 3px #ce0b0b;
+    background-image: linear-gradient(to bottom, #ff4a4a, #ff0000);
+}
+
+.sectionBackPart,
+.sectionFrontPart{
+    
+    &:focus{
+        outline: none;
+    }
+    border:none;
+    // background: none;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.sectionTitleBar{
+    padding-top: 13px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.backPartPadding{
+    padding-right: 10px;
+    cursor: pointer;
+    margin-right: 12px;
+}
+
+.frontPartPadding{
+    margin-left: 24px;
+}
+
+.sectionTable{
+    margin: 12px;
+    border: 1px #eaeaea solid;
+    border-collapse: collapse;
+}
+
+.sectionTableCell{
+    // padding-left: 28px;
+    border-bottom: 1px #eaeaea solid;
+    border-collapse: collapse;
+    height: 40px;
+
+}
+
+.sectionTableRow{
+    background-color: #fcfcfc;
+}
+
+.section{
+    &:focus{
+        // border: 2px #2d8e34 solid ;
+        box-shadow: 0 0 2pt 1pt #2d8e34;
+        // outline: solid 2px #2d8e34;
+        outline: none;
+    }
+
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border: 1px white solid;
+    border-radius: 4px;
+    margin: 0px 6px 18px 6px ;
+}
