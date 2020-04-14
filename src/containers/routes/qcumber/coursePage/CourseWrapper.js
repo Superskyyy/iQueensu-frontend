@@ -1,24 +1,43 @@
-import React from "react";
-import { connect } from "react-redux";
-import { getCourse } from "../../../../store/actions/courseActions";
-import StatusBar from "../../../../components/common/statusBar/StatusBar";
-import CourseLoadBar from "../../../../components/common/courseLoadBar/CourseLoadBar";
-import styles from './CourseWrapper.module.css';
-import DataCourseLoad from "./CourseLoad/DataCourseLoad";
-
+import React               from "react";
+import { connect }         from "react-redux";
+import { getCourse }       from "../../../../store/actions/courseActions";
+import StatusBar           from "../../../../components/common/statusBar/StatusBar";
+import CourseLoadBar       from "../../../../components/common/courseLoadBar/CourseLoadBar";
+import styles              from './CourseWrapper.module.css';
+import {fetchCoursePageData} from "../../../../utilities/SearchActions/fetchCoursePageData";
 
 class CourseWrapper extends React.Component{
+    constructor(){
+        super();
+        this.state = {
+            courseDetails: undefined,
+        };
+    }
+
     componentDidMount(){
         this.props.getCourseTest("noUse"); 
+        this.makeApiCall("CISC199");
+    }
 
+    makeApiCall = (courseCode) => {
+        console.log("call api");
+        fetchCoursePageData("CISC199", this.props.successHandler);
+    };
+
+    successHandler = (res) => {
+        // TODO: add an intermediate interface
+        res.json().then(result => {
+            this.setState({
+                courseDetails: result
+            });
+        })
     }
 
     render(){    
         return(
-            
+
             <div  className={styles.coursePageDashBoard}> 
                 {/* <Fragment> */}
-                
                     <div className={styles.coursePageLeftPart}>
                         {/* temp */}
                         {this.props.currentCourse.length < 1 ? null : this.props.currentCourse[0]["units"]}
@@ -110,9 +129,11 @@ class CourseWrapper extends React.Component{
 
                             <div className={styles.myrow}>
                                 {/* designed Component */}
-                                var learning_hours = <DataCourseLoad />
+                                
                                 <CourseLoadBar
-                                        tableHeaders = {["Lecture", "Tutorial", "Lab", "Practice", "Total", "Load"]}                                      
+                                        workLoad = {typeof(this.state.courseDetails)!=="undefined" ? this.state.courseDetails ['course_details'] : ""}
+                                        // mock data, need to be deleted
+                                        tableHeaders = {["Lecture", "Tutorial", "Lab", "Practice", "Total", "Load"]}
                                         lecture={"3 h/week"}
                                         tutorial={"-"}
                                         lab={"1 h/week"}
@@ -148,5 +169,7 @@ const mapDispatchToProps = dispatch => {
         getCourseTest: noUse => dispatch(getCourse(noUse)),
     };
 };
+
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(CourseWrapper);
