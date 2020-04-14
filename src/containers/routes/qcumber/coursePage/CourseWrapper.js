@@ -1,13 +1,13 @@
-import React               from "react";
-import { connect }         from "react-redux";
-import { getCourse }       from "../../../../store/actions/courseActions";
-import StatusBar           from "../../../../components/common/statusBar/StatusBar";
-import CourseLoadBar       from "../../../../components/common/courseLoadBar/CourseLoadBar";
-import styles              from './CourseWrapper.module.css';
+import React                 from "react";
+import {connect}             from "react-redux";
+import {getCourse}           from "../../../../store/actions/courseActions";
+import StatusBar             from "../../../../components/common/statusBar/StatusBar";
+import CourseLoadBar         from "../../../../components/common/courseLoadBar/CourseLoadBar";
+import styles                from './CourseWrapper.module.css';
 import {fetchCoursePageData} from "../../../../utilities/SearchActions/fetchCoursePageData";
 
-class CourseWrapper extends React.Component{
-    constructor(){
+class CourseWrapper extends React.Component {
+    constructor() {
         super();
         this.state = {
             courseDetails: undefined,
@@ -21,7 +21,7 @@ class CourseWrapper extends React.Component{
 
     makeApiCall = (courseCode) => {
         console.log("call api");
-        fetchCoursePageData("CISC199", this.props.successHandler);
+        fetchCoursePageData(this.successHandler);
     };
 
     successHandler = (res) => {
@@ -30,20 +30,21 @@ class CourseWrapper extends React.Component{
             this.setState({
                 courseDetails: result
             });
-        })
-    }
+        });
+    };
 
-    render(){    
-        return(
+    render() {
+        console.log("render", this.state.courseDetails);
+        return (
 
-            <div  className={styles.coursePageDashBoard}> 
+            <div className={styles.coursePageDashBoard}>
                 {/* <Fragment> */}
-                    <div className={styles.coursePageLeftPart}>
-                        {/* temp */}
-                        {this.props.currentCourse.length < 1 ? null : this.props.currentCourse[0]["units"]}
-                    </div>      
+                <div className={styles.coursePageLeftPart}>
+                    {/* temp */}
+                    {this.props.currentCourse.length < 1 ? null : this.props.currentCourse[0]["units"]}
+                </div>
 
-                    <div className={styles.coursePageCenterPart}>
+                <div className={styles.coursePageCenterPart}>
                         {/* <backtrace /> */}
                         <div>
                             <h1 className={styles.coursePageCourseSubjAndNum}>
@@ -129,18 +130,18 @@ class CourseWrapper extends React.Component{
 
                             <div className={styles.myrow}>
                                 {/* designed Component */}
-                                
+
                                 <CourseLoadBar
-                                        workLoad = {typeof(this.state.courseDetails)!=="undefined" ? this.state.courseDetails ['course_details'] : ""}
+                                    workLoad={typeof (this.state.courseDetails) !== "undefined" ? this.state.courseDetails ['course_details'] ["learning_hours"] : undefined}
                                         // mock data, need to be deleted
-                                        tableHeaders = {["Lecture", "Tutorial", "Lab", "Practice", "Total", "Load"]}
-                                        lecture={"3 h/week"}
-                                        tutorial={"-"}
-                                        lab={"1 h/week"}
-                                        practice={"6 h/week"}
-                                        total={"10 h/week"}
-                                        totalPerTerm={"120 h/term"}
-                                        load={"Regular"} />
+                                    tableHeaders = {["Lecture", "Tutorial", "Lab", "Practice", "Total", "Load"]}
+                                    lecture={"3 h/week"}
+                                    tutorial={"-"}
+                                    lab={"1 h/week"}
+                                    practice={"6 h/week"}
+                                    total={"10 h/week"}
+                                    totalPerTerm={"120 h/term"}
+                                    load={"Regular"} />
                                
                                 
                             </div>
