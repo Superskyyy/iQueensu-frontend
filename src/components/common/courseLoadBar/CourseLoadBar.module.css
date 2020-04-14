@@ -1,6 +1,6 @@
 .headS {
     height: 45px;
-    width: 812px;
+    width: 100%; /* Minor change to fit screen -- sky*/
     background-color: #EFEFEF;
     text-align: center;
 }
