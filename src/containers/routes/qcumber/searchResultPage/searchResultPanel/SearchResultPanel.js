@@ -23,6 +23,12 @@ const SearchResultPanel = (props) =>{
                                 {/* TODO: adding its constant and to right interface places */}
                                 {result["course_details"]["course_description_short"]}
                         </p>
+
+                        <div className={classes.Labelstyle}>
+                            <div className={classes.Label}><span style={{fontWeight: 600}}>Units &nbsp;</span> {result["course_details"]["units"]}</div>
+                            <div className={classes.Label}><span style={{fontWeight: 600}}>Career &nbsp;</span>  {result["course_details"]["career"]}</div>
+                            <div className={classes.Label}><span style={{fontWeight: 600}}>Grading &nbsp;</span>  {result["course_details"]["grading"]}</div>
+                        </div>
                     </div>
             )})}
         </div>

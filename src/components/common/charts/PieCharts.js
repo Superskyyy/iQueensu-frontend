@@ -133,6 +133,7 @@ export const PieCharts = (props) => {
         ];
         var legendData = [];
         var seriesData = [];
+        // inital state in which the selected entity will be highlighted
         var selected = {};
         for (var i = 0; i < count; i++) {
             legendData.push(nameList[i]);
@@ -140,7 +141,7 @@ export const PieCharts = (props) => {
                 name: nameList[i],
                 value: Math.round(Math.random() * 100)
             });
-            selected[nameList[i]] = i < 6;
+            selected[nameList[i]] = i < 2;
         }
         return {
             legendData: legendData,

@@ -124,28 +124,20 @@ class SearchPage extends Component {
     } 
 
     handleFilterResult = (logics) => {
-        var filteredResults = [];
+        var filteredResults = this.state.searchResults;
 
         for(let property in logics){
-            if(filteredResults.length === 0){
-                // Intersection properties, Union element in the same property, using lodash lib
-                if(logics[property].length > 0){
-                    for(let logicIndex in logics[property]){
-                        // Actual filtering logic 
-                        filteredResults = filteredResults.concat(this.filter(logics[property][logicIndex], this.state.searchResults));
-                    }
-            }}
-            else{
-                if(logics[property].length > 0){
-                    let tmp = [];
-                    for(let logicIndex in logics[property]){
-                        // Actual filtering logic 
-                        tmp = tmp.concat(this.filter(logics[property][logicIndex], filteredResults))
-                    }
-                    //  TODO: replace url with uuid
-                    filteredResults = _.intersectionBy(tmp, filteredResults, 'url');
-            }}
+            let tmp = []
+            // union the same property
+            if(logics[property].length > 0){
+                for(let logicIndex in logics[property]){
+                    tmp = tmp.concat(this.filter(logics[property][logicIndex], filteredResults, property));
+                }
+                // intersect different properties
+                filteredResults = _.intersectionBy(tmp, filteredResults, 'uuid');
+            }
         }
+
         this.setState({
             filteredSearchResults: filteredResults
         })
@@ -171,19 +163,27 @@ class SearchPage extends Component {
           .toLowerCase();
       }
       
-    objectValues = (value) => {
-        return Object.values(value).reduce(
-          (string, val) =>
-            string +
-            (typeof val === 'object' && val !== null
-              ? this.strOp(this.objectValues(val))
-              : this.strOp(val))
-        );
-      }
+    objectValues = (object, logic) => {
+        return this.traverse(object, logic);
+    }
+    
+    traverse = (o, logic) => {
+        var res = null
+        for (var i in o) {
+            if (i === logic){
+                res = this.strOp(o[i])
+                return res
+            }
+            if (o[i] !== null && typeof(o[i])=="object") {
+                //going one step down in the object tree!!
+                return this.traverse(o[i], logic);
+            }
+        }
+    }
       
-    filter = (val, data) => {
+    filter = (val, data, logic) => {
         return data.filter(el => {
-          return !!val.length ? this.objectValues(el).includes(this.strOp(val)) : true;
+            return !!val.length ? this.objectValues(el,logic) === (this.strOp(val)) : true;
         });
     }
 
