@@ -3,8 +3,8 @@
     Simply not making this file modularize
 */
 
-@import "reboot";
-@import "global_styles";
+@import "./reboot";
+@import "./global_styles";
 
 html, body {
     -webkit-font-smoothing: antialiased;

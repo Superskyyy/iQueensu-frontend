@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./testingPlayground.module.scss";
+import CommentEditor from "../../../components/widgets/Comments/CommentEditor"
 
 const TestingPlayground = (props) => {
+    const [isOpen, setOpen] = useState(false);
+
     return (
         <>
             {/* put your testing code here */}
             <div className={"H1"}>
                 Testing Page
             </div>
+            <button onClick={()=>{
+                setOpen(!isOpen)
+            }}>click to launch CommentEditor</button>
+            <CommentEditor show={isOpen} onClose={()=>{setOpen(!isOpen)}}/>
+
             <div className={""}>
                 <p className={styles.green_050}>
                     <p className="H5">green—050</p>
