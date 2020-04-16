@@ -1,0 +1,195 @@
+@import './global_vars';
+@import './global_mixins';
+@import './scss/utility_styles';
+
+h1,
+.H1 {
+    font-family: $header-font;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 52px;
+    line-height: 80px;
+}
+
+h2,
+.H2 {
+    font-family: $content-font;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 72px;
+    letter-spacing: -1px;
+}
+
+h3,
+.H3 {
+    font-family: $content-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 56px;
+}
+
+h4,
+.H4 {
+    font-family: $content-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 36px;
+}
+
+h5,
+.H5 {
+    font-family: $content-font;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 24px;
+}
+
+h6,
+.H6 {
+    font-family: $content-font;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.Subtitle1 {
+    font-family: $content-font;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.Subtitle2 {
+    font-family: $content-font;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+body,
+.Body1 {
+    font-family: $content-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.Body2 {
+    font-family: $content-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+button,
+.Button {
+    font-family: $content-font;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+caption,
+.Caption {
+    font-family: $content-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.Overline {
+    font-family: $content-font;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 16px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.Primary {
+    background-color: $primary;
+}
+
+.PrimaryLite {
+    background-color: $primary-lite;
+}
+
+.Link {
+    background-color: $link;
+}
+
+.LinkLite {
+    background-color: $link-lite;
+}
+
+.Error {
+    background-color: $error;
+}
+
+.ErrorLite {
+    background-color: $error-lite;
+}
+
+.Warning {
+    background-color: $warning;
+}
+
+.WarningLite {
+    background-color: $warning-lite;
+}
+
+.Ok {
+    background-color: $ok;
+}
+
+.OkLite {
+    background-color: $ok-lite;
+}
+
+.Grey {
+    background-color: $grey;
+}
+
+.HighEmphasis{
+    background: $on-surface-emphasis-high;
+    color: $light;
+}
+
+.MediumEmphasis {
+    background: $on-surface-emphasis-medium;
+    color: $light;
+}
+.DisabledEmphasis {
+    background: $on-surface-emphasis-disabled;
+    color: $light;
+}
+
+.Primary>.HighEmphasis,
+.Primary .HighEmphasis {
+    background: $on-primary-emphasis-high !important;
+    color: black !important;
+}
+
+.Primary>.MediumEmphasis,
+.Primary .MediumEmphasis {
+    background: $on-primary-emphasis-medium !important;
+    color: black !important;
+}
+
+.Primary>.DisabledEmphasis,
+.Primary .DisabledEmphasis {
+    background: $on-primary-emphasis-disabled !important;
+    color: black !important;
+}

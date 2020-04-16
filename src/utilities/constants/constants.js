@@ -1,3 +1,5 @@
+import { isDev } from "../testFor";
+
 // TYPEs
 export const CONTAINER_TYPES = {
     GRADE_DISTRIBUTION: 'gradeDistribution',
@@ -27,6 +29,9 @@ export const URL_PATHS = {
     LOGIN_PATH: '/login',
     SIGNUP_PATH: '/signup',
     FORGET_PATH: '/forget',
+
+    //testing page
+    TESTING_ONLY: '/testPage'
 }
 
 // Filters related

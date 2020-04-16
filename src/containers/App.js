@@ -20,6 +20,8 @@ import SignUp                                from "./routes/login/SignUp";
 import ForgetPage                            from "./routes/login/forget/forget";
 import QcumberLayout                        from './routes/qcumber/QcumberLayout';
 import { URL_PATHS }                        from '../utilities/constants/constants';
+import { isDev } from '../utilities/testFor';
+import TestingPlayground from './routes/ONLY_FOR_TESTING/testingPlayground';
 
 class App extends Component {
     constructor(props) {
@@ -53,6 +55,7 @@ class App extends Component {
                             <Route path={URL_PATHS.LOGIN_PATH} exact component={LoginPage}/>
                             <Route path={URL_PATHS.SIGNUP_PATH} exact component={SignUp}/>
                             <Route path={URL_PATHS.FORGET_PATH} exact component={ForgetPage}/>
+                            {isDev() ? <Route path={URL_PATHS.TESTING_ONLY} exact component={TestingPlayground}/> : <></>}
                             <Redirect from="*" to="/404"/>
                         </Switch>
                     {/* </QcumberWrapper> */}
