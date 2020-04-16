@@ -3,7 +3,7 @@ import styles            from './CourseLoadBar.module.css';
 
 const CourseLoadBar = props => {
     // const studyLoad= props.workLoad;
-    const studyLoad = "129 (30L;24T;18GL;6I;12O;9OC;24P)";
+    const studyLoad = props.workLoad;
     const headTypeShort = {
         Total: "Total", // added total we need this to avoid failed render when tooltip doesn't have a total-- sky
         L: "Lecture",
@@ -35,11 +35,9 @@ const CourseLoadBar = props => {
         // Instruction; O = Online Activities; Oc = Off-campus Activity; Pc = Practicum; P = Private Study
     };
 
-    if (studyLoad == "-1" || studyLoad == undefined) {
+    if (studyLoad === "-1" || studyLoad === undefined) {
         return "";
     } else {
-        let tableHeads = ["Total"];
-        let tableContents = [];
         //1: total
         let workString = "";
         console.log(studyLoad);
@@ -65,7 +63,7 @@ const CourseLoadBar = props => {
         //    headers[k] = headType[headers[k]];
         //}
 
-        let rows = Math.ceil(headers.length / 4);
+        let rows = Math.ceil(headers.length / 6);
         console.log(rows);
         let renderList = [];
 
@@ -77,7 +75,7 @@ const CourseLoadBar = props => {
 
                     <div className={styles.headS}>
                         <div className={styles.tableHeadWrapper}>
-                            {headers.slice(row * 4, row * 4 + 4).map(header => {
+                            {headers.slice(row * 6, row * 6 + 6).map(header => {
                                 return (
                                     <div key={header} className={styles.tableHead}>
                                         <abbr title={headTypeTooltip[header]} className={styles.headTitle}>
@@ -91,12 +89,31 @@ const CourseLoadBar = props => {
 
                     <div className={styles.tableCell}>
                         <div className={styles.tableContentWrapper}>
-                            {hours.slice(row * 4, row * 4 + 4).map(content => {
-                                return (
-                                    <div key={content} className={styles.levelContent}>
-                                        <span className={styles.levelContent}>{content} Hours</span>
-                                    </div>
-                                );
+                            {hours.slice(row * 6, row * 6 + 6).map(content => {
+                                if (content === totalTime){
+                                    if(parseInt(totalTime) === 120){
+                                        return(
+                                            <div key={content} className={styles.levelContent}>
+                                                <div className={styles.regularLoad}></div>
+                                                <span className={styles.levelContentText}> {content} Hours</span>
+                                            </div>)
+                                    }else if(parseInt(totalTime) < 120){
+                                        return(
+                                            <div key={content} className={styles.levelContent}>
+                                                <div className={styles.lightLoad}></div>
+                                                <span className={styles.levelContentText}> {content} Hours</span>
+                                            </div>)
+                                    }else{
+                                        return(
+                                            <div key={content} className={styles.levelContent}>
+                                                <div className={styles.hardLoad}></div>
+                                                <span className={styles.levelContentText}> {content} Hours</span>
+                                            </div>)
+                                    }
+                                } else {
+                                    return(
+                                    <span className={styles.levelContent}>{content} Hours</span>)
+                                }
                             })}
                         </div>
                     </div>

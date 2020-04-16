@@ -35,6 +35,13 @@ class CourseWrapper extends React.Component {
 
     render() {
         console.log("render", this.state.courseDetails);
+        let courseLoadTitle = "";
+        if(typeof (this.state.courseDetails) !== "undefined"){
+            if(this.state.courseDetails ['course_details'] ["learning_hours"] !=="-1"){
+                courseLoadTitle = "Course Load";
+            }
+        }
+
         return (
 
             <div className={styles.coursePageDashBoard}>
@@ -125,7 +132,9 @@ class CourseWrapper extends React.Component {
                             <div className="column6"></div>
                             <div className={styles.column5}></div>
                             <div className={styles.myrow}>
-                                <div className={styles.mycellHeader}>Course Load</div>
+                                <div className={styles.mycellHeader}>
+                                    {courseLoadTitle}
+                                </div>
                             </div>
 
                             <div className={styles.myrow}>

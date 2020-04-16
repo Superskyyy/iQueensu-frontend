@@ -1,6 +1,6 @@
 export const fetchCoursePageData = (successHandler) => {
     console.log("before fetch");
-    fetch(`${window.api_root['iqueensu']}/api/v1/qcumber/courses/8788c0f0-2f7b-42a3-bbf5-ae9e552b0dc1/`, {
+    fetch(`${window.api_root['iqueensu']}/api/v1/qcumber/courses/5e267a2b-93a1-46a5-88ed-7e2b8e0a949d/`, {
         mode: 'cors',
         headers: {
             'Content-Type': 'application/json'
