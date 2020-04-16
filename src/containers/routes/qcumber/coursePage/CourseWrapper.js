@@ -37,7 +37,7 @@ class CourseWrapper extends React.Component {
         console.log("render", this.state.courseDetails);
         let courseLoadTitle = "";
         if (typeof (this.state.courseDetails) !== "undefined") {
-            if (this.state.courseDetails ['course_details']["learning_hours"] !== "-1") {
+            if (this.state.courseDetails['course_details']["learning_hours"] !== "-1") {
                 courseLoadTitle = "Course Load";
             }
         }
@@ -146,7 +146,7 @@ class CourseWrapper extends React.Component {
                             {/* designed Component */}
 
                             <CourseLoadBar
-                                workLoad={typeof (this.state.courseDetails) !== "undefined" ? this.state.courseDetails ['course_details']["learning_hours"] : undefined}
+                                workLoad={typeof (this.state.courseDetails) !== "undefined" ? this.state.courseDetails['course_details']["learning_hours"] : undefined}
                                 // mock data, need to be deleted
                                 tableHeaders={["Lecture", "Tutorial", "Lab", "Practice", "Total", "Load"]}
                                 lecture={"3 h/week"}
