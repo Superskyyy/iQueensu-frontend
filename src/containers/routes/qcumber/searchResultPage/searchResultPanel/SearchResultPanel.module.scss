@@ -36,7 +36,7 @@
 }
 
 .sectionContent{
-    min-height: 40px;
+    // min-height: 40px;
     font-weight: 400;
     text-align: left;
     font-size: 14px;
@@ -44,3 +44,20 @@
     color: rgba(0, 0, 0, 0.6);
     font-family: $nav-link-font;
 }
+
+.Labelstyle{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+
+  }
+  
+  .Label {
+    margin-right: 10px;
+    // font-weight: 600;
+    background-color: rgba(0, 101, 242, 0.1);;
+    padding: 5px 15px;
+    border-radius: 50px;
+    margin-bottom: 0px;
+    color: #0065F2;
+  }

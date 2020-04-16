@@ -1,9 +1,11 @@
-import React                 from "react";
-import {connect}             from "react-redux";
-import {getCourse}           from "../../../../store/actions/courseActions";
-import StatusBar             from "../../../../components/common/statusBar/StatusBar";
-import styles                from './CourseWrapper.module.css';
-import ScheduleSection       from "./scheduleSection/ScheduleSection";
+import React from "react";
+import { connect } from "react-redux";
+import { getCourse } from "../../../../store/actions/courseActions";
+import StatusBar from "../../../../components/common/statusBar/StatusBar";
+import styles from './CourseWrapper.module.css';
+import { PieCharts } from "../../../../components/common/charts/PieCharts";
+import ScheduleSection from "./scheduleSection/ScheduleSection";
+import { fetchCourseTimeTable } from "../../../../utilities/courseDetailActions/fetchCourseTimeTable";
 import CourseLoadBar         from "../../../../components/common/courseLoadBar/CourseLoadBar";
 import {fetchCoursePageData} from "../../../../utilities/SearchActions/fetchCoursePageData";
 
@@ -180,8 +182,6 @@ class CourseWrapper extends React.Component {
                                     prerequisiteItem={"C- in CISC203"}
                                     userGrade={"2018 Fall A+"}
                                     valid={"valid"}/>
-
-                                {/* red */}
                                 <StatusBar
                                     prerequisiteItem={"C- in CISC124"}
                                     userGrade={"Not Taken Yet"}
@@ -201,8 +201,6 @@ class CourseWrapper extends React.Component {
                         <div className={styles.myrow}>
                             <div className={styles.mycellHeader}>{courseLoadTitle}</div>
                         </div>
-
-
                         <div className={styles.myrow}>
                             <CourseLoadBar
                                 workLoad={typeof (this.state.courseDetails) !== "undefined" ? this.state.courseDetails['course_details']["learning_hours"] : undefined}
@@ -227,8 +225,20 @@ class CourseWrapper extends React.Component {
                 </div>
 
                 <div className={styles.coursePageRightPart}>
-                    {/* temp */}
-                    {this.props.currentCourse.length < 1 ? null : this.props.currentCourse[0]["units"]}
+                    <div className={styles.coursePageRightPart}>
+                        {/* temp */}
+                        <div className={styles.mytable} style={{marginTop:"2rem"}}>
+                            {/* <div className="column6"></div>
+                            <div className={styles.column5}></div> */}
+                            <div className={styles.myrow}>
+                                <div className={styles.mycellHeader}>Grade Distribution</div>
+                            </div>
+                            <div className={styles.myrow}>
+                                {/* TODO: feed this as an variable */}
+                                <PieCharts course={"ELEC 390"}/>
+                            </div>
+                        </div>
+                    </div> 
                 </div>
                 {/* </Fragment> */}
             </div>
