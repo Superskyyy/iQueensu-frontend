@@ -196,8 +196,8 @@ class CourseWrapper extends React.Component{
                                 <div className={styles.mycellHeader}>Grade Distribution</div>
                             </div>
                             <div className={styles.myrow}>
-                                {/* <div id="mainChart" style="width:300px; height:200px;"></div> */}
-                                <PieCharts />
+                                {/* TODO: feed this as an variable */}
+                                <PieCharts course={"ELEC 390"}/>
                             </div>
                         </div>
                     </div> 

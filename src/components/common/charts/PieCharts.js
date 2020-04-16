@@ -1,9 +1,56 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactEcharts from 'echarts-for-react';
 import echarts from 'echarts';
+import { fetchCourseGradeDistribution } from '../../../utilities/courseDetailActions/fetchCourseGradeDistribution';
 
 export const PieCharts = (props) => {
-    
+    const [courseData, setCourseData] = useState({});
+
+    const [grades, setGrades] = useState([]);
+
+    // Similar to componentDidMount
+    useEffect(()=>{
+        console.log('loading course data');
+        // invoke api to fetch grade details.
+        fetchCourseGradeDistribution(props.course, successHandler)
+    }, [])
+
+    const successHandler = (res) =>{
+        res.json().then(result => {
+            setGrades(result)
+        })
+    }
+
+    useEffect(()=>{
+        if(grades.length > 0){
+            console.log('set');
+            setCourseData(generateData(grades));
+        }
+    },[grades])
+
+    const generateData = (result) =>{
+        let nameList = [];
+        let legendData = [];
+        // inital state in which the selected entity will be highlighted
+        let seriesData = [];
+
+        for (let entity in result[0]['data']){
+            if(entity.length < 3 && entity.length > 0){
+                nameList.push(entity);
+                legendData.push(entity);
+                seriesData.push({
+                    name: entity,
+                    value: result[0]['data'][entity]
+                });
+            }
+        }
+        return {
+            legendData: legendData,
+            seriesData: seriesData,
+            // selected: selected
+        }
+    }
+
     // Way of theme registration
     var colorPalette = [
         '#e9e0d1',
@@ -123,32 +170,7 @@ export const PieCharts = (props) => {
     };
 
     echarts.registerTheme('jazz', theme);
-    // till here, this is a whole example of how theme can be set: https://github.com/apache/incubator-echarts/blob/master/theme/jazz.js
 
-    var data = genData(3);
-
-    function genData(count) {
-        var nameList = [
-            'Failed', 'Lower than C-', 'Got A- and higher',
-        ];
-        var legendData = [];
-        var seriesData = [];
-        // inital state in which the selected entity will be highlighted
-        var selected = {};
-        for (var i = 0; i < count; i++) {
-            legendData.push(nameList[i]);
-            seriesData.push({
-                name: nameList[i],
-                value: Math.round(Math.random() * 100)
-            });
-            selected[nameList[i]] = i < 2;
-        }
-        return {
-            legendData: legendData,
-            seriesData: seriesData,
-            selected: selected
-        };
-    }
     return(
         <ReactEcharts
             option={{
@@ -157,11 +179,11 @@ export const PieCharts = (props) => {
                     formatter: '{a}<br/>{b} : {c} ({d}%)'
                 },
                 legend: {
-                    orient: 'vertical',
+                    orient: 'horizontal',
                     left: 10,
                     top: 10,
-                    data: data.legendData,
-                    selected: data.selected
+                    data: courseData.legendData,
+                    // selected: courseData.selected
                 },
                 series: [
                     {
@@ -174,7 +196,7 @@ export const PieCharts = (props) => {
                                 show: false,
                             },
                         },
-                        data: data.seriesData,
+                        data: courseData.seriesData,
                         emphasis: {
                             itemStyle: {
                                 shadowBlur: 10,
