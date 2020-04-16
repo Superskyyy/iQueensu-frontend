@@ -1,0 +1,105 @@
+.headS {
+    height: 45px;
+    width: 100%; /* Minor change to fit screen -- sky*/
+    background-color: #EFEFEF;
+    text-align: center;
+    border-radius: 4px;
+}
+.tableCell {
+    height: 45px;
+    width: 100%; /* Minor change to fit screen -- sky*/
+    text-align: center;
+}
+/**/
+.tableHeadWrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.tableContentWrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+/**/
+.headTitle {
+    width: 120px;
+    height: 39px;
+    object-fit: contain;
+    /* font-family: OpenSans; */
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.36;
+    letter-spacing: normal;
+    text-align: center;
+    color: #4D4F5C;
+    justify-content: space-around;
+}
+.levelContent {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 120px;
+    height: 39px;
+    object-fit: contain;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-align: center;
+    color: #4D4F5C;
+    background-color: white;
+    justify-content: center;
+}
+.levelContentText {
+    display: flex;
+    align-items: center;
+    width: 70px;
+    height: 39px;
+    object-fit: contain;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-align: center;
+    color: #4D4F5C;
+    background-color: white;
+}
+.tableHead {
+    width: 120px;
+    /* text-align: center; */
+}
+.lightLoad{
+    margin-right: 3px;
+    width: 17px;
+    height: 17px;
+    border-radius: 17px;
+    border: solid 1px #dcdcdc;
+    background-image: linear-gradient(to bottom, #dcdcdc, #dcdcdc);
+}
+.regularLoad{
+    margin-right: 3px;
+    width: 17px;
+    height: 17px;
+    border-radius: 17px;
+    border: solid 1px #429449;
+    background-image: linear-gradient(to bottom, #459e4c, #429449);
+}
+.hardLoad{
+    margin-right: 3px;
+    width: 17px;
+    height: 17px;
+    border-radius: 17px;
+    border: solid 3px #FF0000;
+    background-image: linear-gradient(to bottom, #ff0000, #ff0000);
+}
