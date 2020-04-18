@@ -35,7 +35,6 @@ export const BlockEntity = (props) => {
                                     setFlip(false);
                                 }else{  
                                     dispatch(addTimeBlock(props.timeBlockEntity))
-                                    //console.log(registeredTimeTable.length)
                                     setFlip(true);
                                 }}}>
                             <img src={flip ? redSign : greySign} alt="plusOrMinus"/>

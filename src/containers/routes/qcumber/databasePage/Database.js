@@ -11,7 +11,7 @@ import { CONTAINER_TYPES, MESSAGE_KEYS } from "../../../../utilities/constants/c
 import { getMessageByTypes } from "../../../../utilities/TypeHelper";
 // Styles
 import scssStyles from "./Database.module.scss";
-import CustomSearch from "../../../../components/common/customSearch/CustomSearch";
+import CustomSearchModule from "../../../../components/common/customSearchModule/CustomSearchModule";
 
 class Database extends React.Component {
     // an example for customized onClick prop for 'CustomButton' component
@@ -39,7 +39,7 @@ class Database extends React.Component {
                 </div>
 
                 <div className={scssStyles.search}>
-                    <CustomSearch />
+                    <CustomSearchModule />
                 </div>
 
                 <div className={scssStyles.QcumberCardsWrapper}>

@@ -8,7 +8,6 @@ export const fetchSearchResult = (searchInput, additionalFilter="", successHandl
     })
     .then(response =>{
         if(successHandler){
-            console.log('handle fetchSearchResult');
             successHandler(response);
         }
     })

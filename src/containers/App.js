@@ -50,8 +50,8 @@ class App extends Component {
                             {/* <Route path="/qcumber" exact component={Qcumber}/> */}
                             <Route path={URL_PATHS.QCUMBER_PATH} exact component={QcumberLayout}/>
                             <Route path={URL_PATHS.DATABASE_PATH} exact component={QcumberLayout}/>
-                            <Route path={URL_PATHS.DATABASE_COURSE_PATH} exact component={QcumberLayout}/>
-                            <Route path={URL_PATHS.DATABASE_SEARCH_PATH} exact component={QcumberLayout}/>
+                            <Route path={URL_PATHS.DATABASE_COURSE_PATH} component={QcumberLayout}/>
+                            <Route path={URL_PATHS.DATABASE_SEARCH_PATH} component={QcumberLayout}/>
                             <Route path={URL_PATHS.LOGIN_PATH} exact component={LoginPage}/>
                             <Route path={URL_PATHS.SIGNUP_PATH} exact component={SignUp}/>
                             <Route path={URL_PATHS.FORGET_PATH} exact component={ForgetPage}/>

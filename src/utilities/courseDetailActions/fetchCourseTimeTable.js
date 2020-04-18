@@ -10,7 +10,6 @@ export const fetchCourseTimeTable = (courseId, sucessHandler) => {
     })
     .then(response => {
         if(sucessHandler){
-            console.log('handle fetchCourseTimeTable');
             sucessHandler(response);
         }
     })

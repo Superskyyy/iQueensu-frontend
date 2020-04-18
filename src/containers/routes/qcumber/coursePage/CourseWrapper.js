@@ -87,7 +87,6 @@ class CourseWrapper extends React.Component {
     }
 
     makeApiCall = (courseCode) => {
-        console.log("call api");
         fetchCoursePageData(this.successHandler);
     };
     successHandler = (res) => {
@@ -100,7 +99,6 @@ class CourseWrapper extends React.Component {
     };
 
     render() {
-        console.log("render", this.state.courseDetails);
         let courseLoadTitle = "";
         if (typeof (this.state.courseDetails) !== "undefined") {
             if (this.state.courseDetails['course_details']["learning_hours"] !== "-1") {
