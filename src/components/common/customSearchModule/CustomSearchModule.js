@@ -206,13 +206,10 @@ class CustomSearchModule extends Component{
                     <FilterPanel
                         filterMethod={this.modifyFilterLogics} 
                         filterOptions={filterOptions}/> 
-                    {
-                        // this.state.inputValue !== '' ?
-                        <SearchResultPanel 
-                            userHasSearched = {this.state.userHasSearched} 
-                            results= {this.refreshDisplayedResults(this.state.filterLogics)}/>
-                        // : <div>{'搜点啥把'}</div>
-                    }
+
+                    <SearchResultPanel 
+                        userHasSearched = {this.state.userHasSearched} 
+                        results= {this.refreshDisplayedResults(this.state.filterLogics)}/>
 
                 </div>}
             </div>

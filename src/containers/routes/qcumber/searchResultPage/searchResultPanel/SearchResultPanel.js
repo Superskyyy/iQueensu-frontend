@@ -35,7 +35,7 @@ const SearchResultPanel = (props) =>{
                         </div>
                         // result is empty
                         : <div>{'没搜着啥'}</div>
-                    // user is first time landing on the page
+                    // user is first time landing on the page, or searching an empty string
                     : <div>{'搜点啥把'}</div>
             }
             
