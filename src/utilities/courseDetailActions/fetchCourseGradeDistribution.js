@@ -10,7 +10,6 @@ export const fetchCourseGradeDistribution = (courseCodeAndName, sucessHandler) =
     })
     .then(response => {
         if(sucessHandler){
-            console.log('handle fetchCourseGradeDistribution');
             sucessHandler(response);
         }
     })

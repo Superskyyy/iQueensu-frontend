@@ -39,23 +39,18 @@ const CourseLoadBar = props => {
     } else {
         //1: total
         let workString = "";
-        console.log(studyLoad);
         let totalTime = studyLoad.match(/\d+/);
         workString = (studyLoad).replace(/.+[(]/, "").slice(0, workString.length - 1);
         workString = workString.split(";");// workString should be [36L,24Lb,60P]
-        console.log("totalTime", totalTime, "workString", workString);// totalTime should be "120"
         //2:find the completed headers and contexts
         let headers = ["Total"];
         let hours = [totalTime];
         for (let j = 0; j < workString.length; j++) {
-            console.log(hours);
             hours.push((workString[j]).match(/\d+/));
             headers.push((workString[j]).match(/[a-z]+/i));
         }
-        console.log("hours:", hours, "headers:", headers);
 
         let rows = Math.ceil(headers.length / 6);
-        console.log(rows);
         let renderList = [];
 
         for (let row = 0; row < rows; row++) {
