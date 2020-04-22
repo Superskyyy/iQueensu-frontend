@@ -3,7 +3,6 @@ import PropTypes         from "prop-types";
 import React, {Fragment} from "react";
 //
 import {Sections}        from "./Section";
-import {store}           from "../../../../store";
 import Prerequisite      from "./Prerequisite";
 // Styles
 import styles            from "./Dashboard.module.css";
@@ -99,7 +98,6 @@ export default (props) => {
         <Fragment>
             <div className={styles.Wrapper}>
                 {props.title}
-                {console.log(store.getState())}
                 Legend/>
                 {/* <Description title={props.description.title} content={props.description.content}/> */}
                 <Prerequisite/>

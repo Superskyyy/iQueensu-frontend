@@ -10,7 +10,6 @@ export const PieCharts = (props) => {
 
     // Similar to componentDidMount
     useEffect(()=>{
-        console.log('loading course data');
         // invoke api to fetch grade details.
         fetchCourseGradeDistribution(props.course, successHandler)
     }, [])
@@ -23,7 +22,6 @@ export const PieCharts = (props) => {
 
     useEffect(()=>{
         if(grades.length > 0){
-            console.log('set');
             setCourseData(generateData(grades));
         }
     },[grades])

@@ -18,7 +18,6 @@ const FilterEntity = (props) => {
             );
         }
         else if (choicesType[FILTERS_COMMON.CHOICES].hasOwnProperty([FILTERS_COMMON.RANGE_SLIDER])){
-            console.log('this is a range slider');
             //let choices = choicesType[FILTERS_COMMON.CHOICES][FILTERS_COMMON.RANGE_SLIDER];
             // return(
             //     <RangeSlider 
