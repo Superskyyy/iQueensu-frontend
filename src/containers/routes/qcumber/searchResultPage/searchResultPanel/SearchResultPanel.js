@@ -43,4 +43,4 @@ const SearchResultPanel = (props) =>{
     )
 }
 
-export default SearchResultPanel;
+export default React.memo(SearchResultPanel);
