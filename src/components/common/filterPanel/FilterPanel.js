@@ -1,8 +1,8 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import classes from './FilterPanel.module.scss';
 import FilterEntity from '../filterEntity/filterEntity';
 
-class FilterPanel extends Component{
+class FilterPanel extends PureComponent{
 
 
     render(){
