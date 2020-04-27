@@ -16,10 +16,10 @@
 }
 
 .coursePageRightPart{
-    background-color: #f5f5f5;
     width:260px;
     /* temp */
     height: 100%;
+    text-align: left;
 }
 
 .coursePageCourseSubjAndNum{

@@ -4,6 +4,8 @@ import { getCourse } from "../../../../store/actions/courseActions";
 import StatusBar from "../../../../components/common/statusBar/StatusBar";
 import styles from './CourseWrapper.module.css';
 import ScheduleSection from "./scheduleSection/ScheduleSection";
+import CommentDisplay from '../../../../components/widgets/Comments/CommentDisplay'
+import getMockData from '../../../../utilities/mockData/getMockData'
 import { fetchCourseTimeTable } from "../../../../utilities/courseDetailActions/fetchCourseTimeTable";
 
 class CourseWrapper extends React.Component{
@@ -70,22 +72,44 @@ class CourseWrapper extends React.Component{
         // fetchCourseTimeTable(this.props.currentCourse[0]['uuid'], this.handleCourseTimeTable);
     }
 
-    render(){    
+    render(){
+        const subject = this.props.currentCourse.length < 1 ? null : this.props.currentCourse[0]["subject"]
+        const courseNumber = this.props.currentCourse.length < 1 ? null : this.props.currentCourse[0]["number"]
+
+        const mock = true;
+        const realRating = []
+
+        const mockName = "courseRating";
+        const mockRating = getMockData(mockName)
+        const listRating = (mock ? mockRating : realRating)
+            .filter(e => {
+                return e["subject"] === subject && e["number"] === courseNumber
+            })
+            .map(e => {
+                var str = ""
+                for(var k in e) {
+                    str += e[k]
+                }
+                return {...e, "key": str.split('').reduce((a,b)=>{a=((a<<5)-a)+b.charCodeAt(0);return a&a},0)}
+            })
+            .map(rate => {
+                return (
+                    <CommentDisplay {...rate} ></CommentDisplay>
+                )
+            })
         return(
             <div  className={styles.coursePageDashBoard}>
                 {/* <Fragment> */}
                     <div className={styles.coursePageLeftPart}>
-                        {/* temp */}
-                        {this.props.currentCourse.length < 1 ? null : this.props.currentCourse[0]["units"]}
+                        {/* this div is meant to be blank */}
                     </div>      
 
                     <div className={styles.coursePageCenterPart}>
                         {/* <backtrace /> */}
                         <div>
-                            <h1 className={styles.coursePageCourseSubjAndNum}>
-                                {this.props.currentCourse.length < 1 ? null : this.props.currentCourse[0]["subject"]
-                                + " " + this.props.currentCourse[0]["number"]}
-                            </h1>
+                            <h3 className={styles.coursePageCourseSubjAndNum}>
+                                {`${subject} ${courseNumber}`}
+                            </h3>
                         </div>
 
                         {/* small table containing Career, Units, Academic Group, Academic Organization */}
@@ -187,8 +211,10 @@ class CourseWrapper extends React.Component{
                     </div>
 
                     <div className={styles.coursePageRightPart}>
-                        {/* temp */}
-                        {this.props.currentCourse.length < 1 ? null : this.props.currentCourse[0]["units"]}
+                        <div className="Subtitle1">
+                            Course Review
+                        </div>
+                        {listRating}
                     </div> 
                 {/* </Fragment> */}
             </div>

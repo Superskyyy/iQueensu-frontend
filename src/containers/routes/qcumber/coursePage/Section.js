@@ -45,4 +45,3 @@ Sections.defaultProps = {
     status: "",
     conflict: ""
 };
-

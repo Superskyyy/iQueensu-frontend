@@ -1,0 +1,173 @@
+@import "../../../global_styles";
+
+.commentWrapper {
+    /* Auto Layout */
+
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+
+    position: static;
+    width: 180px;
+    height: 176px;
+    left: 0px;
+    top: 0px;
+
+
+    /* Inside Auto Layout */
+
+    flex: none;
+    order: 0;
+    align-self: center;
+    margin: 0px 24px;
+}
+
+.commentHeader {
+    position: static;
+    width: 180px;
+    height: 16px;
+    left: 0px;
+    top: 0px;
+
+    flex: none;
+    order: 0;
+    align-self: center;
+    margin: 0px 16px;
+}
+
+.commentTerm {
+    color: $on-surface-emphasis-high;
+    width: 51px;
+    left: 0px;
+    top: 0%;
+    bottom: 90.91%;
+}
+
+.commentProf {
+    width: 45px;
+    right: 0px;
+    top: 0%;
+    bottom: 90.91%;
+    text-align: right;
+}
+
+.commentRate {
+    /* Auto Layout */
+
+    display: flex;
+    flex-direction: row;
+    padding: 8px 12px;
+
+    position: static;
+    left: 0%;
+    right: 73.33%;
+    top: 18.18%;
+    bottom: 63.64%;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 1;
+    align-self: flex-start;
+    margin: 0px 16px;
+}
+
+.commentRate>p {
+    position: static;
+    width: 24px;
+    height: 16px;
+    left: 12px;
+    top: 8px;
+
+    /* button */
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    /* identical to box height, or 114% */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.75px;
+    text-transform: capitalize;
+
+    /* High Emphasis - On Primary | White */
+
+    color: #FFFFFF;
+
+    /* Inside Auto Layout */
+
+    flex: none;
+    order: 0;
+    align-self: center;
+    margin: 10px 0px;
+}
+
+.commentText {
+    position: static;
+    left: 0%;
+    right: 0%;
+    top: 45.45%;
+    bottom: 27.27%;
+
+    /* caption */
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    /* or 133% */
+
+
+    /* High Emphasis - On Surface | White */
+
+    color: rgba(0, 0, 0, 0.87);
+
+    /* Inside Auto Layout */
+
+    flex: none;
+    order: 2;
+    align-self: center;
+    margin: 0px 16px;
+}
+
+.commentDate {
+    position: static;
+    left: 0%;
+    right: 61.11%;
+    top: 81.82%;
+    bottom: 9.09%;
+
+    /* caption */
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    /* identical to box height, or 133% */
+
+
+    /* Disabled - On Surface | White */
+
+    color: rgba(0, 0, 0, 0.38);
+
+    /* Inside Auto Layout */
+
+    flex: none;
+    order: 3;
+    align-self: flex-start;
+    margin: 0px 16px;
+}
+
+.commentDivider {
+    position: static;
+
+    /* Inside Auto Layout */
+    color: rgba(0, 0, 0, 0.12);
+    flex: none;
+    order: 4;
+}
