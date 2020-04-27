@@ -2,7 +2,8 @@ export const fetchCourseGradeDistribution = (courseCodeAndName, sucessHandler) =
     // update url
     fetch(`${window.api_root['iqueensu']}/api/v1/qcumber/gradeDistribution/?search=${courseCodeAndName}`, {
         // optimize those common attribtes into one place
-        mode: 'cors',
+        credentials: 'include',
+        // mode: 'cors',
         headers: {
             'Content-Type': 'application/json'
         },
@@ -13,5 +14,8 @@ export const fetchCourseGradeDistribution = (courseCodeAndName, sucessHandler) =
             sucessHandler(response);
         }
     })
-    .catch();
+    .catch(error => {
+        console.error('Error:', error);
+        console.log('please Login first');
+    });
 }

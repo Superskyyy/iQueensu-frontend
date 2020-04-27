@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import {NavLink} from "react-router-dom";
 import styles             from './LoginPage.module.css';
 import Logo               from './qucumber.svg';
+import { login } from '../../../utilities/authActions/login';
+import { loginRequest, loginSuccess } from '../../../store/actions/authActions';
+import { connect } from 'echarts';
 //import './App.css';
 
 class LoginPage extends Component {
@@ -21,41 +24,55 @@ class LoginPage extends Component {
     }
 
     handleSubmit = (evt) => {
-        evt.preventDefault();
 
-        if (!this.state.username) {
-            return this.setState({error: 'Username is required'});
+        if(evt){
+            evt.preventDefault();
         }
 
-        if (this.state.password.length > 20) {
-            return this.setState({error: 'The max length of password is 20'});
-        }
+        // TODO: change to a valid account
+        this.props.loginRequest('TestName');
 
-        if (!(this.state.username.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/))) {
-            return this.setState({error: 'Username must be an email.'});
-        }
+        login(this.state.username, this.state.password, this.localLoginSuccess, this.localLoginFailure);
 
-        if (!this.state.password) {
-            return this.setState({error: 'Password is required'});
-        }
+        // if (!this.state.username) {
+        //     return this.setState({error: 'Username is required'});
+        // }
 
-        if (this.state.password.length > 27) {
-            return this.setState({error: 'The max length of password is 27'});
-        }
+        // if (this.state.password.length > 20) {
+        //     return this.setState({error: 'The max length of password is 20'});
+        // }
 
-        if (this.state.password.length < 8) {
-            return this.setState({error: 'The min length of password is 8'});
-        }
+        // if (!(this.state.username.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/))) {
+        //     return this.setState({error: 'Username must be an email.'});
+        // }
 
-        if (!(this.state.password.match(/[a-z]/g) && this.state.password.match( /[A-Z]/g) && this.state.password.match( /[0-9]/g))) {
-            return this.setState({error: 'Password should contain (a-z),(A-Z),(0-9)'});
-        }
+        // if (!this.state.password) {
+        //     return this.setState({error: 'Password is required'});
+        // }
 
-        if (this.state.password.match( /[^a-zA-Z\d]/g)) {
-          return this.setState({error: 'Password can not contain special character'});
-        }
+        // if (this.state.password.length > 27) {
+        //     return this.setState({error: 'The max length of password is 27'});
+        // }
 
-        return this.setState({error: ''});
+        // if (this.state.password.length < 8) {
+        //     return this.setState({error: 'The min length of password is 8'});
+        // }
+
+        // if (!(this.state.password.match(/[a-z]/g) && this.state.password.match( /[A-Z]/g) && this.state.password.match( /[0-9]/g))) {
+        //     return this.setState({error: 'Password should contain (a-z),(A-Z),(0-9)'});
+        // }
+
+        // if (this.state.password.match( /[^a-zA-Z\d]/g)) {
+        //   return this.setState({error: 'Password can not contain special character'});
+        // }
+
+        // return this.setState({error: ''});
+    }
+
+    localLoginSuccess = (res) =>{
+        res.json().then(result => {
+            this.props.loginSuccess(res);
+        });
     }
 
     handleUserChange = (evt) => {
@@ -139,4 +156,17 @@ class LoginPage extends Component {
     }
 }
 
-export default LoginPage;
+const mapStateToProps = state => {
+    return {
+
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        loginRequest: username => dispatch(loginRequest(username)),
+        loginSuccess: username => dispatch(loginSuccess(username))
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);

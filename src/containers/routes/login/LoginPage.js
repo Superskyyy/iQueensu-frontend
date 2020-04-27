@@ -80,26 +80,7 @@ class LoginPage extends Component {
           </div>
       );
   };
-
-   /*Reg = (prop) => {
-      return (
-          <>
-              <div className={styles.headtop}>
-                <img className={styles.img} src={Logo} alt={"Logo"}/>
-                <label >Register</label>
-              </div>
-              <input type="text" data-test="username" placeholder="Email" value={this.state.username}
-                     onChange={this.handleUserChange}/>
-              <input type="password" data-test="password" placeholder="Password" value={this.state.password}
-                     onChange={this.handlePassChange}/>
-              <div className={styles.func}>
-                  <a className={styles.change} href="#" onClick={() => {this.setState((state, prop) => ({regist: !state.regist}));}}>Sign in</a>
-                  <button className={styles.but1} type="submit" data-test="submit">Next</button>
-              </div>
-          </>
-      );
-  };*/
-
+  
    Login = (prop) => {
       return (
           <>

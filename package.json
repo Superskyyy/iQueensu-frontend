@@ -49,6 +49,7 @@
         "prop-types": "latest",
         "react": "^16.13.1",
         "react-burger-menu": "^2.6.13",
-        "react-scripts": "3.4.1"
+        "react-scripts": "3.4.1",
+        "sanitize-html": "^1.23.0"
     }
 }
