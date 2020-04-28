@@ -2,7 +2,7 @@
 
 ## steps
 
-1. Normally write your modal toggle button. Notice: you shouldn't put any attribute on your button. Notice, you have to make a valid react component, not jsx literal.
+1. Normally write your modal toggle button. Notice: you shouldn't put any attribute on your button. Also, you have to make a valid react component, not jsx literal.
 
     ```jsx
     const Button = (props) => {
@@ -10,7 +10,7 @@
     };
     ```
 
-2. Write your modal content with extends [ModalContent.jsx](./ModalContent.jsx). Notice, you should call `this.props.handleClose()` when you decides to close the modal.
+2. Write your modal content that extends [ModalContent.jsx](./ModalContent.jsx). You should call `this.props.handleClose()` when you decides to close the modal.
 
     ```jsx
     import react from "react";
@@ -38,4 +38,4 @@
     }
     ```
 
-4. Enjoy. Contact me if you facing any problem
+4. Enjoy. Contact me if you‘re facing any problem
