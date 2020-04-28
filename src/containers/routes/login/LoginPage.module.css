@@ -26,6 +26,7 @@
   margin-bottom: 25px;
 }
 .img{
+  margin-top: 3rem;
   position: relative;
   align-items: center;
   justify-content: center;
@@ -77,3 +78,11 @@
 /* body {
   background: linear-gradient(to left, #76b852, #8DC26F);
 } */
+
+.modalDialog{
+  position: relative;
+  margin: 1.75rem auto;
+  width: auto;
+  max-width: 600px;
+  background-color: white;
+}

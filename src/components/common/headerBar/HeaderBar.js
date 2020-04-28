@@ -9,6 +9,9 @@ import Text from "../../accessoriesDeprecated/Text";
 import Styles from "./HeaderBar.module.scss";
 import "./_burger.scss";
 import BurerItemStyles from "./WithBurger.module.scss";
+import modalPackUp from "../../../components/common/modal/ModalPackUp";
+import LoginPage from "../../../containers/routes/login/LoginPage";
+
 // props:
 // hasRightAlignedItems (Optional): if containing any navlink that aligns to right
 
@@ -113,10 +116,21 @@ class HeaderBar extends React.Component {
         );
     }
 
+    button = (props) =>{
+        return (<button {...props} >
+                    Sign In click to open Modal
+                </button>)
+    }
+
     render() {
         const Content = this.state.useBurger ? this.WithBurger.bind(this) : this.WithoutBurger.bind(this);
-
-        return <Content />;
+        const ModalTest = modalPackUp(this.button, {}, LoginPage, {});
+        return(
+            <>
+            <ModalTest />
+            <Content />
+            </>
+        );
     }
 }
 

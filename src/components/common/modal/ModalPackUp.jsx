@@ -11,6 +11,14 @@ export default function modalPackUp(MoButton, buttonAttr, MContent, panelAttr) {
             };
         }
 
+        componentDidUpdate(prevProps, prevState){
+            if(this.state.isOpen){
+                document.querySelector('body').classList.add('modal-open');
+            }else {
+                document.querySelector('body').classList.remove('modal-open');
+            }
+        }
+
         render() {
             return (
                 <>

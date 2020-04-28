@@ -2,9 +2,11 @@ import React, {Component} from 'react';
 import {NavLink} from "react-router-dom";
 import styles             from './LoginPage.module.css';
 import Logo               from './qucumber.svg';
-//import './App.css';
+import ModalContent from '../../../components/common/modal/ModalContent';
 
-class LoginPage extends Component {
+//import './App.css';
+class LoginPage extends ModalContent {
+// class LoginPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -81,42 +83,24 @@ class LoginPage extends Component {
       );
   };
 
-   /*Reg = (prop) => {
-      return (
-          <>
-              <div className={styles.headtop}>
-                <img className={styles.img} src={Logo} alt={"Logo"}/>
-                <label >Register</label>
-              </div>
-              <input type="text" data-test="username" placeholder="Email" value={this.state.username}
-                     onChange={this.handleUserChange}/>
-              <input type="password" data-test="password" placeholder="Password" value={this.state.password}
-                     onChange={this.handlePassChange}/>
-              <div className={styles.func}>
-                  <a className={styles.change} href="#" onClick={() => {this.setState((state, prop) => ({regist: !state.regist}));}}>Sign in</a>
-                  <button className={styles.but1} type="submit" data-test="submit">Next</button>
-              </div>
-          </>
-      );
-  };*/
-
    Login = (prop) => {
       return (
-          <>
-              <div className={styles.headtop}>
-                <img className={styles.img} src={Logo} alt={"Logo"}/>
-                <label >Login</label>
-              </div>
-              <input id={"username"} type="text" placeholder="Email" value={this.state.username}
-                     onChange={this.handleUserChange}/>
-              <input id={"password"} type="password"  placeholder="Password" value={this.state.password}
-                     onChange={this.handlePassChange}/>
-              <NavLink to={"/forget"}>Forget password?</NavLink>
-              <div className={styles.func}>
-                  <NavLink to={"/signup"} className={styles.change}>Register</NavLink>
-                  <button className={styles.but1} type="submit" data-test="submit">Login</button>
-              </div>
-          </>
+        <>
+            <button onClick={this.props.handleClose}> Click me to close</button>
+            <div className={styles.headtop}>
+            <img className={styles.img} src={Logo} alt={"Logo"}/>
+            <label >Login</label>
+            </div>
+            <input id={"username"} type="text" placeholder="Email" value={this.state.username}
+                    onChange={this.handleUserChange}/>
+            <input id={"password"} type="password"  placeholder="Password" value={this.state.password}
+                    onChange={this.handlePassChange}/>
+            <NavLink to={"/forget"}>Forget password?</NavLink>
+            <div className={styles.func}>
+                <NavLink to={"/signup"} className={styles.change}>Register</NavLink>
+                <button className={styles.but1} type="submit" data-test="submit">Login</button>
+            </div>
+        </>
       );
   };
 
@@ -124,9 +108,43 @@ class LoginPage extends Component {
 
     render() {
         return (
-            <this.LoginLayout type={this.layoutType}>
-                {<this.Login/>}
-            </this.LoginLayout>
+            // <this.LoginLayout type={this.layoutType}>
+            //     <button onClick={this.props.handleClose}> Click me to close</button>
+            //     <div className={styles.headtop}>
+            //     <img className={styles.img} src={Logo} alt={"Logo"}/>
+            //     <label >Login</label>
+            //     </div>
+            //     <input id={"username"} type="text" placeholder="Email" value={this.state.username}
+            //             onChange={this.handleUserChange}/>
+            //     <input id={"password"} type="password"  placeholder="Password" value={this.state.password}
+            //             onChange={this.handlePassChange}/>
+            //     <NavLink to={"/forget"}>Forget password?</NavLink>
+            //     <div className={styles.func}>
+            //     <NavLink to={"/signup"} className={styles.change}>Register</NavLink>
+            //     <button className={styles.but1} type="submit" data-test="submit">Login</button>
+            //     </div>
+            // </this.LoginLayout>
+            <div id="commentModal" class="modal" role="dialog">
+                {/* <div class="modal-dialog"> */}
+                <div class={styles.modalDialog}>
+                    <div class="modal-content">
+                        <button style={{float: 'right'}} onClick={this.props.handleClose}>X</button>
+                        <div className={styles.headtop}>
+                            <img className={styles.img} src={Logo} alt={"Logo"}/>
+                            <label >Login</label>
+                        <input id={"username"} type="text" placeholder="Email" value={this.state.username}
+                            onChange={this.handleUserChange}/>
+                        <input id={"password"} type="password"  placeholder="Password" value={this.state.password}
+                            onChange={this.handlePassChange}/>
+                        <NavLink to={"/forget"}>Forget password?</NavLink>
+                        </div>
+                        <div className={styles.func}>
+                            <NavLink to={"/signup"} className={styles.change}>Register</NavLink>
+                            <button className={styles.but1} type="submit" data-test="submit">Login</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         );
     }
 }
