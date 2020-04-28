@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 
 class ModalOpenButton extends Component {
     render() {
-        const { onClick, children, ...rest } = this.props;
-        const Children = children
-        
+        const { modalToggle, onClick, children, ...rest } = this.props;
+        const Children = children;
+
         const handleClick = () => {
-            this.props.modalToggle();
-            this.props.onClick && this.props.onClick();
+            modalToggle();
+            onClick && onClick();
         };
 
         return <Children onClick={handleClick} {...rest} />;
@@ -16,7 +16,7 @@ class ModalOpenButton extends Component {
 }
 
 ModalOpenButton.propTypes = {
-    modalToggle: PropTypes.func.isRequired
+    modalToggle: PropTypes.func.isRequired,
 };
 
 export default ModalOpenButton;
