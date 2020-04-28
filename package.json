@@ -25,10 +25,10 @@
     ],
     "dependencies": {
         "connected-react-router": "^6.8.0",
-        "dompurify": "^2.0.8",
+        "dompurify": "^2.0.10",
         "google-map-react": "^1.1.7",
         "history": "^4.10.1",
-        "marked": "^0.8.2",
+        "marked": "^1.0.0",
         "react-dom": "^16.13.1",
         "react-helmet": "^5.2.1",
         "react-intl": "^2.9.0",
@@ -39,11 +39,11 @@
         "redux": "^4.0.5",
         "redux-persist": "^6.0.0",
         "redux-thunk": "^2.3.0",
-        "styled-components": "^5.0.1"
+        "styled-components": "^5.1.0"
     },
     "devDependencies": {
-        "husky": "^4.2.3",
-        "node-sass": "^4.13.1",
+        "husky": "^4.2.5",
+        "node-sass": "^4.14.0",
         "prop-types": "latest",
         "react": "^16.13.1",
         "react-burger-menu": "^2.6.13",
