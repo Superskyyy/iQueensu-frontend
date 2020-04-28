@@ -1,28 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./testingPlayground.module.scss";
 import CommentEditor from "../../../components/widgets/Comments/CommentEditor";
-import bindModal from "../../../components/HOC/ModalHOC";
+import modalPackUp from "../../../components/common/modal/ModalPackUp";
 
-const TestingPlayground = (props) => {
-    const [isOpen, setOpen] = useState(false);
-    
+const TestingPlayground = () => {
+    const Butt = (props) => {
+        return <button {...props}>click to launch CommentEditor</button>;
+    };
+    const Modal = modalPackUp(Butt, {}, CommentEditor, {});
+
     return (
         <>
             {/* put your testing code here */}
+            <Modal />
             <div className={"H1"}>Testing Page</div>
-            <button
-                onClick={() => {
-                    setOpen(!isOpen);
-                }}
-            >
-                click to launch CommentEditor
-            </button>
-            <CommentEditor
-                show={isOpen}
-                onClose={() => {
-                    setOpen(!isOpen);
-                }}
-            />
             <div className={""}>
                 <div className={styles.green_050}>
                     <p className="H5">green—050</p>
