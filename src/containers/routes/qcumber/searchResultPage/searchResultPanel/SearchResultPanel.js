@@ -1,6 +1,7 @@
-import React, { Fragment } from 'react';
-import classes from './SearchResultPanel.module.scss';
-import { SEARCH_RESULTS_COMMON } from '../../../../../utilities/constants/constants';
+import React, { Fragment }                from 'react';
+import classes                            from './SearchResultPanel.module.scss';
+import {SEARCH_RESULTS_COMMON, URL_PATHS} from '../../../../../utilities/constants/constants';
+import {NavLink}                          from "react-router-dom";
 
 const SearchResultPanel = (props) =>{
 
@@ -19,7 +20,7 @@ const SearchResultPanel = (props) =>{
                                 return(
                                     <div key={id}>
                                         <h4 className={classes.sectionTitle}>
-                                            {result[SEARCH_RESULTS_COMMON.SUBJECT_CODE] + " " + result[SEARCH_RESULTS_COMMON.NUMBER]}
+                                            <NavLink to={URL_PATHS.DATABASE_COURSE_PATH} activeClassName="chosen">{result[SEARCH_RESULTS_COMMON.SUBJECT_CODE] + "" + result[SEARCH_RESULTS_COMMON.NUMBER]}</NavLink>
                                         </h4>
                                         <p className={classes.sectionContent}>
                                                 {result["course_details"]["course_description_short"]}

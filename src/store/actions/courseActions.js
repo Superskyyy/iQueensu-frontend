@@ -1,6 +1,7 @@
 //
-import {getCourseAPI}       from "../../utilities/mockData/getCourseAPI";
+import {getCourseAPI}                                          from "../../utilities/mockData/getCourseAPI";
 import {GET_COURSE_SUCCESS, ADD_TIME_BLOCK, REMOVE_TIME_BLOCK} from "./types";
+import {fetchCoursePageData}                                   from "../../utilities/SearchActions/fetchCoursePageData";
 
 // action creators
 export const getCourseSuccess = (course) => {
@@ -10,9 +11,18 @@ export const getCourseSuccess = (course) => {
     };
 };
 
-export const getCourse = (possibleFilters) => {
+export const successHandler = (res) => {
+    // TODO: add an intermediate interface
+    res.json().then(result => {
+        return({
+            courseDetails: result
+        });
+    });
+};
+
+export const getCourse = (uuid) => {
     return dispatch => {
-        let res = getCourseAPI();
+        let res = fetchCoursePageData(uuid,successHandler());
         dispatch(getCourseSuccess(res));
     };
 };

@@ -80,23 +80,23 @@ class CourseWrapper extends React.Component {
     };
 
     componentDidMount() {
-        this.props.getCourseTest("noUse");
-        this.makeApiCall("CISC199");
+        this.props.getCourseDetail("800070fd-1572-41b9-91a5-aab0df31b35a");
+        //this.makeApiCall("CISC199");
         // uncoment this later on when demo
         // fetchCourseTimeTable(this.props.currentCourse[0]['uuid'], this.handleCourseTimeTable);
     }
 
-    makeApiCall = (courseCode) => {
-        fetchCoursePageData(this.successHandler);
-    };
-    successHandler = (res) => {
-        // TODO: add an intermediate interface
-        res.json().then(result => {
-            this.setState({
-                courseDetails: result
-            });
-        });
-    };
+    // makeApiCall = (courseCode) => {
+    //     fetchCoursePageData(this.successHandler);
+    // };
+    // successHandler = (res) => {
+    //     // TODO: add an intermediate interface
+    //     res.json().then(result => {
+    //         this.setState({
+    //             courseDetails: result
+    //         });
+    //     });
+    // };
 
     render() {
         let courseLoadTitle = "";
@@ -250,7 +250,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        getCourseTest: noUse => dispatch(getCourse(noUse)),
+        getCourseDetail: uuid => dispatch(getCourse(uuid)),
     };
 };
 
