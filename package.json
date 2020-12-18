@@ -27,7 +27,7 @@
         "echarts": "^4.6.0",
         "echarts-for-react": "^2.0.15-beta.1",
         "connected-react-router": "^6.8.0",
-        "dompurify": "^2.0.8",
+        "dompurify": "^2.0.17",
         "google-map-react": "^1.1.7",
         "history": "^4.10.1",
         "marked": "^0.8.2",
